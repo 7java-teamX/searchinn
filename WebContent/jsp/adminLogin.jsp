@@ -24,11 +24,11 @@
 	 	<form class="login-container">
 	    <p><input type="text" placeholder="管理者ID"></p>
 	    <p><input type="password" placeholder="Password"></p>
-	    <p><input type="submit" value="ログイン" ></p>
+	    <p><input type="submit" value="管理者ログイン" ></p>
 	  	</form>
 
 		<p>
-			<a class="whiteText" href="../admin/admin.html">管理者画面へ</a>
+			<a class="whiteText" href="../admin.html">管理者画面へ</a>
 		</p>
 	</div>
 

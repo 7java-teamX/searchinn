@@ -25,7 +25,7 @@
  	<form class="login-container" action="" method="post">
     <p><input type="text" placeholder="ユーザーID"></p>
     <p><input type="password" placeholder="Password"></p>
-    <p><input type="submit" value="ログイン" ></p>
+    <p><input type="submit" value="会員ログイン" ></p>
   	</form>
 
 	<h2><a class ="touroku" href="/searchinn/RegisterGuestServlet">会員登録</a></h2>
