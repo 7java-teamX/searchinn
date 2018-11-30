@@ -28,7 +28,7 @@
 	  	</form>
 
 		<p>
-			<a class="whiteText" href="../admin.html">管理者画面へ</a>
+			<a class="whiteText" href="/searchinn/jsp/admin.jsp">管理者画面へ</a>
 		</p>
 	</div>
 

@@ -55,7 +55,7 @@
 		</div>
 	</div>
 	<p>
-		<a class="center" href="../index/index.html">TOPへ戻る</a>
+		<a class="center" href="../jsp/index.html">TOPへ戻る</a>
 	</p>
 </body>
 </html>

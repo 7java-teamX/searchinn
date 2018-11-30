@@ -20,7 +20,7 @@
 		</div>
 
 	</div>
-	<p><a class="whiteText" href="../index/index.html">TOPへ戻る</a></p>
+	<p><a class="whiteText" href="../jsp/index.jsp">TOPへ戻る</a></p>
 
 </body>
 </html>

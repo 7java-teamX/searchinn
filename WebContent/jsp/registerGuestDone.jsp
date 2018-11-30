@@ -15,7 +15,7 @@
 		<input type="button" value="ログイン画面へ" onClick="location.href='guestLogin.html'">
 
 	<p>
-		<a class="center" href="../index/index.html">TOPへ戻る</a>
+		<a class="center" href="../jsp/index.jsp">TOPへ戻る</a>
 	</p>
 	</div>
 

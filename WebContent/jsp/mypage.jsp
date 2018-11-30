@@ -10,7 +10,7 @@
 <link rel="stylesheet" type="text/css" href="/searchinn/css/headerStyle.css">
 <link rel="stylesheet" type="text/css" href="/searchinn/css/footerStyle.css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>マイページ</title>
 </head>
 <body>
 
@@ -20,8 +20,10 @@
 	<div class="login-triangle"></div>
 	 	<h2 class="login-header">マイページ</h2>
 	 	<div class="login-container">
+	 	<br>
 		<p><a href="#" class="square_btn">予約確認</a></p>
 		<p><a href="#" class="square_btn">会員情報</a></p>
+		<br>
 	</div>
 </div>
 <jsp:include page="footer.jsp"/>
