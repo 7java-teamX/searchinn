@@ -7,6 +7,10 @@
 <link rel="stylesheet" type="text/css" href="../css/indexStyle.css">
 <link rel="stylesheet" type="text/css" href="../css/headerStyle.css">
 <link rel="stylesheet" type="text/css" href="../css/footerStyle.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/indexStyle.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/headerStyle.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/footerStyle.css">
+
 
 <title>BOOKINN</title>
 </head>

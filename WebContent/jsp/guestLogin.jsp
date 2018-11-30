@@ -28,9 +28,8 @@
     <p><input type="submit" value="ログイン" ></p>
   	</form>
 
-	<h2><a class ="touroku" href="registerGuestForm.html">会員登録</a></h2>
+	<h2><a class ="touroku" href="/searchinn/RegisterGuestServlet">会員登録</a></h2>
 
-	<a class ="touroku" href="/searchinn/RegisterGuestServlet">会員登録へ(servlet)</a>
 
 	</div>
 
