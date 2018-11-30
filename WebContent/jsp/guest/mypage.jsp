@@ -3,9 +3,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="../css/loginStyle.css">
-<link rel="stylesheet" type="text/css" href="../css/headerStyle.css">
-<link rel="stylesheet" type="text/css" href="../css/footerStyle.css">
 <link rel="stylesheet" type="text/css" href="/searchinn/css/loginStyle.css">
 <link rel="stylesheet" type="text/css" href="/searchinn/css/headerStyle.css">
 <link rel="stylesheet" type="text/css" href="/searchinn/css/footerStyle.css">
@@ -14,7 +11,7 @@
 </head>
 <body>
 
-<jsp:include page="header.jsp"/>
+<jsp:include page="/jsp/header.jsp"/>
 
 <div class="login">
 	<div class="login-triangle"></div>
@@ -26,7 +23,7 @@
 		<br>
 	</div>
 </div>
-<jsp:include page="footer.jsp"/>
+<jsp:include page="/jsp/footer.jsp"/>
 
 </body>
 </html>

@@ -14,7 +14,7 @@
 </head>
 <body>
 
-	<jsp:include page="header.jsp"/>
+	<jsp:include page="/jsp/header.jsp"/>
 
 	<div class="login">
  		<div class="login-triangle"></div>
@@ -28,11 +28,11 @@
 	  	</form>
 
 		<p>
-			<a class="whiteText" href="/searchinn/jsp/admin.jsp">管理者画面へ</a>
+			<a class="whiteText" href="/searchinn/jsp/admin/admin.jsp">管理者画面へ</a>
 		</p>
 	</div>
 
-	<jsp:include page="footer.jsp"/>
+	<jsp:include page="/jsp/footer.jsp"/>
 
 </body>
 </html>

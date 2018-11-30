@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>会員情報入力確定</title>
-<link rel="stylesheet" type="text/css" href="../css/registerGuestFormStyle.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/registerGuestFormStyle.css">
 </head>
 <body>
 <div class="main">

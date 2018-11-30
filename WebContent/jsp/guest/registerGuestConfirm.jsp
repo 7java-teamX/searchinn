@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="../css/registerGuestFormStyle.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/registerGuestFormStyle.css">
 <title>会員情報入力確認</title>
 </head>
 <body>

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="../css/adminStyle.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/adminStyle.css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -20,7 +20,7 @@
 		</div>
 
 	</div>
-	<p><a class="whiteText" href="../jsp/index.jsp">TOPへ戻る</a></p>
+	<p><a class="whiteText" href="/searchinn/jsp/index.jsp">TOPへ戻る</a></p>
 
 </body>
 </html>
