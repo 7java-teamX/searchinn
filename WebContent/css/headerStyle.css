@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+
+/*----------*/
+/*--header--*/
+/*----------*/
+
+
+
+#nav{
+    background-color: #000033;
+    padding: 10px 70px ;
+
+}
+
+
+#nav ul{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+#nav ul li {
+    display: inline;
+    margin-right: 1em;
+}
+
+
+#nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#nav ul li a:hover {
+	text-decoration: underline;
+}
+
+#hoge{
+	display: inline;
+}

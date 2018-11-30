@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="indexStyle.css">
-<link rel="stylesheet" type="text/css" href="headerStyle.css">
-<link rel="stylesheet" type="text/css" href="footerStyle.css">
+<link rel="stylesheet" type="text/css" href="../css/indexStyle.css">
+<link rel="stylesheet" type="text/css" href="../css/headerStyle.css">
+<link rel="stylesheet" type="text/css" href="../css/footerStyle.css">
+<link rel="stylesheet" type="text/css" href="/hotel/css/indexStyle.css">
+<link rel="stylesheet" type="text/css" href="/hotel/css/headerStyle.css">
+<link rel="stylesheet" type="text/css" href="/hotel/css/footerStyle.css">
 <title>BOOKINN</title>
 </head>
 <body>

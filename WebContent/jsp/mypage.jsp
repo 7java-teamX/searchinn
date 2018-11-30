@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>マイページ</title>
 </head>
 <body>
-test1(inoue)
+
+
+
 </body>
 </html>
