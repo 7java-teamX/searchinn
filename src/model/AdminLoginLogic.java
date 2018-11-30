@@ -1,6 +1,6 @@
 package model;
 
-import DAO.AdminDAO;
+import dao.AdminDAO;
 
 public class AdminLoginLogic {
 	public boolean execute(Admin admin) {

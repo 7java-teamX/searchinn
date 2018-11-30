@@ -23,7 +23,8 @@ public class AdminLoginServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
@@ -31,27 +32,28 @@ public class AdminLoginServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// リクエストパラメーターの取得
-				request.setCharacterEncoding("UTF-8");
-				String name = request.getParameter("name");
-				String pass = request.getParameter("pass");
+		request.setCharacterEncoding("UTF-8");
+		String name = request.getParameter("name");
+		String pass = request.getParameter("pass");
 
-				Admin admin = new Admin(name,pass);
-				//ログイン処理の生成
-				AdminLoginLogic adLog = new AdminLoginLogic();
-				boolean isLogin = adLog.execute(admin);
-				//ログイン成功時の処理
-				if(isLogin) {
-					//ユーザー情報をセッションスコープに保存
-					HttpSession ses = request.getSession();
-					ses.setAttribute("admin", admin);
-					//ログイン結果を画面にフォワード
-					RequestDispatcher dis = request.getRequestDispatcher("/admin.jsp");
-					dis.forward(request, response);
-				}else {
-					response.sendRedirect("/searchinn/adminLogin.jsp");
-				}
+		Admin admin = new Admin(name, pass);
+		//ログイン処理の生成
+		AdminLoginLogic adLog = new AdminLoginLogic();
+		boolean isLogin = adLog.execute(admin);
+		//ログイン成功時の処理
+		if (isLogin) {
+			//ユーザー情報をセッションスコープに保存
+			HttpSession ses = request.getSession();
+			ses.setAttribute("admin", admin);
+			//ログイン結果を画面にフォワード
+			RequestDispatcher dis = request.getRequestDispatcher("/admin.jsp");
+			dis.forward(request, response);
+		} else {
+			response.sendRedirect("/searchinn/adminLogin.jsp");
+		}
 
 	}
 

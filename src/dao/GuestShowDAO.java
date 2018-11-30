@@ -1,41 +1,41 @@
-package DAO;
+package dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
-import model.Admin;
+import model.Guest;
 
-public class AdminDAO {
+
+public class GuestShowDAO {
 	private final String DRIVER_NAME = "com.mysql.jdbc.Driver";
 	private final String JDBC_URL = "jdbc:mysql://localhost:3306/inn";
 	private final String DB_USER = "root";
 	private final String DB_PASS = "root";
-	/**
-	 * ログイン画面で入力した管理者名とpassがあっているか確かめる
-	 * @param admin
-	 * @return
-	 */
-	public boolean findByLogin(Admin admin){
+	public List<Guest> showAll(){
+
 		Connection conn = null;
-		boolean isExist = false;
+		List<Guest> guestList = new ArrayList<>();
 		try {
 			Class.forName(DRIVER_NAME);
 			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
 			//select文の準備
-			String sql = "SELECT admin_id , admin_pass s from admin_t " +
-						  "WHERE admin_id = ? AND admin_pass = ?";
-			PreparedStatement pStmt = conn.prepareStatement(sql);
-			pStmt.setString(1, admin.getId());
-			pStmt.setString(2, admin.getPass());
+			String sql = "SELECT guest_id ,guest_name, guest_kana from guest_t order by guest_kana desc";
+			java.sql.PreparedStatement pStmt = conn.prepareStatement(sql);
 			//selectを実行し結果表(ResultSet)を取得
 			ResultSet rs = pStmt.executeQuery();
 
 			//結果表に格納されたレコードの内容を表示
-			if (rs.next()) {
-				isExist = true;
+			while (rs.next()) {
+				int id = rs.getInt("guest_id");
+				String name = rs.getString("guest_name");
+				String kana = rs.getString("guest_kana");
+
+				Guest guest = new Guest(id, name, kana);
+				guestList.add(guest);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -51,6 +51,7 @@ public class AdminDAO {
 				}
 			}
 		}
-		return isExist;
+		return guestList;
 	}
+		//TODO 他のメソッドも実装
 }

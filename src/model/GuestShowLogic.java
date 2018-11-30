@@ -2,7 +2,7 @@ package model;
 
 import java.util.List;
 
-import DAO.GuestShowDAO;
+import dao.GuestShowDAO;
 
 public class GuestShowLogic {
 	public List<Guest> showAll(){
