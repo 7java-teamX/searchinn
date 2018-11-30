@@ -16,6 +16,10 @@ import model.AdminLoginLogic;
 /**
  * Servlet implementation class AdminLoginServlet
  */
+/**
+ * @author 3BC1_12
+ *
+ */
 @WebServlet("/AdminLoginServlet")
 public class AdminLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -45,7 +49,7 @@ public class AdminLoginServlet extends HttpServlet {
 		boolean isLogin = adLog.execute(admin);
 		//ログイン成功時の処理
 		if (isLogin) {
-			//ユーザー情報をセッションスコープに保存
+			//管理者情報をセッションスコープに保存
 			HttpSession ses = request.getSession();
 			ses.setAttribute("admin", admin);
 			//ログイン結果を画面にフォワード

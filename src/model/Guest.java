@@ -2,6 +2,10 @@ package model;
 
 import java.io.Serializable;
 
+/**
+ * @author 3BC1_12
+ *
+ */
 public class Guest implements Serializable{
 	private int guestId;
 	private String name;
@@ -14,9 +18,6 @@ public class Guest implements Serializable{
 	private String mail;
 	/**
 	 * 顧客情報一覧時使用
-	 * @param id
-	 * @param name
-	 * @param kana
 	 */
 	public Guest(int id, String name, String kana) {
 		this.guestId = id;
@@ -24,15 +25,18 @@ public class Guest implements Serializable{
 		this.kana = kana;
 	}
 	/**
+	 * 管理者側顧客情報検索時使用
+	 */
+
+	public Guest(int guestId, String name, String tel, String mail) {
+		this.guestId = guestId;
+		this.name = name;
+		this.tel = tel;
+		this.mail = mail;
+	}
+
+	/**
 	 * 顧客情報登録時使用
-	 * @param guestId
-	 * @param name
-	 * @param kana
-	 * @param pass
-	 * @param birthday
-	 * @param tel
-	 * @param address
-	 * @param mail
 	 */
 	public Guest(int guestId, String name, String kana, String pass, String birthday, String tel, String address,
 			String mail) {
@@ -48,13 +52,6 @@ public class Guest implements Serializable{
 	}
 	/**
 	 * 顧客情報詳細表示時使用
-	 * @param guestId
-	 * @param name
-	 * @param kana
-	 * @param birthday
-	 * @param tel
-	 * @param address
-	 * @param mail
 	 */
 	public Guest(int guestId, String name, String kana, String birthday, String tel, String address, String mail) {
 

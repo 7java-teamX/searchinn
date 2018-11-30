@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>管理者 ログイン画面</h1>
-<form action="/searchinn/AdminLoginServlet" method="post">
+<form action="/searchinn/GuestInfoServlet" method="post">
 	<p>ユーザー名:<input type="text" name="name"></p>
 	<p>パスワード:<input type ="password" name="pass"></p>
 	<input type="submit" value="ログイン">
