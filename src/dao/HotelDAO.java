@@ -17,7 +17,7 @@ public class HotelDAO {
 	private final String DB_USER = "root";
 	private final String DB_PASS = "root";
 	/**
-	 *
+	 * ホテル選択後のプラン一覧表示に使用
 	 * @param hotelId
 	 * @return planList
 	 */

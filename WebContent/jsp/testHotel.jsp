@@ -8,18 +8,18 @@
 </head>
 <body>
 北海道
-<a href="/searchinn/PlanSelectServlet?hotelId=1">コロポックル</a>
-<a href="/searchinn/PlanSelectServlet?hotelId=2">ススキノ</a>
+<a href="/searchinn/PlanSelectServlet?action=toPlan&hotelId=1">コロポックル</a>
+<a href="/searchinn/PlanSelectServlet?action=toPlan&hotelId=2">ススキノ</a>
 
 近畿
-<a href="/searchinn/PlanSelectServlet?hotelId=3">琵琶湖</a>
+<a href="/searchinn/PlanSelectServlet?action=toPlan&hotelId=3">琵琶湖</a>
 
 四国
-<a href="/searchinn/PlanSelectServlet?hotelId=4">河童</a>
+<a href="/searchinn/PlanSelectServlet?action=toPlan&hotelId=4">河童</a>
 
 沖縄
-<a href="/searchinn/PlanSelectServlet?hotelId=5">キジムナー</a>
-<a href="/searchinn/PlanSelectServlet?hotelId=6">マリーナ</a>
+<a href="/searchinn/PlanSelectServlet?action=toPlan&hotelId=5">キジムナー</a>
+<a href="/searchinn/PlanSelectServlet?action=toPlan&hotelId=6">マリーナ</a>
 
 </body>
 </html>
