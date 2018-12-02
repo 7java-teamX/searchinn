@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.CalendarMake;
+import model.Plan;
+import model.ShowCalendarLogic;
 
 /**
  * Servlet implementation class PlanReserveServlet
@@ -25,10 +26,14 @@ public class PlanReserveServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String path = null;
 		HttpSession session = request.getSession();
-		CalendarMake cm = new CalendarMake();
-		session.setAttribute("calMap", cm.calMake(request.getParameter("ym")));
+		//
+		ShowCalendarLogic scLogic = new ShowCalendarLogic();
+		Plan plan = (Plan)session.getAttribute("plan");
+		System.out.println(request.getParameter("ym"));
+//		session.setAttribute("calMap", scLogic.execute(plan.getPlanId(), request.getParameter("ym")));
+		//
 		path = "/jsp/reserveForm.jsp";
-
+		//
 		RequestDispatcher dis = request.getRequestDispatcher(path);
 		dis.forward(request, response);
 	}

@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class CalendarMake {
 
-	public Map<String, Object> calMake(String ym){
+	public Map<String, Object> calMake(String ym, int[] reserveCount){
 		Map<String, Object> calMap = new HashMap<>();
 		int year;
 		int month;
@@ -56,7 +56,7 @@ public class CalendarMake {
 			if(num < startdayOfWeek || num > lastdayOfMonth + startdayOfWeek - 1){
 				sb.append("<td></td>");
 			}else{
-				sb.append("<td>"+date+"</td>");
+				sb.append("<td>"+date+"<br>残り："+reserveCount[date-1]+"</td>");
 				date++;
 			}
 			// 7マスごとにカレンダーを改行

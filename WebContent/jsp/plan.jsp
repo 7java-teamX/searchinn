@@ -27,7 +27,7 @@
 			<c:out value="${plan.planImage}" />
 		</div>
 		<div>
-			<a href="/searchinn/PlanSelectServlet?index=${status.index}">空室確認・予約</a>
+			<a href="/searchinn/PlanSelectServlet?action=toReserve&index=${status.index}">空室確認・予約</a>
 		</div>
 	</div>
 </c:forEach>

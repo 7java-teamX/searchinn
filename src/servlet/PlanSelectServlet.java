@@ -39,7 +39,9 @@ public class PlanSelectServlet extends HttpServlet {
 		case "toReserve":
 			//planListとindexを取得，該当のplanをセッションスコープに保存，フォワード先を設定
 			List<Plan> planList = (List<Plan>)session.getAttribute("planList");
-			session.setAttribute("plan", planList.get((int) request.getAttribute("index")));
+//			System.out.println(request.getParameter("index"));
+//			System.out.println(planList.get((int) request.getParameter("index")));
+			session.setAttribute("plan", planList.get(Integer.parseInt(request.getParameter("index"))));
 			path = "/PlanReserveServlet";
 			break;
 		}
