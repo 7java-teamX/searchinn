@@ -11,7 +11,7 @@ import java.util.List;
 
 import model.Plan;
 
-public class HotelDAO {
+public class PlanDAO {
 	private final String DRIVER_NAME = "com.mysql.jdbc.Driver";
 	private final String JDBC_URL = "jdbc:mysql://localhost:3306/inn";
 	private final String DB_USER = "root";
