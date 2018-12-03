@@ -32,7 +32,6 @@ public class AReserveListServlet extends HttpServlet {
 			session.setAttribute("reserveList", reserveList);
 		}
 
-
 		//main.jspのフォワードを行う
 		RequestDispatcher dis =
 				request.getRequestDispatcher("aReserveList.jsp");

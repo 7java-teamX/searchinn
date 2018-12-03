@@ -8,18 +8,28 @@
 <title>予約状況閲覧</title>
 <style>
 table,th,td{border: solid 1px black;}
+.bg{ 	height:35px; }
 </style>
 </head>
 <body>
 <h2>予約状況閲覧</h2>
 <table>
 <form action="/searchinn/ReserveInfoServlet" method="get">
-	期間<input type="date" name="day1"><br>
-	ホテルの名前<input type="text" name="hotelName"><br>
-	プランの名前<input type="text" name="planName"><br>
-	予約者の名前<input type="text" name="name"><br>
-	<input type="reset">
-	<input type="submit" value="送信">
+	期間：<input type="date" name="day"  value="<c:out value="${refineSearch.day}" />" >
+	ホテルの名前：<input type="text" name="hotelName" list="keywords1">
+	<datalist id="keywords1">
+		<option value="<c:out value="${refineSearch.hotelName}" />" >
+	</datalist>
+	プランの名前：<input type="text" name="planName" list="keywords2">
+	<datalist id="keywords2">
+		<option value="<c:out value="${refineSearch.hotelName}" />" >
+	</datalist>
+	予約者の名前：<input type="text" name="name" list="keywords3"><br>
+	<datalist id="keywords3">
+		<option value="<c:out value="${refineSearch.hotelName}" />" >
+	</datalist>
+	<input type="reset" class="bg">
+	<input type="submit" value="送信" class="bg">
 </form>
 </table>
 <hr>

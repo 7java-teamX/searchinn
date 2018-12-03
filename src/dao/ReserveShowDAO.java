@@ -18,7 +18,8 @@ public class ReserveShowDAO {
 	private final String DriverName = "com.mysql.jdbc.Driver";
 	private final String JDBCURL = "jdbc:mysql://localhost:3306/inn"; //接続先データベース
 	private final String DBUser = "root"; // user名
-	private final String DBPass = "root"; // pass名
+	//private final String DBPass = "root"; // pass名
+	private final String DBPass = "Reina9110Nao"; // pass名
 
 	//検索条件で取得するメソッド(つぶやきの内容取得)
 	public List<Reserve> selectReserve(Reserve refineSearch) {
@@ -31,7 +32,7 @@ public class ReserveShowDAO {
 		String hotelName = refineSearch.getHotelName();
 		String planName = refineSearch.getPlanName();
 		String guestName = refineSearch.getGuestName();
-		String whereOrAnd = " WHERE";
+		String whereOrAnd = " where ";
 
 		try {
 			Class.forName(DriverName);
@@ -60,6 +61,7 @@ public class ReserveShowDAO {
 
 			 //'as r join guest_t as g on r.guest_id = g.guest_id join plan_t as p on r.plan_id '
 			PreparedStatement pStmt = conn.prepareStatement(sql);
+
 			if(day != null && day != "") {
 				sql  += whereOrAnd + "reserve_date like ?";
 				pStmt = conn.prepareStatement(sql);
