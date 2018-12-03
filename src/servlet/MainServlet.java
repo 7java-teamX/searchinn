@@ -26,7 +26,7 @@ public class MainServlet extends HttpServlet {
 		if("top".equals(action)) {
 			forward = "/jsp/index.jsp";
 		}else if("login".equals(action)) {
-			forward = "/jsp/login.jsp";
+			forward = "/jsp/guestLogin.jsp";
 		}else if("mypage".equals(action)) {
 			forward = "/jsp/mypage.jsp";
 		}else if("admin".equals(action)) {

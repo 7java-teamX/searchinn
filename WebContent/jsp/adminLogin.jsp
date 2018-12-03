@@ -7,9 +7,9 @@
 <link rel="stylesheet" type="text/css" href="../css/loginStyle.css">
 <link rel="stylesheet" type="text/css" href="../css/headerStyle.css">
 <link rel="stylesheet" type="text/css" href="../css/footerStyle.css">
-<link rel="stylesheet" type="text/css" href="/hotel/css/loginStyle.css">
-<link rel="stylesheet" type="text/css" href="/hotel/css/headerStyle.css">
-<link rel="stylesheet" type="text/css" href="/hotel/css/footerStyle.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/loginStyle.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/headerStyle.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/footerStyle.css">
 <title>管理者画面ログイン</title>
 </head>
 <body>
