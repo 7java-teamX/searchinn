@@ -15,7 +15,7 @@
 
 		<div class="center">
 			<p><a href="#" class="square_btn">顧客情報管理</a></p>
-			<p><a href="../admin/sales.html" class="square_btn">売上集計</a></p>
+			<p><a href="/searchinn/jsp/admin/sales.jsp" class="square_btn">売上集計</a></p>
 			<p><a href="#" class="square_btn">予約状況一覧</a></p>
 		</div>
 

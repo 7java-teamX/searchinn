@@ -10,7 +10,7 @@
 <link rel="stylesheet" type="text/css" href="/searchinn/css/loginStyle.css">
 <link rel="stylesheet" type="text/css" href="/searchinn/css/headerStyle.css">
 <link rel="stylesheet" type="text/css" href="/searchinn/css/footerStyle.css">
-<title>管理者画面ログイン</title>
+<title>管理者ログイン画面</title>
 </head>
 <body>
 
@@ -19,7 +19,7 @@
 	<div class="login">
  		<div class="login-triangle"></div>
 
-	 	<h2 class="login-header">管理者画面ログイン</h2>
+	 	<h2 class="login-header">管理者ログイン画面</h2>
 
 	 	<form class="login-container">
 	    <p><input type="text" placeholder="管理者ID"></p>
