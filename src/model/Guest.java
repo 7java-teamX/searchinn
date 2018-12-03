@@ -16,14 +16,7 @@ public class Guest implements Serializable{
 	private String tel;
 	private String address;
 	private String mail;
-	/**
-	 * 顧客情報一覧時使用
-	 */
-	public Guest(int id, String name, String kana) {
-		this.guestId = id;
-		this.name = name;
-		this.kana = kana;
-	}
+
 	/**
 	 * 管理者側顧客情報検索時使用
 	 */
@@ -31,6 +24,18 @@ public class Guest implements Serializable{
 	public Guest(int guestId, String name, String tel, String mail) {
 		this.guestId = guestId;
 		this.name = name;
+		this.tel = tel;
+		this.mail = mail;
+	}
+/*
+ * 	顧客情報一覧時使用
+ * 顧客情報変更時使用
+ */
+	public Guest(int guestId, String name, String kana, String tel, String mail) {
+		super();
+		this.guestId = guestId;
+		this.name = name;
+		this.kana = kana;
 		this.tel = tel;
 		this.mail = mail;
 	}

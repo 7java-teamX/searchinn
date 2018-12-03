@@ -30,8 +30,17 @@ public class GuestInfoServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		// リクエストパラメーターの取得
+		request.setCharacterEncoding("UTF-8");
+		int id = Integer.parseInt(request.getParameter("id"));
+		GuestShowLogic guestShowLogic = new GuestShowLogic();
+		Guest guest = guestShowLogic.detailSearch(id);
+		HttpSession ses = request.getSession();
+		//1件のユーザー情報の詳細をセッションスコープに保存
+		ses.setAttribute("guestDetail", guest);
+		RequestDispatcher dis = request.getRequestDispatcher("/aGuestInfoDetail.jsp");
+		dis.forward(request, response);
+
 	}
 
 	/**

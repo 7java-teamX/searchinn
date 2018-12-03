@@ -9,15 +9,19 @@ import dao.GuestShowDAO;
  *
  */
 public class GuestShowLogic {
+	GuestShowDAO guestShowDAO = new GuestShowDAO();
 	public List<Guest> showAll(){
-		GuestShowDAO guestShowDAO = new GuestShowDAO();
+		//GuestShowDAO guestShowDAO = new GuestShowDAO();
 		List<Guest> guestList = guestShowDAO.showAll();
 
 		return guestList;
 	}
 	public List<Guest> refineSearch(Guest criteria){
-		GuestShowDAO guestShowDAO = new GuestShowDAO();
+		//GuestShowDAO guestShowDAO = new GuestShowDAO();
 		List<Guest> guestList = guestShowDAO.refineSearch(criteria);
 		return guestList;
+	}
+	public Guest detailSearch(int id) {
+		return guestShowDAO.detailSearch(id);
 	}
 }

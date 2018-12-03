@@ -29,7 +29,7 @@ public class GuestShowDAO {
 			Class.forName(DRIVER_NAME);
 			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
 			//select文の準備
-			String sql = "SELECT guest_id ,guest_name, guest_kana FROM guest_t ORDER BY guest_kana ASC";
+			String sql = "SELECT guest_id ,guest_name, guest_kana,guest_tel,guest_mail FROM guest_t ORDER BY guest_kana ASC";
 			java.sql.PreparedStatement pStmt = conn.prepareStatement(sql);
 			//selectを実行し結果表(ResultSet)を取得
 			ResultSet rs = pStmt.executeQuery();
@@ -39,8 +39,9 @@ public class GuestShowDAO {
 				int id = rs.getInt("guest_id");
 				String name = rs.getString("guest_name");
 				String kana = rs.getString("guest_kana");
-
-				Guest guest = new Guest(id, name, kana);
+				String tel = rs.getString("guest_tel");
+				String mail = rs.getString("guest_mail");
+				Guest guest = new Guest(id, name, kana,tel,mail);
 				guestList.add(guest);
 			}
 		} catch (SQLException e) {
@@ -59,6 +60,9 @@ public class GuestShowDAO {
 		}
 		return guestList;
 	}
+	/*
+	 * 顧客情報絞り込み検索機能
+	 */
 		public List<Guest> refineSearch(Guest criteria){
 			Connection conn = null;
 			List<Guest> guestList = new ArrayList<>();
@@ -121,4 +125,47 @@ public class GuestShowDAO {
 			}
 			return guestList;
 		}
+	public Guest detailSearch(int id) {
+		Connection conn = null;
+		Guest guest = null;
+		String guestId = Integer.toString(id);
+		try {
+			Class.forName(DRIVER_NAME);
+			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
+			//select文の準備
+			String sql = "SELECT guest_name, guest_kana,guest_birthday,guest_tel, guest_mail,guest_address FROM guest_t "+
+						"WHERE guest_id = ?;";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			pStmt.setString(1, guestId);
+			//selectを実行し結果表(ResultSet)を取得
+			ResultSet rs = pStmt.executeQuery();
+
+			//結果表に格納されたレコードの内容を表示
+			if (rs.next()) {
+				String name = rs.getString("guest_name");
+				String kana = rs.getString("guest_kana");
+				String birthday = rs.getString("guest_birthday");
+				String tel = rs.getString("guest_mail");
+				String address = rs.getString("guest_address");
+				String mail = rs.getString("guest_mail");
+
+				guest = new Guest(id, name, kana,birthday,tel,address,mail);
+				System.out.println(guestId + name +kana+  birthday+ tel+ address+ mail);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			//データベース切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return guest;
+	}
 }
