@@ -44,7 +44,7 @@ table,th,td{border: solid 1px black;}
 		<td><c:out value="${reserve.guestName}"/></td>
 		<td><c:out value="${reserve.guestId}"/></td>
 		<td><c:out value="${reserve.reserveDate}"/></td>
-		<td><a href="ReseveInfoServlet?index=<c:out value="${status.index}" />">詳細</a>
+		<td><a href="ReserveInfoServlet?index=<c:out value="${status.index}" />">詳細</a>
 		</td>
 	</tr>
 	</c:forEach>

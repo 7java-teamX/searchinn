@@ -113,8 +113,8 @@ public class ReserveShowDAO {
 				 String hotelMail = rs.getString("hotel_mail");
 				 String hotelImage = rs.getString("hotel_image");
 				 String hotelDetail = rs.getString("hotel_detail");
-				 int adultCopacity = rs.getInt("adult_capacity");
-				 int childCopacity = rs.getInt("child_capacity");
+				 int adultCapacity = rs.getInt("adult_capacity");
+				 int childCapacity = rs.getInt("child_capacity");
 				 int adultCharge = rs.getInt("adult_charge");
 				 int childCharge = rs.getInt("child_charge");
 
@@ -123,8 +123,7 @@ public class ReserveShowDAO {
 						reserveId,numOfAdults, numOfChildren, checkin, numOfNights, reserveDate, charge,reserveMemo,
 						planName, planImage,  planDetail,
 						hotelName,hotel_address, hotelTel,  hotelMail, hotelImage,
-						hotelDetail,  adultCopacity,
-						childCopacity,  adultCharge, childCharge
+						hotelDetail,  adultCapacity,childCapacity,  adultCharge, childCharge
 						);
 				reserveList.add(reserve);
 			}

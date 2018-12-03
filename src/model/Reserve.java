@@ -10,7 +10,7 @@ public class Reserve implements Serializable {
 
 	private String reserveId;      //予約id
 	private String guestId;        //ゲストid
-	//private String planId;        //プランid
+	private String planId;        //プランid
 	private int numOfAdults;    //大人人数
 	private int numOfChildren;  //子供人数
 	private String checkin;        //宿泊日
@@ -24,14 +24,14 @@ public class Reserve implements Serializable {
 	private String hotelMail;      //ホテルメールアドレス
 	private String hotelImage;     //ホテル画像
 	private String hotelDetail;    //ホテル説明文
-	//private String hotelId;       //
-	//private String roomTypeId;    //
+	private String hotelId;        //
+	private String roomTypeId;     //
 
 	private int numOfRooms;     //部屋の最大数
 	private String planImage;      //プラン画像
 	private String planDetail;     //プラン説明文
-	private int adultCopacity;     //大人の最大人数
-	private int childCopacity;     //子供の最大人数
+	private int adultCapacity;     //大人の最大人数
+	private int childCapacity;     //子供の最大人数
 	private int adultCharge;       //大人料金
 	private int childCharge;       //子供料金
 
@@ -41,8 +41,8 @@ public class Reserve implements Serializable {
 	private String guestTel;
 	private String guestMail;
 	private String guestAddress;
-	public Reserve(){}
 
+	public Reserve(){}
 
 	//予約状況管理時の検索情報保持に使用 インスタンス名
 	public Reserve(String day,String hotelName,String planName,String guestName){
@@ -84,8 +84,8 @@ public class Reserve implements Serializable {
 		//this.numOfRooms = numOfRooms;
 		this.planImage = planImage;
 		this.planDetail = planDetail;
-		this.adultCopacity = adultCopacity;
-		this.childCopacity = childCopacity;
+		this.adultCapacity = adultCopacity;
+		this.childCapacity = childCopacity;
 		this.adultCharge = adultCharge;
 		this.childCharge = childCharge;
 		this.guestKana = guestKana;
@@ -120,8 +120,8 @@ public class Reserve implements Serializable {
 	public int getNumOfRooms() {return numOfRooms;}
 	public String getPlanImage() {return planImage; }
 	public String getPlanDetail() {return planDetail; }
-	public int getAdultCopacity() {return adultCopacity; }
-	public int getChildCopacity() {return childCopacity; }
+	public int getAdultCapacity() {return adultCapacity; }
+	public int getChildCapacity() {return childCapacity; }
 	public int getAdultCharge() {return adultCharge; }
 	public int getChildCharge() { return childCharge; }
 
