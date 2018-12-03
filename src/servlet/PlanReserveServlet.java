@@ -26,15 +26,14 @@ public class PlanReserveServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
 		String path = null;
 		String ym = request.getParameter("ym");
-		System.out.println("PRS l32:" + request.getParameter("ym"));
 		if(ym == null || ym.equals("")){
 			Calendar cal = Calendar.getInstance();
 			ym = new SimpleDateFormat("yyyy-MM").format(cal.getTime());
 		}
-		System.out.println("PRS l38:" + ym);
 		//
 		ShowCalendarLogic scLogic = new ShowCalendarLogic();
 		Plan plan = (Plan)session.getAttribute("plan");
