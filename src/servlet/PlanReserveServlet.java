@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -24,13 +26,19 @@ public class PlanReserveServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String path = null;
 		HttpSession session = request.getSession();
+		String path = null;
+		String ym = request.getParameter("ym");
+		System.out.println("PRS l32:" + request.getParameter("ym"));
+		if(ym == null || ym.equals("")){
+			Calendar cal = Calendar.getInstance();
+			ym = new SimpleDateFormat("yyyy-MM").format(cal.getTime());
+		}
+		System.out.println("PRS l38:" + ym);
 		//
 		ShowCalendarLogic scLogic = new ShowCalendarLogic();
 		Plan plan = (Plan)session.getAttribute("plan");
-		System.out.println(request.getParameter("ym"));
-//		session.setAttribute("calMap", scLogic.execute(plan.getPlanId(), request.getParameter("ym")));
+		session.setAttribute("calMap", scLogic.execute(plan.getPlanId(),ym));
 		//
 		path = "/jsp/reserveForm.jsp";
 		//
@@ -42,8 +50,7 @@ public class PlanReserveServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+
 	}
 
 }

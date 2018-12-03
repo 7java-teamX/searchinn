@@ -15,15 +15,9 @@ public class CalendarMake {
 
 		//  カレンダーの取得
 		Calendar cal = Calendar.getInstance();
-		//  年月が入力されていればその値，入力がなければ現在の年月を設定
-		if(ym == null || ym.equals("")){
-			year = cal.get(Calendar.YEAR);
-			month = cal.get(Calendar.MONTH)+1;
-		}else{
-			String[] ymArr = ym.split("-");
-			year = Integer.parseInt(ymArr[0]);
-			month = Integer.parseInt(ymArr[1]);
-		}
+		String[] ymArr = ym.split("-");
+		year = Integer.parseInt(ymArr[0]);
+		month = Integer.parseInt(ymArr[1]);
 		//Mapにセット
 		calMap.put("ym", ym);
 		calMap.put("year", year);

@@ -18,7 +18,9 @@ public class ReserveDAO {
 		String DB_user = "root";
 		String DR_pass = "root";
 
+		int reserveMax[] = new int[31];
 		int reserveCount[] = new int[31];  //最大31日まで部屋の予約数を配列で格納
+		int roomAvailable[] = new int[31];
 		String firstDay = ym + "-01";    	//当月の月初の日付をString型で格納
 		int numDays = countDays(firstDay);;  					//当月の月末の日付をint型で格納
 
@@ -31,7 +33,7 @@ public class ReserveDAO {
 
 				//部屋の最大数 sql(select num_of_rooms from plan_t where plan_id = 1);
 				//SELECT文の準備(forで reserve_date likeの値は増加していく)
-				String sql ="SELECT (num_of_rooms-count(*))"
+				String sql ="SELECT (SELECT DISTINCT num_of_rooms FROM plan_t),count(*),(SELECT DISTINCT num_of_rooms FROM plan_t)-count(*)"
 						+ " FROM reserve_t"
 						+ " JOIN plan_t"
 						+ " ON reserve_t.plan_id=plan_t.plan_id"
@@ -43,10 +45,13 @@ public class ReserveDAO {
 
 				//SELECT文の結果を配列に格納
 				if(rs.next()) {
-					int count = rs.getInt("(num_of_rooms-count(*))");  //getIntで 部屋の予約数の合計を取得
+					int max = rs.getInt("(SELECT DISTINCT num_of_rooms FROM plan_t)");
+					int count = rs.getInt("count(*)");
+					int available = rs.getInt("(SELECT DISTINCT num_of_rooms FROM plan_t)-count(*)");
 
+					reserveMax[i] = max; //配列のi番目に格納
 					reserveCount[i] = count; //配列のi番目に格納
-	//				System.out.println("["+i+"]番目 : "+changeDate +" "+reserveCount[i]); //テスト用
+					roomAvailable[i] = available;
 				}// if
 			}// for
 		}//try
@@ -66,11 +71,16 @@ public class ReserveDAO {
 				}
 			}
 		} //finally
-	//	for(int i=0; i<reserveRoom.length; i++){
-	//		//System.out.print(reserveRoom[i]+" ");
-	//	}
-		return reserveCount;
+//テスト用
+//		for (int i = 0; i < reserveCount.length; i++) {
+//			System.out.println(i + "最大" + reserveMax[i]);
+//			System.out.println(i + "予約数" + reserveCount[i]);
+//			System.out.println(i + "空き" + roomAvailable[i]);
+//		}
+		return roomAvailable;
 	} // countReserveDate() fin
+
+
 
 	//String firstDayから最終日をint型で返す　
 	public static int countDays(String firstDay) {
