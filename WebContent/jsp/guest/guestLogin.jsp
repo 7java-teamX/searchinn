@@ -20,12 +20,12 @@
  	<h2 class="login-header">ログイン画面</h2>
 
  	<form class="login-container" action="" method="post">
-    <p><input type="text" placeholder="ユーザーID"></p>
-    <p><input type="password" placeholder="Password"></p>
+    <p><input type="text" placeholder="ユーザーID" name="guestName"></p>
+    <p><input type="password" placeholder="Password" name="guestMail"></p>
     <p><input type="submit" value="会員ログイン" ></p>
   	</form>
 
-	<h2><a class ="touroku" href="/searchinn/RegisterGuestServlet">会員登録</a></h2>
+	<h2><a class ="touroku" href="/searchinn/RegisterGuestServlet?action=null">会員登録</a></h2>
 
 
 	</div>

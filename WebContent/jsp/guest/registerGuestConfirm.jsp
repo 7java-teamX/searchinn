@@ -14,7 +14,10 @@
 	<p>下記のユーザーを登録します</p>
 
 
-	<input type="button" value="確定" onClick="location.href='registerGuestDone.html'">
+	<input type="button" value="登録" onClick="location.href='/searchinn/RegisterGuestServlet?action=done'">
+	<input type="button" value="キャンセル" onClick="location.href='/searchinn/RegisterGuestServlet?action=null'">
+
+
 	<h3><a href="registerGuestDone.html"></a></h3>
 	<p>
 		<a class="center" href="../index/index.html">TOPへ戻る</a>
