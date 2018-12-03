@@ -87,5 +87,8 @@ public class Guest implements Serializable{
 	public String getMail() {
 		return mail;
 	}
+	public String getPass() {
+		return pass;
+	}
 
 }

@@ -1,14 +1,7 @@
-/**
- *
- */
 package model;
 
 import java.io.Serializable;
 
-/**
- * @author kentaro
- *
- */
 public class Plan implements Serializable {
 	private int planId;
 	private String planName;
