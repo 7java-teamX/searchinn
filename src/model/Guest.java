@@ -46,6 +46,29 @@ public class Guest implements Serializable{
 		this.address = address;
 		this.mail = mail;
 	}
+
+	/**
+	 * id抜き
+	 * @param name
+	 * @param kana
+	 * @param pass
+	 * @param birthday
+	 * @param tel
+	 * @param address
+	 * @param mail
+	 */
+	public Guest(String name, String kana, String pass, String birthday, String tel, String address,
+			String mail) {
+		super();
+		this.name = name;
+		this.kana = kana;
+		this.pass = pass;
+		this.birthday = birthday;
+		this.tel = tel;
+		this.address = address;
+		this.mail = mail;
+	}
+
 	/**
 	 * 顧客情報詳細表示時使用
 	 * @param guestId
