@@ -15,35 +15,35 @@
 			<table>
 				<tr>
 					<th>お名前</th>
-					<td><input type="text" size="40" name="guestName"></td>
+					<td><input type="text" size="50" name="guestName"></td>
 				</tr>
 				<tr>
 					<th>カナ</th>
-					<td><input type="text" size="40" name="guestKana"></td>
+					<td><input type="text" size="50" name="guestKana"></td>
 				</tr>
 				<tr>
 					<th>生年月日</th>
-					<td><input type="text" size="40"name="guestBirthday"></td>
+					<td><input type="text" size="50"name="guestBirthday"></td>
 				</tr>
 				<tr>
 					<th>ユーザーID</th>
-					<td><input type="text" size="40" name="guestId"></td>
+					<td><input type="text" size="50" name="guestId"></td>
 				</tr>
 				<tr>
 					<th>パスワード</th>
-					<td><input type="password" size="40" name="guestPass"></td>
+					<td><input type="password" size="50" name="guestPass"></td>
 				</tr>
 				<tr>
 					<th>電話番号</th>
-					<td><input type="text" size="40" name="guestTel"></td>
+					<td><input type="text" size="50" name="guestTel"></td>
 				</tr>
 				<tr>
 					<th>メールアドレス</th>
-					<td><input type="email" size="40"name="guestMail"></td>
+					<td><input type="email" size="50"name="guestMail"></td>
 				</tr>
 				<tr>
 					<th>ご自宅住所</th>
-					<td><input type="text" size="40" name="guestAdress"></td>
+					<td><input type="text" size="50" name="guestAdress"></td>
 				</tr>
 			</table>
 			<p>
