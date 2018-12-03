@@ -19,7 +19,7 @@ public class Reserve implements Serializable {
 	private int charge;            //合計料金
 	private String reserveMemo;    //予約時メモ
 
-	private String hotel_address;  //ホテル住所
+	private String hotelAddress;  //ホテル住所
 	private String hotelTel;       //ホテルの電話番号
 	private String hotelMail;      //ホテルメールアドレス
 	private String hotelImage;     //ホテル画像
@@ -60,7 +60,7 @@ public class Reserve implements Serializable {
 			String reserveId,int numOfAdults, int numOfChildren, String checkin,
 			int numOfNights, String reserveDate, int charge, String reserveMemo,
 			String planName, String planImage,  String planDetail,
-			String hotelName,String hotel_address, String hotelTel,  String hotelMail, String hotelImage,
+			String hotelName,String hotelAddress, String hotelTel,  String hotelMail, String hotelImage,
 			String hotelDetail,   int adultCopacity,
 			int childCopacity,  int adultCharge, int childCharge) {
 		this.guestId = guestId;
@@ -76,7 +76,7 @@ public class Reserve implements Serializable {
 		this.reserveDate = reserveDate;
 		this.charge = charge;
 		this.reserveMemo = reserveMemo;
-		this.hotel_address = hotel_address;
+		this.hotelAddress = hotelAddress;
 		this.hotelTel = hotelTel;
 		this.hotelMail = hotelMail;
 		this.hotelImage = hotelImage;
@@ -111,7 +111,7 @@ public class Reserve implements Serializable {
 	public int getCharge() {return charge; }
 	public String getReserveMemo() { return reserveMemo; }
 
-	public String getHotel_address() { return hotel_address; }
+	public String getHotelAddress() { return hotelAddress; }
 	public String getHotelTel() { return hotelTel;}
 	public String getHotelMail() { return hotelMail;}
 	public String getHotelImage() { return hotelImage;}
