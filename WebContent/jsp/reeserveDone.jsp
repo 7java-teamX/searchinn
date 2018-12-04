@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>マイページ</title>
+<title>Insert title here</title>
 </head>
 <body>
+予約完了
 
-
-
+<a href="/searchinn">TOPへ</a>
 </body>
 </html>

@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="../css/indexStyle.css">
-<link rel="stylesheet" type="text/css" href="../css/headerStyle.css">
-<link rel="stylesheet" type="text/css" href="../css/footerStyle.css">
-<link rel="stylesheet" type="text/css" href="/hotel/css/indexStyle.css">
-<link rel="stylesheet" type="text/css" href="/hotel/css/headerStyle.css">
-<link rel="stylesheet" type="text/css" href="/hotel/css/footerStyle.css">
+
+<link rel="stylesheet" type="text/css" href="/searchinn/css/indexStyle.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/headerStyle.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/footerStyle.css">
+
+
 <title>BOOKINN</title>
 </head>
 <body>
@@ -26,8 +26,7 @@
 	<div id="main">
 
 	<h4 class="siro">ご予約の流れ</h4><span class="spanao">→</span>
-	<h4 class="ao">エリア選択</h4><span class="spanao">→</span>
-	<h4 class="ao">ホテル選択</h4><span class="spanao">→</span>
+	<h4 class="ao">エリア/ホテル選択</h4><span class="spanao">→</span>
 	<h4 class="ao">プラン選択</h4><span class="spanao">→</span>
 	<h4 class="ao">予約情報入力</h4><span class="spanao">→</span>
 	<h4 class="ao">会員登録</h4><span class="spanao">→</span>
