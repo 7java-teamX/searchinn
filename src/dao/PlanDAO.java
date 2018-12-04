@@ -19,7 +19,7 @@ public class PlanDAO {
 	/**
 	 * ホテル選択後のプラン一覧表示に使用
 	 * @param hotelId
-	 * @return planList
+	 * @return
 	 */
 	public List<Plan> selectByHotelId(int hotelId){
 		Connection conn = null;
