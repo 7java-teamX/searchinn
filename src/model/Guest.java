@@ -10,8 +10,8 @@ public class Guest implements Serializable{
 
 	private String birthday;
 	private String tel;
-	private String address;
 	private String mail;
+	private String address;
 	/**
 	 * 顧客情報一覧時使用
 	 * @param id
@@ -34,8 +34,7 @@ public class Guest implements Serializable{
 	 * @param address
 	 * @param mail
 	 */
-	public Guest(int guestId, String name, String kana, String pass, String birthday, String tel, String address,
-			String mail) {
+	public Guest(int guestId, String name, String kana, String pass, String birthday, String tel, String mail, String address) {
 		super();
 		this.guestId = guestId;
 		this.name = name;
@@ -79,7 +78,7 @@ public class Guest implements Serializable{
 	 * @param address
 	 * @param mail
 	 */
-	public Guest(int guestId, String name, String kana, String birthday, String tel, String address, String mail) {
+	public Guest(int guestId, String name, String kana, String birthday, String tel, String mail, String address) {
 
 		this.guestId = guestId;
 		this.name = name;
@@ -109,6 +108,9 @@ public class Guest implements Serializable{
 	}
 	public String getMail() {
 		return mail;
+	}
+	public String getPass() {
+		return pass;
 	}
 
 }
