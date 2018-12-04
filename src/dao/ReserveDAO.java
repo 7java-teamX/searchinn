@@ -57,9 +57,11 @@ public class ReserveDAO {
 		}//try
 		catch (ClassNotFoundException e) {
 			e.printStackTrace();
+			return null;
 		}
 		catch(SQLException se) {
 			se.printStackTrace();
+			return null;
 		}
 		finally {
 			if(conn != null) {
@@ -68,6 +70,7 @@ public class ReserveDAO {
 				}
 				catch(SQLException se) {
 					se.printStackTrace();
+					return null;
 				}
 			}
 		} //finally
