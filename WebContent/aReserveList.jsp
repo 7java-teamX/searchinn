@@ -13,25 +13,18 @@ table,th,td{border: solid 1px black;}
 </head>
 <body>
 <h2>予約状況閲覧</h2>
-<table>
-<form action="/searchinn/ReserveInfoServlet" method="get">
-	期間：<input type="date" name="day"  value="<c:out value="${refineSearch.day}" />" >
-	ホテルの名前：<input type="text" name="hotelName" list="keywords1">
-	<datalist id="keywords1">
-		<option value="<c:out value="${refineSearch.hotelName}" />" >
-	</datalist>
-	プランの名前：<input type="text" name="planName" list="keywords2">
-	<datalist id="keywords2">
-		<option value="<c:out value="${refineSearch.hotelName}" />" >
-	</datalist>
-	予約者の名前：<input type="text" name="name" list="keywords3"><br>
-	<datalist id="keywords3">
-		<option value="<c:out value="${refineSearch.hotelName}" />" >
-	</datalist>
-	<input type="reset" class="bg">
+<form action="/searchinn/AReserveInfoServlet" method="post">
+	期間：<input type="date" name="day" value="<c:out value="${refineSearch.day}" />" ><br>
+	ホテルの名前：<input type="text" name="hotelName"
+	value="<c:out value="${refineSearch.hotelName}" />"><br>
+	プランの名前：<input type="text" name="planName"
+	value="<c:out value="${refineSearch.planName}" />"><br>
+	予約者の名前：<input type="text" name="guestName"
+	value="<c:out value="${refineSearch.guestName}" />"><br>
 	<input type="submit" value="送信" class="bg">
+	<a href="/searchinn/AReserveListServlet?action=delete" class="bg">検索条件のリセット</a>
 </form>
-</table>
+
 <hr>
 
 <table style="border: solid 1px black;">
@@ -54,7 +47,7 @@ table,th,td{border: solid 1px black;}
 		<td><c:out value="${reserve.guestName}"/></td>
 		<td><c:out value="${reserve.guestId}"/></td>
 		<td><c:out value="${reserve.reserveDate}"/></td>
-		<td><a href="ReserveInfoServlet?index=<c:out value="${status.index}" />">詳細</a>
+		<td><a href="AReserveInfoServlet?index=<c:out value="${status.index}" />">詳細</a>
 		</td>
 	</tr>
 	</c:forEach>

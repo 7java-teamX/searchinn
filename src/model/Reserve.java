@@ -3,10 +3,10 @@ package model;
 import java.io.Serializable;
 
 public class Reserve implements Serializable {
-	private String day; //開始日
-	private String hotelName;  //ホテルの名前
-	private String planName;   //プランの名前
-	private String guestName;  //予約者の名前
+	private String day;        //開始日       検索条件で使用
+	private String hotelName;  //ホテルの名前 検索条件で使用
+	private String planName;   //プランの名前 検索条件で使用
+	private String guestName;  //予約者の名前 検索条件で使用
 
 	private String reserveId;      //予約id
 	private String guestId;        //ゲストid
@@ -132,5 +132,11 @@ public class Reserve implements Serializable {
 	public String getGuestTel() { return guestTel; }
 	public String getGuestMail() { return guestMail; }
 	public String getGuestAddress() { return guestAddress; }
+
+	//admin reserveレコードのupdate時に使用
+	public void setNumOfAdults(int numOfAdults) {this.numOfAdults = numOfAdults;}
+	public void setNumOfChildren(int numOfChildren) {this.numOfChildren = numOfChildren;}
+	public void setCharge(int charge) {this.charge = charge;}
+
 
 }

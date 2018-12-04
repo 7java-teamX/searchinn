@@ -67,10 +67,17 @@ img{
 				メールアドレス：<c:out value="${reserveInfo.guestMail}"/><br>
 		</div>
 	</div>
-	<a class="btn" href="AReservetInfoChangeServlet">予約変更</a>
-	<a class="btn" href="AReserveInfoDeleteServlet?index=<c:out value="${reserveInfo.reserveId}" />">削除</a>
+	<a class="btn" href="AReserveInfoChangeServlet">予約変更</a>
+	<a class="btn" onclick="doConfirm()">削除</a>
 </div>
 
+<script>
+function doConfirm(){
+  if(window.confirm("予約のキャンセル確認になります\nよろしければ<はい>を押してください")){
+    location.href = "/searchinn/AReserveInfoDeleteServlet";
+  }
+}
+</script>
 
 </body>
 </html>
