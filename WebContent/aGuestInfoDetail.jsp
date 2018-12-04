@@ -19,7 +19,7 @@
 <p>住所:${guestDetail.address}</p>
 <p><a href = "/searchinn/aGuestInfoChangeForm.jsp">変更</a></p>
 <p><a href = "/searchinn/GuestInfoDeleteServlet">削除</a></p>
-<p><a href = "/searchinn/aGuestList">戻る</a></p>
+<p><a href = "/searchinn/aGuestList.jsp">戻る</a></p>
 
 
 </body>

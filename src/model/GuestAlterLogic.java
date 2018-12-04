@@ -1,9 +1,14 @@
 package model;
 
-public class GuestAlterLogic {
-	public boolean delete{
-		AlterGuestDAO alterGuestDAO= new AlterGuestDAO;
-		boolean delete = alterGuestDAO.delete();
+import dao.AlterGuestDAO;
 
+public class GuestAlterLogic {
+	AlterGuestDAO alterGuestDAO= new AlterGuestDAO();
+	public void delete(int id){
+		alterGuestDAO.delete(id);
+
+	}
+	public void update(Guest guest) {
+		 alterGuestDAO.update(guest);
 	}
 }

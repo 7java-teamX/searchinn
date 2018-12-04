@@ -2,13 +2,16 @@ package servlet;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.Guest;
+import model.GuestAlterLogic;
 /**
 * @author 3BC1_12
 *
@@ -25,8 +28,15 @@ public class GuestInfoChangeServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		HttpSession ses = request.getSession();
+		Guest guest = (Guest) ses.getAttribute("update");
+		GuestAlterLogic guestAlterLogic = new GuestAlterLogic();
+		//ユーザー情報の変更実行
+		guestAlterLogic.update(guest);
+
+		RequestDispatcher dis = request.getRequestDispatcher("/aGuestInfoChangeDone.jsp");
+		dis.forward(request, response);
+
 	}
 
 	/**
@@ -39,9 +49,14 @@ public class GuestInfoChangeServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		String kana = request.getParameter("kana");
 		String tel = request.getParameter("tel");
+		String address = request.getParameter("address");
 		String email = request.getParameter("email");
-		Guest guest = new Guest(guestId,name,kana,tel,email);
 
-	}
+		Guest guest = new Guest(guestId,name,kana,tel,address,email);
+		HttpSession ses = request.getSession();
+		ses.setAttribute("update", guest);
+		RequestDispatcher dis = request.getRequestDispatcher("/aGuestInfoChangeConfirm.jsp");
+		dis.forward(request, response);
+}
 
 }

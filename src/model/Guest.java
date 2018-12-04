@@ -29,7 +29,7 @@ public class Guest implements Serializable{
 	}
 /*
  * 	顧客情報一覧時使用
- * 顧客情報変更時使用
+ *
  */
 	public Guest(int guestId, String name, String kana, String tel, String mail) {
 		super();
@@ -39,7 +39,17 @@ public class Guest implements Serializable{
 		this.tel = tel;
 		this.mail = mail;
 	}
-
+/**
+ * 顧客情報変更時使用
+ */
+	public Guest(int id,String name, String kana, String tel, String address, String mail) {
+	this.guestId= id;
+	this.name = name;
+	this.kana = kana;
+	this.tel = tel;
+	this.address = address;
+	this.mail = mail;
+}
 	/**
 	 * 顧客情報登録時使用
 	 */
