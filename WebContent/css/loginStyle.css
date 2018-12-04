@@ -6,7 +6,6 @@
 
 body {
   background: #456;
-
 }
 
 .login {
@@ -98,12 +97,17 @@ h2{
 	border-radius: 3px;
 }
 
+
 h2 a{
 	color: #fff;
 }
 
 .touroku{
 	text-decoration:none;
+}
+
+h2.hover:hover{
+	 background: #17c;
 }
 
 .whiteText{
@@ -115,4 +119,19 @@ h2 a{
 	width: 100%;
 	text-align: center;
 }
+.square_btn {
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #28d;
+    color: #FFF;
+    width: 200px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
 
+p{
+	display:block;
+	text-align: center;
+
+}
