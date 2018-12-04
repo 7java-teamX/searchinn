@@ -11,28 +11,21 @@ import java.util.List; //
 
 import model.Reserve;
 
-//検索条件を元に予約情報をarrayListで抽出させる
 
-public class ReserveShowDAO {
+public class GReserveShowDAO {
 	// データベース接続のためにString型で変数宣言
 	private final String DriverName = "com.mysql.jdbc.Driver";
 	private final String JDBCURL = "jdbc:mysql://localhost:3306/inn"; //接続先データベース
 	private final String DBUser = "root"; // user名
 	private final String DBPass = "root"; // pass名
-	//private final String DBPass = "Reina9110Nao"; // pass名
+	//private final String DBPass = "Reina9110Nao"; // pass名自宅用
 
-
-	//検索条件で取得するメソッド(つぶやきの内容取得)
-	public List<Reserve> selectReserve(Reserve refineSearch) {
+	////ゲストidを元に予約情報をarrayListで抽出するメソッド(つぶやきの内容取得)
+	public List<Reserve> selectReserve(int guestId) {
 		Connection conn = null;
 
 		//検索条件を呼び出し
-		String day = refineSearch.getDay();
-		String hotelName = refineSearch.getHotelName();
-		String planName = refineSearch.getPlanName();
-		String guestName = refineSearch.getGuestName();
 		List<Reserve> reserveList = new ArrayList<Reserve>();
-		String whereOrAnd = " where ";
 
 		try {
 			Class.forName(DriverName);
@@ -57,46 +50,26 @@ public class ReserveShowDAO {
 				"join hotel_t as h "+
 				"on p.hotel_id = h.hotel_id "+
 				"join room_type_t as t "+
-				"on t.room_type_id = p.room_type_id ";
+				"on t.room_type_id = p.room_type_id "+
+				"where guest_id = ?";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-			if(day != null && day != "") {
-				sql  += whereOrAnd + "reserve_date like ?";
 				pStmt = conn.prepareStatement(sql);
-				pStmt.setString(1, "%"+ day +"%");
-				whereOrAnd =" AND";
-			}
-			if(hotelName != null && hotelName != "") {
-				sql  += whereOrAnd + " hotel_name like ?";
-				pStmt = conn.prepareStatement(sql);
-				pStmt.setString(1, "%" + hotelName + "%");
-				whereOrAnd =" AND";
-			}
-			if(planName != null && planName != "") {
-				sql  += whereOrAnd + " plan_name like ?";
-				pStmt = conn.prepareStatement(sql);
-				pStmt.setString(1, "%" + planName + "%");
-				whereOrAnd =" AND";
-			}
-			if(guestName != null && guestName != "") {
-				sql  += whereOrAnd + " guest_name like ?";
-				pStmt = conn.prepareStatement(sql);
-				pStmt.setString(1, "%" + guestName + "%");
-				whereOrAnd =" AND";
-			}
+				pStmt.setInt(1, guestId);
 
 			ResultSet rs = pStmt.executeQuery();
 
 			while(rs.next()) {
-				 String guestId = rs.getString("guest_id");
-				 guestName = rs.getString("guest_name");
+				 guestId = rs.getInt("guest_id");
+				 String guestName = rs.getString("guest_name");
 				 String guestKana = rs.getString("guest_kana");
 				 String guestBirthday  = rs.getString("guest_birthday");
 				 String guestTel = rs.getString("guest_tel");
 				 String guestMail = rs.getString("guest_mail");
 				 String guestAddress = rs.getString("guest_address");
-				 String reserveId = rs.getString("reserve_id");
+
+				 int reserveId = rs.getInt("reserve_id");
 				 int numOfAdults = rs.getInt("num_of_adults");
 				 int numOfChildren = rs.getInt("num_of_children");
 				 String checkin = rs.getString("checkin");
@@ -105,12 +78,12 @@ public class ReserveShowDAO {
 				 int charge= rs.getInt("charge");
 
 				 String reserveMemo = rs.getString("reserve_memo");
-				 planName = rs.getString("plan_name");
+				 String planName = rs.getString("plan_name");
 				 String planImage = rs.getString("plan_image");
 				 String planDetail = rs.getString("plan_detail");
 
-				 hotelName = rs.getString("hotel_name");
-				 String hotel_address = rs.getString("hotel_address");
+				 String hotelName = rs.getString("hotel_name");
+				 String hotelAddress = rs.getString("hotel_address");
 				 String hotelTel = rs.getString("hotel_tel");
 				 String hotelMail = rs.getString("hotel_mail");
 				 String hotelImage = rs.getString("hotel_image");
@@ -121,14 +94,13 @@ public class ReserveShowDAO {
 				 int adultCharge = rs.getInt("adult_charge");
 				 int childCharge = rs.getInt("child_charge");
 
-				Reserve reserve = new Reserve(
-						guestId,guestName,guestKana, guestBirthday,guestTel,guestMail,guestAddress,
-						reserveId,numOfAdults, numOfChildren, checkin, numOfNights, reserveDate, charge,reserveMemo,
-						planName, planImage,  planDetail,
-						hotelName,hotel_address, hotelTel,  hotelMail, hotelImage,
-						hotelDetail,  adultCapacity,childCapacity,  adultCharge, childCharge
-						);
-				reserveList.add(reserve);
+				Reserve reserveInfo = new Reserve(
+						guestId,guestName,guestKana,guestBirthday,guestTel,guestMail,guestAddress,
+						reserveId,numOfAdults,numOfChildren,checkin,	numOfNights,reserveDate,  charge,reserveMemo,
+						planName,planImage,planDetail,
+						hotelName,hotelAddress,hotelTel, hotelMail, hotelImage,
+						hotelDetail,adultCapacity,childCapacity,adultCharge,childCharge);
+				reserveList.add(reserveInfo);
 			}
 		} //try FIN
 		catch(SQLException se) { //接続,SQL処理失敗時
@@ -153,20 +125,14 @@ public class ReserveShowDAO {
 	} //findAll()メソッド FIN
 
 
-
 	//変更を行うメソッド()
 		public void updateReserve(Reserve reserveInfo) {
 			Connection conn = null;
-
 			//変更内容の呼び出し
-			String reserveId = reserveInfo.getReserveId();
+			int reserveId = reserveInfo.getReserveId();
 			int numOfAdults = reserveInfo.getNumOfAdults();
 			int numOfChildren = reserveInfo.getAdultCharge();;
 			int charge = reserveInfo.getCharge();
-
-			//
-			System.out.println(reserveId +"\t"+numOfAdults +
-					"\t" + numOfChildren +"\t" + charge);
 
 			try {
 				Class.forName(DriverName);
@@ -182,7 +148,7 @@ public class ReserveShowDAO {
 				pStmt.setInt(1, numOfChildren);
 				pStmt.setInt(2, numOfAdults);
 				pStmt.setInt(3, charge);
-				pStmt.setString(4, reserveId);
+				pStmt.setInt(4, reserveId);
 
 				//System.out.println(sql);
 
@@ -209,28 +175,21 @@ public class ReserveShowDAO {
 			}     // finally FIN
 		} //findAll()メソッド FIN
 
-		//変更を行うメソッド()
+		//予約レコード削除メソッド
 		public void deleteReserve(Reserve reserveInfo) {
 			Connection conn = null;
-
-			//変更内容の呼び出し
-			String reserveId = reserveInfo.getReserveId();
-
+			int reserveId = reserveInfo.getReserveId(); //削除対象レコードの予約ID
 			try {
 				Class.forName(DriverName);
 				conn = DriverManager.getConnection(JDBCURL, DBUser, DBPass);
-
-				//sql文で変更内容の設定
 				String sql = "delete from reserve_t where reserve_id = ? ;";
 
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 				pStmt = conn.prepareStatement(sql);
-				pStmt.setString(1, reserveId);
+				pStmt.setInt(1, reserveId);
 				//System.out.println(sql);
 
-				//deleteの実行
-				pStmt.executeUpdate();
-
+				pStmt.executeUpdate();//deleteの実行
 			} //try FIN
 			catch(SQLException se) { //接続,SQL処理失敗時
 				se.printStackTrace();
@@ -250,10 +209,4 @@ public class ReserveShowDAO {
 				} // if FIN
 			}     // finally FIN
 		} //findAll()メソッド FIN
-
 }
-
-/*  * num_of_adults,num_of_children,checkin,num_of_nights,
- * reserve_date,charge,reserve_memo,plan_name,plan_image,plan_detail,
- * hotel_name,hotel_address,hotel_tel,hotel_mail,hotel_image,
- * hotel_detail,room_type_name,adult_capacity,child_capacity,adult_charge,child_charge	 * */

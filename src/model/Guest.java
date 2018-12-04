@@ -12,6 +12,8 @@ public class Guest implements Serializable{
 	private String tel;
 	private String mail;
 	private String address;
+
+	public Guest() {	}
 	/**
 	 * 顧客情報一覧時使用
 	 * @param id
@@ -88,29 +90,14 @@ public class Guest implements Serializable{
 		this.address = address;
 		this.mail = mail;
 	}
-	public int getGuestId() {
-		return guestId;
-	}
-	public String getName() {
-		return name;
-	}
-	public String getKana() {
-		return kana;
-	}
-	public String getBirthday() {
-		return birthday;
-	}
-	public String getTel() {
-		return tel;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public String getMail() {
-		return mail;
-	}
-	public String getPass() {
-		return pass;
-	}
+
+	public int getGuestId() {	return guestId;}
+	public String getName() {	return name; }
+	public String getKana() {	return kana; }
+	public String getBirthday() {	return birthday; }
+	public String getTel() {	return tel; }
+	public String getAddress() {	return address; }
+	public String getMail() {	return mail; }
+	public String getPass() { return pass; }
 
 }
