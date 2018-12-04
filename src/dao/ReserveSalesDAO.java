@@ -12,6 +12,9 @@ import model.SalesInfo;
 
 public class ReserveSalesDAO {
 	public List<SalesInfo> hotelSales(String term) {
+		System.out.println("DAO開始");
+		System.out.println(term);
+
 		Connection conn = null;
 		String DRIVER_NAME ="com.mysql.jdbc.Driver" ;
 		String JDBC_URL = "jdbc:mysql://localhost:3306/inn";
@@ -38,7 +41,7 @@ public class ReserveSalesDAO {
 					+ " ORDER BY area_t.area_id asc,hotel_t.hotel_id asc";
 
 			PreparedStatement pSmt = conn.prepareStatement(sql);
-			pSmt.setString(1, term + '%');
+			pSmt.setString(1, term + "%");
 			ResultSet rs = pSmt.executeQuery();
 
 			//SELECT文の結果を配列に格納
@@ -48,6 +51,7 @@ public class ReserveSalesDAO {
 				int hotelId = rs.getInt("hotel_t.hotel_id");
 				String hotelName = rs.getString("hotel_t.hotel_name");
 				int sales = rs.getInt("SUM(charge)");
+
 				salesInfo = new SalesInfo(areaId, areaName, hotelId, hotelName, sales);
 				salesInfoList.add(salesInfo);
 			}// while
@@ -101,7 +105,7 @@ public class ReserveSalesDAO {
 					+ " ORDER BY area_t.area_id asc";
 
 			PreparedStatement pSmt = conn.prepareStatement(sql);
-			pSmt.setString(1, term + '%');
+			pSmt.setString(1, term + "%");
 			ResultSet rs = pSmt.executeQuery();
 
 			//SELECT文の結果を配列に格納
@@ -109,6 +113,7 @@ public class ReserveSalesDAO {
 				int areaId = rs.getInt("area_t.area_id");
 				String areaName = rs.getString("area_t.area_name");
 				int sales = rs.getInt("SUM(charge)");
+
 				salesInfo = new SalesInfo(areaId, areaName, sales);
 				salesInfoList.add(salesInfo);
 			}// while
@@ -132,6 +137,11 @@ public class ReserveSalesDAO {
 				}
 			}
 		} //finally
+//
+		for (int i = 0; i < salesInfoList.size(); i++) {
+			System.out.println("l136" + salesInfoList.get(i));
+		}
+
 		return salesInfoList;
 	} // areaSales(String term) fin
 
@@ -154,7 +164,7 @@ public class ReserveSalesDAO {
 					+ " WHERE checkin LIKE ?";
 
 			PreparedStatement pSmt = conn.prepareStatement(sql);
-			pSmt.setString(1, term + '%');
+			pSmt.setString(1, term + "%");
 			ResultSet rs = pSmt.executeQuery();
 
 			//SELECT文の結果を配列に格納
