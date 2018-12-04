@@ -12,9 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import model.Guest;
 
-/**
- * Servlet implementation class RegisterGuestServlet
- */
+
 @WebServlet("/RegisterGuestServlet")
 public class RegisterGuestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -51,16 +49,14 @@ public class RegisterGuestServlet extends HttpServlet {
 		String address = request.getParameter("guestAddress");
 
 		//登録するユーザーの情報を設定
-		Guest registerGuest = new Guest(name, kana, birthday, pass, tel, mail, address);
+		Guest Guest = new Guest(name, kana, birthday, pass, tel, mail, address);
 
 		//セッションスコープに登録ユーザーを保存
 		HttpSession session = request.getSession();
-		session.setAttribute("registerGuest", registerGuest);
+		session.setAttribute("Guest", Guest);
 
 		//フォワード
 		RequestDispatcher dis = request.getRequestDispatcher("/searchinn/registerGuestConfirm.jsp");
 		dis.forward(request, response);
-
-
 	}
 }

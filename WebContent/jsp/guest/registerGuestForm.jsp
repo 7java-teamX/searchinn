@@ -26,10 +26,6 @@
 					<td><input type="text" size="50"name="guestBirthday"></td>
 				</tr>
 				<tr>
-					<th>ユーザーID</th>
-					<td><input type="text" size="50" name="guestId"></td>
-				</tr>
-				<tr>
 					<th>パスワード</th>
 					<td><input type="password" size="50" name="guestPass"></td>
 				</tr>
