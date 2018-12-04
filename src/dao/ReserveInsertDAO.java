@@ -3,8 +3,9 @@ package dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import model.Reserve;
 
 public class ReserveInsertDAO {
 	public boolean insert(Reserve reserve) {
@@ -13,12 +14,6 @@ public class ReserveInsertDAO {
 		String JDBC_URL = "jdbc:mysql://localhost:3306/inn";
 		String DB_user = "root";
 		String DR_pass = "root";
-
-//		int reserveMax[] = new int[31];
-//		int reserveCount[] = new int[31];  //最大31日まで部屋の予約数を配列で格納
-//		int roomAvailable[] = new int[31];
-//		String firstDay = ym + "-01";    	//当月の月初の日付をString型で格納
-//		int numDays = countDays(firstDay);;  					//当月の月末の日付をint型で格納
 
 		try {
 			Class.forName(DRIVER_NAME);
@@ -31,16 +26,15 @@ public class ReserveInsertDAO {
 					+ " (?,?,?,?,?,?,?,?,?)";
 
 			PreparedStatement pSmt = conn.prepareStatement(sql);
-			pSmt.setInt(1, plan.);
-			pSmt.setInt(2, plan.);
-			pSmt.setInt(3, plan.);
-			pSmt.setInt(4, plan.);
-			pSmt.setString(5, plan.);
-			pSmt.setInt(6, plan.);
-			pSmt.setString(7, plan.);
-			pSmt.setString(8, plan.);
-			pSmt.setInt(9, plan.);
-			pSmt.setString(10, plan.);
+			pSmt.setInt(1, reserve.getGuestId());
+			pSmt.setInt(2, reserve.getPlanId());
+			pSmt.setInt(3, reserve.getNumOfAdults());
+			pSmt.setInt(4, reserve.getNumOfChildren());
+			pSmt.setString(5, reserve.getCheckin());
+			pSmt.setInt(6, reserve.getNumOfNights());
+			pSmt.setString(7, reserve.getReserveDate());
+			pSmt.setInt(8, reserve.getCharge());
+			pSmt.setString(9, reserve.getReserveMemo());
 
 			int result = pSmt.executeUpdate();
 		}//try

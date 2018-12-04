@@ -40,6 +40,9 @@
 <c:out value="MAIL：${reserve.guestMail}" />
 <c:out value="住所：${reserve.guestAddress}" />
 
+<a href="/searchinn/PlanReserveServlet?action=done">予約</a>
+
+
 
 </body>
 </html>

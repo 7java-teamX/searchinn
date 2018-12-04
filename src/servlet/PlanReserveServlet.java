@@ -16,6 +16,7 @@ import model.Guest;
 import model.Plan;
 import model.Reserve;
 import model.ReserveDateLogic;
+import model.ReserveDoneLogic;
 import model.ShowCalendarLogic;
 
 /**
@@ -32,17 +33,29 @@ public class PlanReserveServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
 		String path = null;
-		String ym = request.getParameter("ym");
-		if(ym == null || ym.equals("")){
-			Calendar cal = Calendar.getInstance();
-			ym = new SimpleDateFormat("yyyy-MM").format(cal.getTime());
+		switch ("action") {
+		case "done":
+			ReserveDoneLogic rdLogic = new ReserveDoneLogic();
+			rdLogic.execute((Reserve)session.getAttribute("reserve"));
+			session.removeAttribute("reserve");
+			path = "/jsp/reserveDone.jsp";
+			break;
+
+		default :
+			String ym = request.getParameter("ym");
+			if(ym == null || ym.equals("")){
+				Calendar cal = Calendar.getInstance();
+				ym = new SimpleDateFormat("yyyy-MM").format(cal.getTime());
+			}
+			//
+			ShowCalendarLogic scLogic = new ShowCalendarLogic();
+			Plan plan = (Plan)session.getAttribute("plan");
+			session.setAttribute("calMap", scLogic.execute(plan.getPlanId(),ym));
+			//
+			path = "/jsp/reserveForm.jsp";
+			break;
 		}
-		//
-		ShowCalendarLogic scLogic = new ShowCalendarLogic();
-		Plan plan = (Plan)session.getAttribute("plan");
-		session.setAttribute("calMap", scLogic.execute(plan.getPlanId(),ym));
-		//
-		path = "/jsp/reserveForm.jsp";
+
 		//
 		RequestDispatcher dis = request.getRequestDispatcher(path);
 		dis.forward(request, response);

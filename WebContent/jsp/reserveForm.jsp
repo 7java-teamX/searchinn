@@ -56,7 +56,7 @@
 	<b><c:out value="${calMap.year}年${calMap.month}月の空室状況"/></b>
 
 	<div>
-		<form action="/searchinn/PlanReserveServlet" method="get">
+		<form action="/searchinn/PlanReserveServlet?action=show" method="get">
 			<input type="month" name="ym" value="${calMap.ym}">
 			<input type="submit" value="表示"/>
 		</form>

@@ -42,7 +42,7 @@ public class PlanSelectServlet extends HttpServlet {
 //			System.out.println(request.getParameter("index"));
 //			System.out.println(planList.get((int) request.getParameter("index")));
 			session.setAttribute("plan", planList.get(Integer.parseInt(request.getParameter("index"))));
-			path = "/PlanReserveServlet";
+			path = "/PlanReserveServlet?action=show";
 			break;
 		}
 		//フォワード
