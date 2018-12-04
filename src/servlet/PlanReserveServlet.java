@@ -54,16 +54,21 @@ public class PlanReserveServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String path = null;
+//テスト用
+		Guest loginUser = new Guest(111, "井上健太郎", "いのうえけんたろう", "1234", "1986-02-17", "08012345678", "1234@sample.com", "大阪府");
+//
 		Plan plan = (Plan)session.getAttribute("plan");
-		Guest loginUser = (Guest)session.getAttribute("loginUser");
-		int numOfAdults = Integer.parseInt(request.getParameter("numAdults"));
-		int numOfChildren = Integer.parseInt(request.getParameter("numchild"));
+//本番用		Guest loginUser = (Guest)session.getAttribute("loginUser");
+		int numOfAdults = Integer.parseInt(request.getParameter("numAdult"));
+		int numOfChildren = Integer.parseInt(request.getParameter("numChild"));
 		String checkin = request.getParameter("checkin");
 		int numOfNights = Integer.parseInt(request.getParameter("nights"));
 		ReserveDateLogic rdLogic = new ReserveDateLogic();
 		String reserveDate = rdLogic.forDayAdd(checkin, numOfNights);
 		int charge = numOfAdults * plan.getAdultCharge();
 		String reserveMemo = request.getParameter("memo");
+
+
 
 		Reserve reserve = new Reserve(numOfAdults, numOfChildren, checkin, numOfNights, reserveDate, charge
 				, reserveMemo, plan.getPlanId(), plan.getPlanName(), plan.getNumRoom(), plan.getPlanImage()

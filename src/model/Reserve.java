@@ -23,7 +23,7 @@ public class Reserve implements Serializable {
 	private int hotelId;        //
 	private String hotelName;      //ホテルの名前
 	private String hotelTel;       //ホテルの電話番号
-	private String hotel_address;  //ホテル住所
+	private String hotelAddress;  //ホテル住所
 	private String hotelMail;      //ホテルメールアドレス
 	private String hotelImage;     //ホテル画像
 	private String hotelDetail;    //ホテル説明文
@@ -63,7 +63,7 @@ public class Reserve implements Serializable {
 			int reserveId,int numOfAdults, int numOfChildren, String checkin,
 			int numOfNights, String reserveDate, int charge, String reserveMemo,
 			String planName, String planImage,  String planDetail,
-			String hotelName,String hotel_address, String hotelTel,  String hotelMail, String hotelImage,
+			String hotelName,String hotelAddress, String hotelTel,  String hotelMail, String hotelImage,
 			String hotelDetail,   int adultCopacity,
 			int childCopacity,  int adultCharge, int childCharge) {
 		this.guestId = guestId;
@@ -79,7 +79,7 @@ public class Reserve implements Serializable {
 		this.reserveDate = reserveDate;
 		this.charge = charge;
 		this.reserveMemo = reserveMemo;
-		this.hotel_address = hotel_address;
+		this.hotelAddress = hotelAddress;
 		this.hotelTel = hotelTel;
 		this.hotelMail = hotelMail;
 		this.hotelImage = hotelImage;
@@ -114,7 +114,7 @@ public class Reserve implements Serializable {
  * @param hotelId
  * @param hotelName
  * @param hotelTel
- * @param hotel_address
+ * @param hotelAddress
  * @param hotelMail
  * @param hotelImage
  * @param hotelDetail
@@ -137,7 +137,7 @@ public class Reserve implements Serializable {
 	public Reserve(int numOfAdults, int numOfChildren, String checkin, int numOfNights,
 			String reserveDate, int charge, String reserveMemo, int planId, String planName, int numOfRooms,
 			String planImage, String planDetail, int hotelId, String hotelName, String hotelTel,
-			String hotel_address, String hotelMail, String hotelImage, String hotelDetail, int roomTypeId,
+			String hotelAddress, String hotelMail, String hotelImage, String hotelDetail, int roomTypeId,
 			String roomTypeName, int adultCopacity, int childCopacity, int adultCharge, int childCharge, int guestId,
 			String guestName, String guestKana, String guestPass, String guestBirthday, String guestTel,
 			String guestMail, String guestAddress) {
@@ -157,7 +157,7 @@ public class Reserve implements Serializable {
 		this.hotelId = hotelId;
 		this.hotelName = hotelName;
 		this.hotelTel = hotelTel;
-		this.hotel_address = hotel_address;
+		this.hotelAddress = hotelAddress;
 		this.hotelMail = hotelMail;
 		this.hotelImage = hotelImage;
 		this.hotelDetail = hotelDetail;
@@ -193,7 +193,7 @@ public class Reserve implements Serializable {
 	public int getCharge() {return charge; }
 	public String getReserveMemo() { return reserveMemo; }
 
-	public String getHotel_address() { return hotel_address; }
+	public String getHotelAddress() { return hotelAddress; }
 	public String getHotelTel() { return hotelTel;}
 	public String getHotelMail() { return hotelMail;}
 	public String getHotelImage() { return hotelImage;}
@@ -214,5 +214,30 @@ public class Reserve implements Serializable {
 	public String getGuestTel() { return guestTel; }
 	public String getGuestMail() { return guestMail; }
 	public String getGuestAddress() { return guestAddress; }
+
+
+	public int getPlanId() {
+		return planId;
+	}
+
+
+	public int getHotelId() {
+		return hotelId;
+	}
+
+
+	public int getRoomTypeId() {
+		return roomTypeId;
+	}
+
+
+	public String getRoomTypeName() {
+		return roomTypeName;
+	}
+
+
+	public String getGuestPass() {
+		return guestPass;
+	}
 
 }

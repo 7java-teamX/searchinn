@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="/serchinn/PlanReserve" method="post">
+	<form action="/searchinn/PlanReserveServlet" method="post">
 		<div>
 			<h3>【宿泊日程】</h3>
 			<p>
@@ -18,7 +18,7 @@
 			</p>
 			<p>
 				泊数：
-				<select name="nigths">
+				<select name="nights">
 					<c:forEach var="i" begin="1" end="6">
 						<option value=${i} >${i}泊${i+1}日</option>
 					</c:forEach>
