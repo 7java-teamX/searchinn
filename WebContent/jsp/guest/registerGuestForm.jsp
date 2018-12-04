@@ -11,6 +11,7 @@
 <div class="main">
 	<h2>会員情報登録</h2>
 	<div class="container">
+
 		<form action="/registerGuestServlet"method="post">
 			<table>
 				<tr>
