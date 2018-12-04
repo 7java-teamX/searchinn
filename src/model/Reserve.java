@@ -86,7 +86,6 @@ public class Reserve implements Serializable {
 		//this.numOfRooms = numOfRooms;
 		this.planImage = planImage;
 		this.planDetail = planDetail;
-
 		this.adultCapacity = adultCapacity;
 		this.childCapacity = childCapacity;
 		this.adultCharge = adultCharge;
@@ -164,12 +163,11 @@ public class Reserve implements Serializable {
 		this.hotelDetail = hotelDetail;
 		this.roomTypeId = roomTypeId;
 		this.roomTypeName = roomTypeName;
-
 		this.adultCapacity = adultCapacity;
 		this.childCapacity = childCapacity;
 		this.adultCharge = adultCharge;
 		this.childCharge = childCharge;
-    
+
 		this.guestId = guestId;
 		this.guestName = guestName;
 		this.guestKana = guestKana;

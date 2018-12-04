@@ -11,33 +11,38 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.GReserveShowLogic;
+import model.Guest;
 import model.Reserve;
-import model.ReserveShowLogic;
 
 @WebServlet("/AReserveListServlet")
-public class AReserveListServlet extends HttpServlet {
+public class GReserveListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		/*
 		//リクエストパラメータの取得
 		request.setCharacterEncoding("UTF-8");
 		String action = request.getParameter("action");
-		System.out.println(action);
-		HttpSession session = request.getSession();
-		Reserve refineSearch = (Reserve) session.getAttribute("refineSearch");
+		System.out.println(action);*/
 
-		if (action == null) {
-			 if (refineSearch != null) { //検索条件存在する時DAOの実行
-					ReserveShowLogic rSL = new ReserveShowLogic();
-					List<Reserve> reserveList = rSL.excecute(refineSearch);
-					session.setAttribute("reserveList", reserveList);
-			}
-		} else if(action.equals("delete")) {
-			session.removeAttribute("refineSearch");
-		}
+		// session-scopeからユーザ情報取得
+		HttpSession session = request.getSession();
+		Guest loginuser = (Guest) session.getAttribute("loginuser");
+
+		//idをもとに自動で予約情報の取得を行う
+		int guestId = loginuser.getGuestId();
+
+		//logicでsqlの実行
+		GReserveShowLogic gsl = new GReserveShowLogic();
+		List<Reserve> reserveList = gsl.excecute(guestId);
+
+		//session-scopeに予約情報の保存
+		session.setAttribute("reserveList", reserveList);
+
 		//main.jspのフォワードを行う
-		RequestDispatcher dis = request.getRequestDispatcher("aReserveList.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("gReserveList.jsp");
 		dis.forward(request, response);
 	}
 

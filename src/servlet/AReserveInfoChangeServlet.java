@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.Reserve;
-import model.ReserveShowLogic;
+import model.GReserveShowLogic;
 
 /**
  * Servlet implementation class AReservetInfoChangeServlet
@@ -33,7 +33,7 @@ public class AReserveInfoChangeServlet extends HttpServlet {
 			//変更確定の処理
 			HttpSession session = request.getSession();
 			Reserve reserveInfo = (Reserve)session.getAttribute("reserveInfo");
-			ReserveShowLogic rSL = new ReserveShowLogic();
+			GReserveShowLogic rSL = new GReserveShowLogic();
 			rSL.excecute2(reserveInfo);
 			pass = "aReserveInfoChangeDone.jsp";
 		}

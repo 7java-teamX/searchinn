@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.Reserve;
-import model.ReserveShowLogic;
+import model.GReserveShowLogic;
 
 /**
  * Servlet implementation class AReserveInfoDeleteServlet
@@ -23,7 +23,7 @@ public class AReserveInfoDeleteServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		Reserve reserveInfo = (Reserve)session.getAttribute("reserveInfo");
-		ReserveShowLogic rSL = new ReserveShowLogic();
+		GReserveShowLogic rSL = new GReserveShowLogic();
 		rSL.excecute3(reserveInfo);
 
 		//session-scopeからreserveInfoインスタンスを破棄
