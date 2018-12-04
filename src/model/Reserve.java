@@ -46,7 +46,6 @@ public class Reserve implements Serializable {
 
 	public Reserve(){}
 
-
 	//予約状況管理時の検索情報保持に使用 インスタンス名
 	public Reserve(String day,String hotelName,String planName,String guestName){
 		this.day = day;
@@ -87,8 +86,9 @@ public class Reserve implements Serializable {
 		//this.numOfRooms = numOfRooms;
 		this.planImage = planImage;
 		this.planDetail = planDetail;
-		this.adultCopacity = adultCopacity;
-		this.childCopacity = childCopacity;
+		this.adultCapacity = adultCopacity;
+		this.childCapacity = childCopacity;
+	
 		this.adultCharge = adultCharge;
 		this.childCharge = childCharge;
 		this.guestKana = guestKana;
@@ -97,6 +97,7 @@ public class Reserve implements Serializable {
 		this.guestMail = guestMail;
 		this.guestAddress = guestAddress;
 	}
+
 /**
  * 予約実行用
  * @param numOfAdults
@@ -177,7 +178,6 @@ public class Reserve implements Serializable {
 		this.guestAddress = guestAddress;
 	}
 
-
 	//getter
 	//検索条件で利用
 	public String getDay() { return day; }
@@ -202,11 +202,11 @@ public class Reserve implements Serializable {
 	public int getNumOfRooms() {return numOfRooms;}
 	public String getPlanImage() {return planImage; }
 	public String getPlanDetail() {return planDetail; }
-	public int getAdultCopacity() {return adultCopacity; }
-	public int getChildCopacity() {return childCopacity; }
+	public int getAdultCapacity() {return adultCapacity; }
+	public int getChildCapacity() {return childCapacity; }
 	public int getAdultCharge() {return adultCharge; }
 	public int getChildCharge() { return childCharge; }
-
+  
 	public int getGuestId() { return guestId;}
 	public String getGuestName() { return guestName; }
 	public String getGuestKana() {return guestKana;}
@@ -215,29 +215,13 @@ public class Reserve implements Serializable {
 	public String getGuestMail() { return guestMail; }
 	public String getGuestAddress() { return guestAddress; }
 
-
-	public int getPlanId() {
-		return planId;
-	}
-
-
-	public int getHotelId() {
-		return hotelId;
-	}
-
-
-	public int getRoomTypeId() {
-		return roomTypeId;
-	}
-
-
-	public String getRoomTypeName() {
-		return roomTypeName;
-	}
-
-
-	public String getGuestPass() {
-		return guestPass;
-	}
-
+	public int getPlanId() {return planId;}
+	public int getHotelId() {return hotelId;}
+	public int getRoomTypeId() {return roomTypeId;}
+	public String getRoomTypeName() {return roomTypeName;}
+	public String getGuestPass() {return guestPass;}
+  
+  public void setNumOfAdults(int numOfAdults) {this.numOfAdults = numOfAdults;}
+	public void setNumOfChildren(int numOfChildren) {this.numOfChildren = numOfChildren;}
+	public void setCharge(int charge) {this.charge = charge;}
 }
