@@ -89,14 +89,14 @@ public class ReserveShowDAO {
 			ResultSet rs = pStmt.executeQuery();
 
 			while(rs.next()) {
-				 String guestId = rs.getString("guest_id");
+				 int guestId = Integer.parseInt(rs.getString("guest_id"));
 				 guestName = rs.getString("guest_name");
 				 String guestKana = rs.getString("guest_kana");
 				 String guestBirthday  = rs.getString("guest_birthday");
 				 String guestTel = rs.getString("guest_tel");
 				 String guestMail = rs.getString("guest_mail");
 				 String guestAddress = rs.getString("guest_address");
-				 String reserveId = rs.getString("reserve_id");
+				 int reserveId = Integer.parseInt(rs.getString("reserve_id"));
 				 int numOfAdults = rs.getInt("num_of_adults");
 				 int numOfChildren = rs.getInt("num_of_children");
 				 String checkin = rs.getString("checkin");
@@ -159,7 +159,7 @@ public class ReserveShowDAO {
 			Connection conn = null;
 
 			//変更内容の呼び出し
-			String reserveId = reserveInfo.getReserveId();
+			int reserveId = reserveInfo.getReserveId();
 			int numOfAdults = reserveInfo.getNumOfAdults();
 			int numOfChildren = reserveInfo.getAdultCharge();;
 			int charge = reserveInfo.getCharge();
@@ -182,7 +182,7 @@ public class ReserveShowDAO {
 				pStmt.setInt(1, numOfChildren);
 				pStmt.setInt(2, numOfAdults);
 				pStmt.setInt(3, charge);
-				pStmt.setString(4, reserveId);
+				pStmt.setInt(4, reserveId);
 
 				//System.out.println(sql);
 
@@ -214,7 +214,7 @@ public class ReserveShowDAO {
 			Connection conn = null;
 
 			//変更内容の呼び出し
-			String reserveId = reserveInfo.getReserveId();
+			int reserveId = reserveInfo.getReserveId();
 
 			try {
 				Class.forName(DriverName);
@@ -225,7 +225,7 @@ public class ReserveShowDAO {
 
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 				pStmt = conn.prepareStatement(sql);
-				pStmt.setString(1, reserveId);
+				pStmt.setInt(1, reserveId);
 				//System.out.println(sql);
 
 				//deleteの実行
