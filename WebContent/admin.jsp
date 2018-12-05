@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>管理者画面</title>
+<title>Insert title here</title>
 </head>
 <body>
 <h2>使用する機能を選んでください</h2>

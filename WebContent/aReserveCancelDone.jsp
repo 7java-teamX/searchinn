@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>マイページ</title>
+<title>キャンセル確定</title>
 </head>
 <body>
+<h1>予約はキャンセルされました</h1>
 
-
-
+<a class="btn" href="AReserveListServlet">予約一覧へ戻る</a>
 </body>
 </html>
