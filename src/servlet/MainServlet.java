@@ -27,14 +27,14 @@ public class MainServlet extends HttpServlet {
 
 		/*actionの値に応じてフォワード分岐*/
 
-		if("top".equals(action)) {
+		if(action.equals("top")) {
 			forward = "/jsp/index.jsp";
-		}else if("login".equals(action)) {
-			forward = "/jsp/guestLogin.jsp";
-		}else if("mypage".equals(action)) {
-			forward = "/jsp/mypage.jsp";
-		}else if("admin".equals(action)) {
-			forward = "/jsp/adminLogin.jsp";
+		}else if(action.equals("login")) {
+			forward = "/jsp/guest/guestLogin.jsp";
+		}else if(action.equals("mypage")) {
+			forward = "/jsp/guest/mypage.jsp";
+		}else if(action.equals("admin")) {
+			forward = "/jsp/admin/adminLogin.jsp";
 		}
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher(forward);
