@@ -33,8 +33,6 @@ public class GReserveShowDAO {
 
 			//sql文で検索条件を設定させる
 			String sql = "select "+
-				"g.guest_id,g.guest_name,g.guest_kana,g.guest_birthday,"+
-				"g.guest_tel,g.guest_mail,g.guest_address,"+
 				"r.reserve_id,r.num_of_adults,r.num_of_children,r.checkin,"+
 				"r.num_of_nights,r.reserve_date,r.charge,r.reserve_memo,"+
 				"p.plan_name,p.plan_image,p.plan_detail,"+
@@ -43,8 +41,6 @@ public class GReserveShowDAO {
 				"t.room_type_name,t.adult_capacity,t.child_capacity,"+
 				"t.adult_charge,t.child_charge "+
 				"from reserve_t as r "+
-				"join guest_t as g "+
-				"on r.guest_id = g.guest_id "+
 				"join plan_t as p "+
 				"on r.plan_id = p.plan_id "+
 				"join hotel_t as h "+
@@ -61,14 +57,6 @@ public class GReserveShowDAO {
 			ResultSet rs = pStmt.executeQuery();
 
 			while(rs.next()) {
-				 guestId = rs.getInt("guest_id");
-				 String guestName = rs.getString("guest_name");
-				 String guestKana = rs.getString("guest_kana");
-				 String guestBirthday  = rs.getString("guest_birthday");
-				 String guestTel = rs.getString("guest_tel");
-				 String guestMail = rs.getString("guest_mail");
-				 String guestAddress = rs.getString("guest_address");
-
 				 int reserveId = rs.getInt("reserve_id");
 				 int numOfAdults = rs.getInt("num_of_adults");
 				 int numOfChildren = rs.getInt("num_of_children");
@@ -95,7 +83,6 @@ public class GReserveShowDAO {
 				 int childCharge = rs.getInt("child_charge");
 
 				Reserve reserveInfo = new Reserve(
-						guestId,guestName,guestKana,guestBirthday,guestTel,guestMail,guestAddress,
 						reserveId,numOfAdults,numOfChildren,checkin,	numOfNights,reserveDate,  charge,reserveMemo,
 						planName,planImage,planDetail,
 						hotelName,hotelAddress,hotelTel, hotelMail, hotelImage,
@@ -125,14 +112,16 @@ public class GReserveShowDAO {
 	} //findAll()メソッド FIN
 
 
-	//変更を行うメソッド()
+
+	//予約変更を行うメソッド()
 		public void updateReserve(Reserve reserveInfo) {
 			Connection conn = null;
 			//変更内容の呼び出し
 			int reserveId = reserveInfo.getReserveId();
 			int numOfAdults = reserveInfo.getNumOfAdults();
-			int numOfChildren = reserveInfo.getAdultCharge();;
+			int numOfChildren = reserveInfo.getAdultCharge();
 			int charge = reserveInfo.getCharge();
+			String reserveMemo = reserveInfo.getReserveMemo();
 
 			try {
 				Class.forName(DriverName);
@@ -140,7 +129,7 @@ public class GReserveShowDAO {
 
 				//sql文で変更内容の設定
 				String sql = "update reserve_t "+
-					"set num_of_children = ?, num_of_adults = ?, charge = ? "+
+					"set num_of_children = ?, num_of_adults = ?, charge = ? ,reserveMemo = ?"+
 					"where reserve_id = ? ;";
 
 				PreparedStatement pStmt = conn.prepareStatement(sql);
@@ -148,12 +137,11 @@ public class GReserveShowDAO {
 				pStmt.setInt(1, numOfChildren);
 				pStmt.setInt(2, numOfAdults);
 				pStmt.setInt(3, charge);
-				pStmt.setInt(4, reserveId);
+				pStmt.setString(4, reserveMemo);
+				pStmt.setInt(5, reserveId);
 
 				//System.out.println(sql);
-
-				//updateの実行
-				pStmt.executeUpdate();
+				pStmt.executeUpdate(); //updateの実行
 
 			} //try FIN
 			catch(SQLException se) { //接続,SQL処理失敗時
@@ -173,12 +161,13 @@ public class GReserveShowDAO {
 					}    //catch FIN
 				} // if FIN
 			}     // finally FIN
-		} //findAll()メソッド FIN
+		} //updateReserve()メソッド FIN
+
 
 		//予約レコード削除メソッド
-		public void deleteReserve(Reserve reserveInfo) {
+		public void deleteReserve(int reserveId) {
 			Connection conn = null;
-			int reserveId = reserveInfo.getReserveId(); //削除対象レコードの予約ID
+			//int reserveId = reserveInfo.getReserveId(); //削除対象レコードの予約ID
 			try {
 				Class.forName(DriverName);
 				conn = DriverManager.getConnection(JDBCURL, DBUser, DBPass);

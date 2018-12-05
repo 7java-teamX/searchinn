@@ -9,6 +9,6 @@
 <body>
 <h1>予約はキャンセルされました</h1>
 
-<a class="btn" href="AReserveListServlet">予約一覧へ戻る</a>
+<a class="btn" href="/searchinn/GReserveListServlet">予約一覧へ戻る</a>
 </body>
 </html>

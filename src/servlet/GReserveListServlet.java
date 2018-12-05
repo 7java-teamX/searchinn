@@ -15,24 +15,20 @@ import model.GReserveShowLogic;
 import model.Guest;
 import model.Reserve;
 
-@WebServlet("/AReserveListServlet")
+@WebServlet("/GReserveListServlet")
 public class GReserveListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		/*
-		//リクエストパラメータの取得
-		request.setCharacterEncoding("UTF-8");
-		String action = request.getParameter("action");
-		System.out.println(action);*/
 
 		// session-scopeからユーザ情報取得
 		HttpSession session = request.getSession();
 		Guest loginuser = (Guest) session.getAttribute("loginuser");
 
 		//idをもとに自動で予約情報の取得を行う
-		int guestId = loginuser.getGuestId();
+		//int guestId = loginuser.getGuestId();
+		int guestId = 2; // テスト用 ユーザid 2の予約情報取得のため
 
 		//logicでsqlの実行
 		GReserveShowLogic gsl = new GReserveShowLogic();

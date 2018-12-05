@@ -11,7 +11,6 @@ public class GReserveShowLogic {
 		GReserveShowDAO dao = new GReserveShowDAO();
 		List<Reserve> reserveList = dao.selectReserve(guestId);
 		return reserveList;
-
 	}
 	//update実行時
 	public void excecute2(Reserve reserveInfo){
@@ -20,10 +19,9 @@ public class GReserveShowLogic {
 
 	}
 	//delete実行時
-	public void excecute3(Reserve refineSearch){
+	public void excecute3(int reserveId){
 		GReserveShowDAO dao = new GReserveShowDAO();
-		dao.deleteReserve(refineSearch);
-
+		dao.deleteReserve(reserveId);
 	}
 
 }
