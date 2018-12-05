@@ -16,6 +16,7 @@
 	<div>
 		<h3><c:out value="${year}年${month}月の売上" /></h3>
 		<div>
+			<h4>ホテル</h4>
 			<table class="hotelSales">
 				<tr>
 					<th>エリアID</th>
@@ -37,6 +38,7 @@
 		</div>
 		<div>
 			<table class="areaSales">
+			<h4>エリア</h4>
 				<tr>
 					<th>エリアID</th>
 					<th>エリア名</th>
@@ -53,6 +55,7 @@
 		</div>
 		<div>
 			<table class="totalSales">
+			<h4>全体</h4>
 				<tr>
 					<th>売上</th>
 				</tr>
@@ -64,5 +67,6 @@
 			</table>
 		</div>
 	</div>
+	<a href="/searchinn/jsp/admin/admin.jsp">管理者TOP</a>
 </body>
 </html>

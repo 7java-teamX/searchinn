@@ -11,5 +11,7 @@
 
 予約内容は変更されました!!
 <a class="btn" href="AReserveListServlet">予約一覧へ戻る</a>
+<hr>
+<a href="/searchinn/jsp/admin/admin.jsp">管理者TOP</a>
 </body>
 </html>

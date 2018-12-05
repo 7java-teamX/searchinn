@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
@@ -31,9 +33,13 @@ public class SalesServlet extends HttpServlet {
 		ShowSalesLogic ssLogic = new ShowSalesLogic();
 		//
 		String term = request.getParameter("term");
+		if(term == null || term.equals("")){
+			Calendar cal = Calendar.getInstance();
+			term = new SimpleDateFormat("yyyy-MM").format(cal.getTime());
+		}
 		Map<String,List<SalesInfo>> salesMap = ssLogic.execute(term);
-		String ym[] = term.split("-");
 		//
+		String ym[] = term.split("-");
 		session.setAttribute("year", ym[0]);
 		session.setAttribute("month", ym[1]);
 		//
