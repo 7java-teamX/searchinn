@@ -30,8 +30,8 @@ public class Reserve implements Serializable {
 	//room_type_t
 	private int roomTypeId;     //
 	private String roomTypeName;
-	private int adultCopacity;     //大人の最大人数
-	private int childCopacity;     //子供の最大人数
+	private int adultCapacity;     //大人の最大人数
+	private int childCapacity;     //子供の最大人数
 	private int adultCharge;       //大人料金
 	private int childCharge;       //子供料金
 	//guest_t
@@ -88,7 +88,7 @@ public class Reserve implements Serializable {
 		this.planDetail = planDetail;
 		this.adultCapacity = adultCopacity;
 		this.childCapacity = childCopacity;
-	
+
 		this.adultCharge = adultCharge;
 		this.childCharge = childCharge;
 		this.guestKana = guestKana;
@@ -164,8 +164,8 @@ public class Reserve implements Serializable {
 		this.hotelDetail = hotelDetail;
 		this.roomTypeId = roomTypeId;
 		this.roomTypeName = roomTypeName;
-		this.adultCopacity = adultCopacity;
-		this.childCopacity = childCopacity;
+		this.adultCapacity = adultCopacity;
+		this.childCapacity = childCopacity;
 		this.adultCharge = adultCharge;
 		this.childCharge = childCharge;
 		this.guestId = guestId;
@@ -206,7 +206,7 @@ public class Reserve implements Serializable {
 	public int getChildCapacity() {return childCapacity; }
 	public int getAdultCharge() {return adultCharge; }
 	public int getChildCharge() { return childCharge; }
-  
+
 	public int getGuestId() { return guestId;}
 	public String getGuestName() { return guestName; }
 	public String getGuestKana() {return guestKana;}
@@ -220,7 +220,7 @@ public class Reserve implements Serializable {
 	public int getRoomTypeId() {return roomTypeId;}
 	public String getRoomTypeName() {return roomTypeName;}
 	public String getGuestPass() {return guestPass;}
-  
+
   public void setNumOfAdults(int numOfAdults) {this.numOfAdults = numOfAdults;}
 	public void setNumOfChildren(int numOfChildren) {this.numOfChildren = numOfChildren;}
 	public void setCharge(int charge) {this.charge = charge;}
