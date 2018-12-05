@@ -28,25 +28,32 @@ public class AGuestListServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		System.out.println("aGuestListServlet");
-		GuestShowLogic guestShowLogic = new GuestShowLogic();
-		List<Guest> guestList = guestShowLogic.showAll();
-		System.out.println("dbからデータを取得");
-		//ユーザー情報一覧をセッションスコープに保存
-		HttpSession ses = request.getSession();
-		ses.setAttribute("guestList", guestList);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// リクエストパラメーターの取得
+		request.setCharacterEncoding("UTF-8");
+		String action = request.getParameter("action");
+		System.out.println(action);
+		if (action.equals("list")) {
+			System.out.println("aGuestListServlet");
+			GuestShowLogic guestShowLogic = new GuestShowLogic();
+			List<Guest> guestList = guestShowLogic.showAll();
+			System.out.println("dbからデータを取得");
+			//ユーザー情報一覧をセッションスコープに保存
+			HttpSession ses = request.getSession();
+			ses.setAttribute("guestList", guestList);
+			System.out.println("AGuestListServlet: if");
+		}
 		RequestDispatcher dis = request.getRequestDispatcher("/aGuestList.jsp");
 		dis.forward(request, response);
 
 	}
 
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 	}
 

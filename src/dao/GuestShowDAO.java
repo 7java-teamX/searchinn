@@ -67,46 +67,92 @@ public class GuestShowDAO {
 			Connection conn = null;
 			List<Guest> guestList = new ArrayList<>();
 			int seachId = criteria.getGuestId();
-			String seachIdName = criteria.getName();
-			String seachTel = criteria.getTel();
-			String seachMail = criteria.getMail();
+			String searchName = criteria.getName();
+			String searchKana = criteria.getKana();
+			String searchTel = criteria.getTel();
+			String searchMail = criteria.getMail();
 			String whereOrAnd = " WHERE";
+			System.out.println("searchId: " + seachId);
+			System.out.println("searchName: " + searchName);
+			System.out.println("searchKana: " + searchKana);
+			System.out.println("searchTel: " + searchTel);
+			System.out.println("searchMail: " + searchMail);
+
 			try {
 				Class.forName(DRIVER_NAME);
 				conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
 				//select文の準備
-				String sql = "SELECT guest_id ,guest_name, guest_tel,guest_mail, guest_kana FROM guest_t AS g ";
+				String sql = "SELECT guest_id ,guest_name, guest_tel,guest_mail, guest_kana FROM guest_t ";
 
 
 				PreparedStatement pStmt = conn.prepareStatement(sql);
+
 				//条件に応じてSQL文を追加
 				if(seachId != -1) {
-					sql += whereOrAnd +" g.guest_id = " + seachId;
-					whereOrAnd =" AND";
+					sql += whereOrAnd +" guest_id = ? ";
+
+					whereOrAnd =" AND ";
+					System.out.println("refineSearchSql id");
 				}
-				if(seachIdName != null && seachIdName == "") {
-					sql += whereOrAnd +" g.guest_name = " + seachIdName;
-					whereOrAnd =" AND";
+				if(searchName != null && searchName != "") {
+					sql += whereOrAnd +" guest_name LIKE ?";
+
+					whereOrAnd =" AND ";
+					System.out.println("refineSearchSql name");
 				}
-				if(seachTel != null && seachTel == "") {
-					sql += whereOrAnd +" g.guest_tel = " + seachTel;
-					whereOrAnd =" AND";
+				if(searchKana != null && searchKana != "") {
+					sql += whereOrAnd +" guest_kana LIKE ? ";
+
+					whereOrAnd =" AND ";
+					System.out.println("refineSearchSql kana");
 				}
-				if(seachMail != null && seachMail == "") {
-					sql += whereOrAnd +" g.seachIdName = " + seachMail;
+				if(searchTel != null && searchTel != "") {
+					sql += whereOrAnd +" guest_tel =? ";
+
+					whereOrAnd =" AND ";
+					System.out.println("refineSearchSql tel");
+				}
+				if(searchMail != null && searchMail != "") {
+					sql += whereOrAnd +" guest_mail =? ";
+
+					System.out.println("refineSearchSql mail" );
 				}
 				sql += ";";
+				pStmt = conn.prepareStatement(sql);
+				int columnIndex = 1;
+				if(seachId != -1) {
+					pStmt.setString(columnIndex, "" + seachId);
+					columnIndex++;
+				}
+				if(searchName != null && searchName != "") {
+					pStmt.setString(columnIndex, "%" + searchName + "%");
+					columnIndex++;
+				}
+				if(searchKana != null && searchKana != "") {
+					pStmt.setString(columnIndex, "%" + searchKana + "%");
+					columnIndex++;
+				}
+				if(searchTel != null && searchTel != "") {
+					pStmt.setString(columnIndex, searchTel);
+					columnIndex++;
+				}
+				if(searchMail != null && searchMail != "") {
+					pStmt.setString(columnIndex, searchMail);
+				}
+				System.out.println(sql);
 				//selectを実行し結果表(ResultSet)を取得
 				ResultSet rs = pStmt.executeQuery();
 
 				//結果表に格納されたレコードの内容を表示
 				while (rs.next()) {
+					System.out.println("while");
 					int id = rs.getInt("guest_id");
 					String name = rs.getString("guest_name");
+					String kana = rs.getString("guest_kana");
 					String tel = rs.getString("guest_tel");
 					String mail = rs.getString("guest_mail");
 
-					Guest guest = new Guest(id, name, tel,mail);
+					Guest guest = new Guest(id, name,kana, tel,mail);
 					guestList.add(guest);
 				}
 			} catch (SQLException e) {

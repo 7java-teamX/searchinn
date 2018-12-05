@@ -51,14 +51,17 @@ public class GuestInfoServlet extends HttpServlet {
 				request.setCharacterEncoding("UTF-8");
 				String  guestId = request.getParameter("id");
 				String name = request.getParameter("name");
+				String kana = request.getParameter("kana");
 				String tel = request.getParameter("tel");
 				String email = request.getParameter("email");
+				int intGuestId = 0;
 				//guestIdが nullかチェック
-				if(guestId == null || guestId == "") {
+				if(guestId == null || guestId.equals("")) {
 					guestId = "-1";
+					System.out.println("in if");
 				}
-				int IntGuestId = Integer.parseInt(guestId);
-				Guest guest = new Guest(IntGuestId, name,tel,email);
+				intGuestId = Integer.parseInt(guestId);
+				Guest guest = new Guest(intGuestId,name, kana,tel,email);
 
 				//検索条件をセッションスコープに保存
 				HttpSession ses = request.getSession();
