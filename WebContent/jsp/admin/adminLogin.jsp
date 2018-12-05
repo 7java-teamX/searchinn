@@ -7,32 +7,32 @@
 <link rel="stylesheet" type="text/css" href="../css/loginStyle.css">
 <link rel="stylesheet" type="text/css" href="../css/headerStyle.css">
 <link rel="stylesheet" type="text/css" href="../css/footerStyle.css">
-<link rel="stylesheet" type="text/css" href="/hotel/css/loginStyle.css">
-<link rel="stylesheet" type="text/css" href="/hotel/css/headerStyle.css">
-<link rel="stylesheet" type="text/css" href="/hotel/css/footerStyle.css">
-<title>管理者画面ログイン</title>
+<link rel="stylesheet" type="text/css" href="/searchinn/css/loginStyle.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/headerStyle.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/footerStyle.css">
+<title>管理者ログイン画面</title>
 </head>
 <body>
 
-	<jsp:include page="header.jsp"/>
+	<jsp:include page="/jsp/header.jsp"/>
 
 	<div class="login">
  		<div class="login-triangle"></div>
 
-	 	<h2 class="login-header">管理者画面ログイン</h2>
+	 	<h2 class="login-header">管理者ログイン画面</h2>
 
 	 	<form class="login-container">
 	    <p><input type="text" placeholder="管理者ID"></p>
 	    <p><input type="password" placeholder="Password"></p>
-	    <p><input type="submit" value="ログイン" ></p>
+	    <p><input type="submit" value="管理者ログイン" ></p>
 	  	</form>
 
 		<p>
-			<a class="whiteText" href="../admin/admin.html">管理者画面へ</a>
+			<a class="whiteText" href="/searchinn/jsp/admin/admin.jsp">管理者画面へ</a>
 		</p>
 	</div>
 
-	<jsp:include page="footer.jsp"/>
+	<jsp:include page="/jsp/footer.jsp"/>
 
 </body>
 </html>
