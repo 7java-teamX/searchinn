@@ -63,8 +63,8 @@ public class Reserve implements Serializable {
 			int numOfNights, String reserveDate, int charge, String reserveMemo,
 			String planName, String planImage,  String planDetail,
 			String hotelName,String hotelAddress, String hotelTel,  String hotelMail, String hotelImage,
-			String hotelDetail,   int adultCopacity,
-			int childCopacity,  int adultCharge, int childCharge) {
+			String hotelDetail,   int adultCapacity,
+			int childCapacity,  int adultCharge, int childCharge) {
 		this.guestId = guestId;
 		this.hotelName = hotelName;
 		this.planName = planName;
@@ -86,9 +86,9 @@ public class Reserve implements Serializable {
 		//this.numOfRooms = numOfRooms;
 		this.planImage = planImage;
 		this.planDetail = planDetail;
-		this.adultCapacity = adultCopacity;
-		this.childCapacity = childCopacity;
 
+		this.adultCapacity = adultCapacity;
+		this.childCapacity = childCapacity;
 		this.adultCharge = adultCharge;
 		this.childCharge = childCharge;
 		this.guestKana = guestKana;
@@ -121,8 +121,8 @@ public class Reserve implements Serializable {
  * @param hotelDetail
  * @param roomTypeId
  * @param roomTypeName
- * @param adultCopacity
- * @param childCopacity
+ * @param adultCapacity
+ * @param childCapacity
  * @param adultCharge
  * @param childCharge
  * @param guestId
@@ -139,7 +139,7 @@ public class Reserve implements Serializable {
 			String reserveDate, int charge, String reserveMemo, int planId, String planName, int numOfRooms,
 			String planImage, String planDetail, int hotelId, String hotelName, String hotelTel,
 			String hotelAddress, String hotelMail, String hotelImage, String hotelDetail, int roomTypeId,
-			String roomTypeName, int adultCopacity, int childCopacity, int adultCharge, int childCharge, int guestId,
+			String roomTypeName, int adultCapacity, int childCapacity, int adultCharge, int childCharge, int guestId,
 			String guestName, String guestKana, String guestPass, String guestBirthday, String guestTel,
 			String guestMail, String guestAddress) {
 //		this.reserveId = reserveId;
@@ -164,10 +164,12 @@ public class Reserve implements Serializable {
 		this.hotelDetail = hotelDetail;
 		this.roomTypeId = roomTypeId;
 		this.roomTypeName = roomTypeName;
-		this.adultCapacity = adultCopacity;
-		this.childCapacity = childCopacity;
+
+		this.adultCapacity = adultCapacity;
+		this.childCapacity = childCapacity;
 		this.adultCharge = adultCharge;
 		this.childCharge = childCharge;
+    
 		this.guestId = guestId;
 		this.guestName = guestName;
 		this.guestKana = guestKana;

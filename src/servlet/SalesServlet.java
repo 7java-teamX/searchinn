@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
@@ -26,13 +28,25 @@ public class SalesServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ShowSalesLogic ssLogic = new ShowSalesLogic();
 		request.setCharacterEncoding("utf-8");
-		Map<String,List<SalesInfo>> salesMap = ssLogic.execute(request.getParameter("term"));
 		HttpSession session = request.getSession();
+		ShowSalesLogic ssLogic = new ShowSalesLogic();
+		//
+		String term = request.getParameter("term");
+		if(term == null || term.equals("")){
+			Calendar cal = Calendar.getInstance();
+			term = new SimpleDateFormat("yyyy-MM").format(cal.getTime());
+		}
+		Map<String,List<SalesInfo>> salesMap = ssLogic.execute(term);
+		//
+		String ym[] = term.split("-");
+		session.setAttribute("year", ym[0]);
+		session.setAttribute("month", ym[1]);
+		//
 		session.setAttribute("hotelSales", salesMap.get("hotelSales"));
 		session.setAttribute("areaSales", salesMap.get("areaSales"));
 		session.setAttribute("totalSales", salesMap.get("totalSales"));
+		//
 		RequestDispatcher dis =request.getRequestDispatcher("/jsp/sales.jsp");
 		dis.forward(request, response);
 	}

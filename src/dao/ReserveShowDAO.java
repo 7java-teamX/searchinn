@@ -108,6 +108,7 @@ public class ReserveShowDAO {
 				 String guestTel = rs.getString("guest_tel");
 				 String guestMail = rs.getString("guest_mail");
 				 String guestAddress = rs.getString("guest_address");
+
 				 int reserveId = rs.getInt("reserve_id");
 				 int numOfAdults = rs.getInt("num_of_adults");
 				 int numOfChildren = rs.getInt("num_of_children");

@@ -20,7 +20,7 @@
 				泊数：
 				<select name="nights">
 					<c:forEach var="i" begin="1" end="6">
-						<option value=${i} >${i}泊${i+1}日</option>
+						<option value=<c:out value="${i}" /> ><c:out value="${i}泊${i+1}日" /></option>
 					</c:forEach>
 				</select>
 			</p>
@@ -31,7 +31,7 @@
 				大人：
 				<select name="numAdult">
 					<c:forEach var="i" begin="1" end="2">
-						<option value=${i} >${i}</option>
+						<option value=<c:out value="${i}" /> ><c:out value="${i}" /></option>
 					</c:forEach>
 				</select>
 				名
@@ -40,7 +40,7 @@
 				小人：
 				<select name="numChild">
 					<c:forEach var="i" begin="0" end="2">
-						<option value=${i} >${i}</option>
+						<option value=<c:out value="${i}" /> ><c:out value="${i}" /></option>
 					</c:forEach>
 				</select>
 				名
@@ -53,11 +53,11 @@
 		<input type="submit" value="予約（確認画面へ）">
 	</form>
 
-	<b><c:out value="${calMap.year}年${calMap.month}月の空室状況"/></b>
+	<h4><c:out value="${calMap.year}年${calMap.month}月の空室状況"/></h4>
 
 	<div>
 		<form action="/searchinn/PlanReserveServlet?action=show" method="get">
-			<input type="month" name="ym" value="${calMap.ym}">
+			<input type="month" name="ym" value=<c:out value="${calMap.ym}" /> >
 			<input type="submit" value="表示"/>
 		</form>
 	</div>
