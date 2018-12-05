@@ -63,40 +63,53 @@ public class ReserveShowDAO {
 
 			if(day != null && day != "") {
 				sql  += whereOrAnd + "reserve_date like ?";
-				pStmt = conn.prepareStatement(sql);
-				pStmt.setString(1, "%"+ day +"%");
-				whereOrAnd =" AND";
+				whereOrAnd =" AND ";
 			}
 			if(hotelName != null && hotelName != "") {
-				sql  += whereOrAnd + " hotel_name like ?";
-				pStmt = conn.prepareStatement(sql);
-				pStmt.setString(1, "%" + hotelName + "%");
-				whereOrAnd =" AND";
+				sql  += whereOrAnd + "hotel_name like ? ";
+				whereOrAnd =" AND ";
 			}
 			if(planName != null && planName != "") {
-				sql  += whereOrAnd + " plan_name like ?";
-				pStmt = conn.prepareStatement(sql);
-				pStmt.setString(1, "%" + planName + "%");
-				whereOrAnd =" AND";
+				sql  += whereOrAnd + "plan_name like ? ";
+				whereOrAnd =" AND ";
 			}
 			if(guestName != null && guestName != "") {
-				sql  += whereOrAnd + " guest_name like ?";
-				pStmt = conn.prepareStatement(sql);
-				pStmt.setString(1, "%" + guestName + "%");
+				sql  += whereOrAnd + "guest_name like ? ";
 				whereOrAnd =" AND";
+			}
+
+			pStmt = conn.prepareStatement(sql);
+			int i = 1;
+
+			if(day != null && day != "") {
+				pStmt.setString(i, "%"+ day +"%");
+				i++;
+			}
+			if(hotelName != null && hotelName != "") {
+				pStmt.setString(i, "%" + hotelName + "%");
+				i++;
+			}
+			if(planName != null && planName != "") {
+				pStmt.setString(i, "%" + planName + "%");
+				i++;
+			}
+			if(guestName != null && guestName != "") {
+				pStmt.setString(i, "%" + guestName + "%");
+				i++;
 			}
 
 			ResultSet rs = pStmt.executeQuery();
 
 			while(rs.next()) {
-				 int guestId = Integer.parseInt(rs.getString("guest_id"));
+				 int guestId = rs.getInt("guest_id");
 				 guestName = rs.getString("guest_name");
 				 String guestKana = rs.getString("guest_kana");
 				 String guestBirthday  = rs.getString("guest_birthday");
 				 String guestTel = rs.getString("guest_tel");
 				 String guestMail = rs.getString("guest_mail");
 				 String guestAddress = rs.getString("guest_address");
-				 int reserveId = Integer.parseInt(rs.getString("reserve_id"));
+
+				 int reserveId = rs.getInt("reserve_id");
 				 int numOfAdults = rs.getInt("num_of_adults");
 				 int numOfChildren = rs.getInt("num_of_children");
 				 String checkin = rs.getString("checkin");
