@@ -28,7 +28,7 @@ public class GReserveListServlet extends HttpServlet {
 
 		//idをもとに自動で予約情報の取得を行う
 		//int guestId = loginuser.getGuestId();
-		int guestId = 2; // テスト用 ユーザid 2の予約情報取得のため
+		int guestId = 2; // テスト用です ユーザid 2の予約情報取得のため
 
 		//logicでsqlの実行
 		GReserveShowLogic gsl = new GReserveShowLogic();
