@@ -191,12 +191,12 @@ public class GuestShowDAO {
 				String name = rs.getString("guest_name");
 				String kana = rs.getString("guest_kana");
 				String birthday = rs.getString("guest_birthday");
-				String tel = rs.getString("guest_mail");
+				String tel = rs.getString("guest_tel");
 				String address = rs.getString("guest_address");
 				String mail = rs.getString("guest_mail");
 
-				guest = new Guest(id, name, kana,birthday,tel,address,mail);
-				System.out.println(guestId + name +kana+  birthday+ tel+ address+ mail);
+				guest = new Guest(id, name, kana,birthday,tel,mail,address);
+				System.out.println(guestId + name +kana+  birthday+ tel+ mail+ address);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

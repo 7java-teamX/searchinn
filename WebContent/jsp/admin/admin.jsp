@@ -14,7 +14,7 @@
 		<h2>管理者画面</h2>
 
 		<div class="center">
-			<p><a href="/serchinn/AGuestList" class="square_btn">顧客情報</a></p>
+			<p><a href="/searchinn/AGuestListServlet" class="square_btn">顧客情報</a></p>
 			<p><a href="/searchinn/jsp/sales.jsp" class="square_btn">売上集計</a></p>
 			<p><a href="/searchinn/AReserveListServlet" class="square_btn">予約状況</a></p>
 		</div>

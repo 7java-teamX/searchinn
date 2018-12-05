@@ -52,7 +52,7 @@ public class GuestInfoChangeServlet extends HttpServlet {
 		String address = request.getParameter("address");
 		String email = request.getParameter("email");
 
-		Guest guest = new Guest(guestId,name,kana,tel,address,email);
+		Guest guest = new Guest(guestId,name,kana,tel,email,address);
 		HttpSession ses = request.getSession();
 		ses.setAttribute("update", guest);
 		RequestDispatcher dis = request.getRequestDispatcher("/aGuestInfoChangeConfirm.jsp");

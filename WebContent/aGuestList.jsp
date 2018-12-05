@@ -8,7 +8,7 @@
 <title>顧客情報</title>
 </head>
 <body>
-<p><a href = "/searchinn/admin.jsp">"管理者機能一覧へ</a></p>
+<p><a href = "/searchinn/jsp/admin/admin.jsp">"管理者機能一覧へ</a></p>
 <p><a href = "/searchinn/AGuestListServlet?action=list">"顧客情報一覧へ</a></p>
 <p>絞り込み検索</p>
 <form action="/searchinn/GuestInfoServlet" method="post">
@@ -22,8 +22,8 @@
 
 <!-- 以下に 一覧表示 -->
 <c:forEach var="guest" items="${guestList}">
-<p>id:${guest.guestId} 名前:${guest.name} かな:${guest.kana} TEL:${guest.tel} Email:${guest.mail}
-<a href="/searchinn/GuestInfoServlet?id=<c:out value="${guest.guestId}"/>">詳細</a></p>
+	<p>id:${guest.guestId} 名前:${guest.name} かな:${guest.kana} TEL:${guest.tel} Email:${guest.mail}
+	<a href="/searchinn/GuestInfoServlet?id=<c:out value="${guest.guestId}"/>">詳細</a></p>
 </c:forEach>
 </body>
 </html>
