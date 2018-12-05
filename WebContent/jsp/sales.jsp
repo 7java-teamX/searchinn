@@ -14,6 +14,7 @@
 		<input type="submit" value="決定">
 	</form>
 	<div>
+		<h3><c:out value="${year}年${month}月の売上" /></h3>
 		<div>
 			<table class="hotelSales">
 				<tr>
@@ -23,13 +24,13 @@
 					<th>ホテル名</th>
 					<th>売上</th>
 				</tr>
-				<c:forEach var="salesInfo" items="${hotelSales}">
+				<c:forEach var="salesInfo" items="${hotelSales}" >
 					<tr>
-						<td>${salesInfo.areaId}</td>
-						<td>${salesInfo.areaName}</td>
-						<td>${salesInfo.hotelId}</td>
-						<td>${salesInfo.hotelName}</td>
-						<td>${salesInfo.sales}</td>
+						<td><c:out value="${salesInfo.areaId}" /></td>
+						<td><c:out value="${salesInfo.areaName}" /></td>
+						<td><c:out value="${salesInfo.hotelId}" /></td>
+						<td><c:out value="${salesInfo.hotelName}" /></td>
+						<td><c:out value="${salesInfo.sales}" /></td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -43,9 +44,9 @@
 				</tr>
 				<c:forEach var="salesInfo" items="${areaSales}">
 					<tr>
-						<td>${salesInfo.areaId}</td>
-						<td>${salesInfo.areaName}</td>
-						<td>${salesInfo.sales}</td>
+						<td><c:out value="${salesInfo.areaId}" /></td>
+						<td><c:out value="${salesInfo.areaName}" /></td>
+						<td><c:out value="${salesInfo.sales}" /></td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -57,7 +58,7 @@
 				</tr>
 				<c:forEach var="salesInfo" items="${totalSales}">
 					<tr>
-						<td>${salesInfo.sales}</td>
+						<td><c:out value="${salesInfo.sales}" /></td>
 					</tr>
 				</c:forEach>
 			</table>

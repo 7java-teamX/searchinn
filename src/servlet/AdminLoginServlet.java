@@ -36,10 +36,10 @@ public class AdminLoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// リクエストパラメーターの取得
 		request.setCharacterEncoding("UTF-8");
-		String name = request.getParameter("name");
+		String id = request.getParameter("id");
 		String pass = request.getParameter("pass");
 
-		Admin admin = new Admin(name, pass);
+		Admin admin = new Admin(id, pass);
 		//ログイン処理の生成
 		AdminLoginLogic adLog = new AdminLoginLogic();
 		boolean isLogin = adLog.execute(admin);
@@ -49,12 +49,11 @@ public class AdminLoginServlet extends HttpServlet {
 			HttpSession ses = request.getSession();
 			ses.setAttribute("admin", admin);
 			//ログイン結果を画面にフォワード
-			RequestDispatcher dis = request.getRequestDispatcher("/admin.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("/jsp/admin/admin.jsp");
 			dis.forward(request, response);
 		} else {
-			response.sendRedirect("/searchinn/adminLogin.jsp");
+			response.sendRedirect("/adminLogin.jsp");
 		}
-
 	}
 
 }
