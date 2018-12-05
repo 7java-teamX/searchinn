@@ -155,8 +155,8 @@ public class Reserve implements Serializable {
  * @param hotelDetail
  * @param roomTypeId
  * @param roomTypeName
- * @param adultCopacity
- * @param childCopacity
+ * @param adultCapacity
+ * @param childCapacity
  * @param adultCharge
  * @param childCharge
  * @param guestId
