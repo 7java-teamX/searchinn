@@ -66,8 +66,8 @@
 <div class="">
 こちらの内容で問題ないですか？
 <div class="btnArea">
-	<a class="btn" href="AReserveInfoChangeServlet?index=done">はい</a>
-	<a class="btn" href="AReserveInfoChangeServlet">戻る</a>
+	<a class="btn" href="GReserveInfoChangeServlet?index=done">はい</a>
+	<a class="btn" href="GReserveInfoChangeServlet">戻る</a>
 </div>
 
 </div>

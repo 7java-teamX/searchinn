@@ -26,6 +26,12 @@
 	justify-content: space-around;
 	margin-bottom:10px;
 }
+.text{
+	width:400px;
+}
+.reserveText,.reserveBox{
+	margin-bottom:10px;
+}
 .btn{
 	text-decoration: none;
 	border-bottom: solid 4px #B0E0E6;
@@ -60,7 +66,6 @@
 	<!-- for Eachで予約情報の繰り返し -->
 	<!-- pc画面1000px前後  -->
 	<c:forEach var="reserveInfo" items="${reserveList}" varStatus="status">
-
 		<div class="reserveBox">
 			チェックイン：<c:out value="${reserveInfo.checkin}"/><!--ホテル名  -->
 			<div class="planArea">
@@ -68,30 +73,30 @@
 					ホテル名<c:out value="${reserveInfo.hotelName}"/><br><!--ホテル名  -->
 					プラン名<c:out value="${reserveInfo.planName}"/><br><!--プラン名  -->
 					予約内容の詳細<c:out value="${reserveInfo.planDetail}"/><br><!--予約内容の詳細  -->
-					sssssssssssssssssssssssssssssssssssssssssssssssssss<br>
 				</div>
 				<img src="<c:out value="${reserve.planImage}"/>" width="300" height="300" alt="<c:out value="${reserve.reserveId}"/>sasas"><!--予約プランの画像  -->
 			</div>
-
 			<div class="reserveArea">
 				<div class="str">予約内容</div>
-				<div class="text">
-					宿泊期間<c:out value="${reserveInfo.reserveDate}"/><br><!--宿泊期間 -->
-					宿泊日数<c:out value="${reserveInfo.planName}"/>日<br><!--宿泊日/宿泊日数  -->
-					大人人数<c:out value="${reserveInfo.numOfAdults}"/><br><!--大人人数  -->
-					子供人数<c:out value="${reserveInfo.numOfChildren}"/><br><!--子供人数  -->
-					合計料金<c:out value="${reserveInfo.charge}"/><br><!--子供人数  -->
-					メモ<c:out value="${reserveInfo.reserveMemo}"/><br><!--メモ -->
-					<div class="btnArea">
-						<a href="/searchinn/GReserveInfoChangeServlet?index=<c:out value="${status.index}" />" class="btn">予約内容変更</a>
-						<a href="#" class="btn" onclick="doConfirm(<c:out value="${reserveInfo.reserveId}" />)">予約キャンセル</a>
-					</div>
+				<div class="reserveText">
+					宿泊期間：<c:out value="${reserveInfo.reserveDate}"/><br><!--宿泊期間 -->
+					宿泊日数：<c:out value="${reserveInfo.numOfNights}"/>日<br><!--宿泊日/宿泊日数  -->
+					大人人数：<c:out value="${reserveInfo.numOfAdults}"/>人<br><!--大人人数  -->
+					子供人数：<c:out value="${reserveInfo.numOfChildren}"/>人<br><!--子供人数  -->
+					合計料金：￥<c:out value="${reserveInfo.charge}"/><br><!--子供人数  -->
+					メモ<br><c:out value="${reserveInfo.reserveMemo}"/><br><!--メモ -->
+				</div>
 
+				<div class="btnArea">
+					<a href="/searchinn/GReserveInfoChangeServlet?index=<c:out value="${status.index}" />" class="btn">予約内容変更</a>
+					<a href="#" class="btn" onclick="doConfirm(<c:out value="${reserveInfo.reserveId}" />)">
+					予約キャンセル</a>
 				</div>
 			</div>
-		</div>
+		</div><!--  -->
 	</c:forEach>
-</div>
+</div><!-- container -->
+
 <script>
 function doConfirm(reservId){
   if(window.confirm("予約のキャンセル確認になります\nよろしければ<はい>を押してください")){

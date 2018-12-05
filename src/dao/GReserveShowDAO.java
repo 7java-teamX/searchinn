@@ -119,7 +119,7 @@ public class GReserveShowDAO {
 			//変更内容の呼び出し
 			int reserveId = reserveInfo.getReserveId();
 			int numOfAdults = reserveInfo.getNumOfAdults();
-			int numOfChildren = reserveInfo.getAdultCharge();
+			int numOfChildren = reserveInfo.getNumOfChildren();
 			int charge = reserveInfo.getCharge();
 			String reserveMemo = reserveInfo.getReserveMemo();
 
@@ -129,8 +129,8 @@ public class GReserveShowDAO {
 
 				//sql文で変更内容の設定
 				String sql = "update reserve_t "+
-					"set num_of_children = ?, num_of_adults = ?, charge = ? ,reserveMemo = ?"+
-					"where reserve_id = ? ;";
+					"set num_of_children = ?, num_of_adults = ?, charge = ? ,reserve_memo = ?"+
+					"where reserve_id = ? ";
 
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 				pStmt = conn.prepareStatement(sql);
