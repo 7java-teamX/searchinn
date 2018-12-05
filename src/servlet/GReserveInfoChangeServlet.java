@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,38 +11,46 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.Reserve;
 import model.GReserveShowLogic;
+import model.Reserve;
 
-/**
- * Servlet implementation class AReservetInfoChangeServlet
- */
-@WebServlet("/AReserveInfoChangeServlet")
-public class AReserveInfoChangeServlet extends HttpServlet {
+
+@WebServlet("/GReserveInfoChangeServlet")
+public class GReserveInfoChangeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//リクエストパラメータの取得
 		request.setCharacterEncoding("UTF-8");
-		String action = request.getParameter("action");
+		String strIndex = request.getParameter("index");
 		String pass = "";
 
-		if(action == null) {
-			pass = "aReserveInfoChangeForm.jsp";
-		}
-		else if(action.equals("done")) {
+		//session-scopeの取得
+		HttpSession session = request.getSession();
+		@SuppressWarnings("unchecked")
+		List<Reserve> reserveList = (List<Reserve>)session.getAttribute("reserveList");
+
+
+		if(strIndex.equals("done")) {
 			//変更確定の処理
-			HttpSession session = request.getSession();
 			Reserve reserveInfo = (Reserve)session.getAttribute("reserveInfo");
 			GReserveShowLogic rSL = new GReserveShowLogic();
 			rSL.excecute2(reserveInfo);
-			pass = "aReserveInfoChangeDone.jsp";
+			pass = "gReserveChangeDone.jsp";
+			//session.remove
+		}
+		else if(strIndex != null) {
+			int index = Integer.parseInt(strIndex);
+
+			// indexの数値を元にarrayListから取得しsession-scopeに格納
+			Reserve reserveInfo = reserveList.get(index);
+			session.setAttribute("reserveInfo", reserveInfo);
+			pass = "gReserveChangeForm.jsp";
 		}
 
 		//aReserveList.jspのフォワード処理
 		RequestDispatcher dis = request.getRequestDispatcher(pass);
 		dis.forward(request,response);
-
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -49,6 +58,7 @@ public class AReserveInfoChangeServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		int numOfAdults = Integer.parseInt(request.getParameter("numOfAdult"));
 		int numOfChildren = Integer.parseInt(request.getParameter("numOfChild"));
+		String reserveMemo = request.getParameter("reserveMemo");
 
 		//session-scopeの取得
 		HttpSession session = request.getSession();
@@ -61,12 +71,13 @@ public class AReserveInfoChangeServlet extends HttpServlet {
 		reserveInfo.setCharge(charge);
 		reserveInfo.setNumOfAdults(numOfAdults);
 		reserveInfo.setNumOfChildren(numOfChildren);
+		reserveInfo.setReserveMemo(reserveMemo);
 
 		//session-scopeに予約詳細を格納
 		session.setAttribute("reserveInfo", reserveInfo);
 
 		//aReserveList.jspのフォワード処理
-		RequestDispatcher dis = request.getRequestDispatcher("aReserveInfoChangeConfirm.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("gReserveChangeConfirm.jsp");
 		dis.forward(request,response);
 	}
 
