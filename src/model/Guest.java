@@ -81,7 +81,7 @@ public class Guest implements Serializable{
 	}
 
 	/**
-	 * id抜き
+	 * 
 	 * @param name
 	 * @param kana
 	 * @param pass

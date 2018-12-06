@@ -8,6 +8,6 @@
 </head>
 <body>
 <h2>変更完了</h2>
-<p><a href="/searchinn/AGuestListServlet?action=list">一覧ページ</a></p>
+<p><a href="/searchinn/gGuestInfo.jsp">一覧ページ</a></p>
 </body>
 </html>
