@@ -133,8 +133,7 @@ public class Plan implements Serializable {
 	 * @param roomTypeId
 	 * @param hotelId
 	 */
-	public Plan(int planId, String planName, int numRoom, String planImage, String planDetail, int roomTypeId,
-			int hotelId) {
+	public Plan(int planId, String planName, int hotelId, int roomTypeId, int numRoom, String planImage, String planDetail) {
 		super();
 		this.planId = planId;
 		this.planName = planName;

@@ -1,0 +1,14 @@
+package model;
+
+import dao.RoomTypeDAO;
+
+public class RoomTypeLogic {
+	public void update(RoomType roomType ) {
+		RoomTypeDAO rtDAO = new RoomTypeDAO();
+		rtDAO.update(roomType);
+	}
+	public void insert(RoomType roomType ) {
+	RoomTypeDAO rtDAO = new RoomTypeDAO();
+	rtDAO.insert(roomType);
+}
+}

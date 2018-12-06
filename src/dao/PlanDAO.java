@@ -79,4 +79,47 @@ public class PlanDAO {
 		}
 		return planList;
 	}
+
+	public List<Plan> showAll(){
+		Connection conn = null;
+		List<Plan> planList = new ArrayList<>();
+		try {
+			Class.forName(DRIVER_NAME);
+			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
+
+			String sql = "SELECT plan_id,plan_name,hotel_id,room_type_id,num_of_rooms,plan_image,plan_detail"
+			+ " FROM plan_t";
+
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			ResultSet rs = pStmt.executeQuery();
+
+			//結果表に格納されたレコードの内容を表示
+			while (rs.next()) {
+				int planId = rs.getInt(1);
+				String planName = rs.getString(2);
+				int hotelId = rs.getInt(3);
+				int roomTypeId = rs.getInt(4);
+				int numRoom = rs.getInt(5);
+				String planImage = rs.getString(6);
+				String planDetail = rs.getString(7);
+
+				Plan plan = new Plan(planId, planName, hotelId, roomTypeId, numRoom, planImage, planDetail);
+				planList.add(plan);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			//データベース切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return planList;
+	}
 }

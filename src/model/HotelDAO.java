@@ -21,7 +21,7 @@ public class HotelDAO {
 			Class.forName(DRIVER_NAME);
 			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
 
-			String sql ="SELECT hotel_id,area_id,hotel_name,hotel_address,hotel_tel,hotel_mail,hotel_image,hotel_detail"
+			String sql ="SELECT area_id,hotel_id,hotel_name,hotel_address,hotel_tel,hotel_mail,hotel_image,hotel_detail"
 					+ "	FROM hotel_t";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
@@ -29,15 +29,16 @@ public class HotelDAO {
 
 			//結果表に格納されたレコードの内容を表示
 			while (rs.next()) {
-				int hotelId = rs.getInt(1);
-				String hotelName = rs.getString(2);
-				String hotelAddress = rs.getString(3);
-				String hotelTel = rs.getString(4);
-				String hotelMail = rs.getString(5);
-				String hotelImage = rs.getString(6);
-				String hotelDetail = rs.getString(7);
+				int areaId = rs.getInt(1);
+				int hotelId = rs.getInt(2);
+				String hotelName = rs.getString(3);
+				String hotelAddress = rs.getString(4);
+				String hotelTel = rs.getString(5);
+				String hotelMail = rs.getString(6);
+				String hotelImage = rs.getString(7);
+				String hotelDetail = rs.getString(8);
 
-				Hotel hotel = new Hotel(hotelId, hotelName, hotelAddress, hotelTel, hotelMail, hotelImage, hotelDetail);
+				Hotel hotel = new Hotel(areaId, hotelId, hotelName, hotelAddress, hotelTel, hotelMail, hotelImage, hotelDetail);
 				hotelList.add(hotel);
 			}
 		} catch (SQLException e) {

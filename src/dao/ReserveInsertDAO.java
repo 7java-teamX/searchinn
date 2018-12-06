@@ -37,6 +37,9 @@ public class ReserveInsertDAO {
 			pSmt.setString(9, reserve.getReserveMemo());
 
 			int result = pSmt.executeUpdate();
+			if(result != 1) {
+				return false;
+			}
 		}//try
 		catch (ClassNotFoundException e) {
 			e.printStackTrace();

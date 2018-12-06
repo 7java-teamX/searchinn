@@ -23,7 +23,7 @@ public class AreaDAO {
 			Class.forName(DRIVER_NAME);
 			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
 
-			String sql ="SELECT area_id,ara_name" +
+			String sql ="SELECT area_id,area_name" +
 					" FROM area_t";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
