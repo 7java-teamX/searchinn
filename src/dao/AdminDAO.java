@@ -8,6 +8,10 @@ import java.sql.SQLException;
 
 import model.Admin;
 
+/**
+ * @author 3BC1_12
+ *
+ */
 public class AdminDAO {
 	private final String DRIVER_NAME = "com.mysql.jdbc.Driver";
 	private final String JDBC_URL = "jdbc:mysql://localhost:3306/inn";
@@ -25,7 +29,7 @@ public class AdminDAO {
 			Class.forName(DRIVER_NAME);
 			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
 			//select文の準備
-			String sql = "SELECT admin_id , admin_pass s from admin_t " +
+			String sql = "SELECT admin_id , admin_pass FROM admin_t " +
 						  "WHERE admin_id = ? AND admin_pass = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setString(1, admin.getId());
