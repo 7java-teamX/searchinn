@@ -98,6 +98,62 @@ public class Reserve implements Serializable {
 		this.guestAddress = guestAddress;
 	}
 
+	/**
+	 * 顧客用予約情報確認
+	 * @param reserveId
+	 * @param numOfAdults
+	 * @param numOfChildren
+	 * @param checkin
+	 * @param numOfNights
+	 * @param reserveDate
+	 * @param charge
+	 * @param reserveMemo
+	 * @param planName
+	 * @param planImage
+	 * @param planDetail
+	 * @param hotelName
+	 * @param hotelAddress
+	 * @param hotelTel
+	 * @param hotelMail
+	 * @param hotelImage
+	 * @param hotelDetail
+	 * @param adultCapacity
+	 * @param childCapacity
+	 * @param adultCharge
+	 * @param childCharge
+	 */
+	public Reserve(
+			int reserveId,int numOfAdults, int numOfChildren, String checkin,
+			int numOfNights, String reserveDate, int charge, String reserveMemo,
+			String planName, String planImage,  String planDetail,
+			String hotelName,String hotelAddress, String hotelTel,  String hotelMail, String hotelImage,
+			String hotelDetail,   int adultCapacity,
+			int childCapacity,  int adultCharge, int childCharge) {
+		this.hotelName = hotelName;
+		this.planName = planName;
+		this.reserveId = reserveId;
+		this.numOfAdults = numOfAdults;
+		this.numOfChildren = numOfChildren;
+		this.checkin = checkin;
+		this.numOfNights = numOfNights;
+		this.reserveDate = reserveDate;
+		this.charge = charge;
+		this.reserveMemo = reserveMemo;
+		this.hotelAddress = hotelAddress;
+		this.hotelTel = hotelTel;
+		this.hotelMail = hotelMail;
+		this.hotelImage = hotelImage;
+		this.hotelDetail = hotelDetail;
+		this.planImage = planImage;
+		this.planDetail = planDetail;
+
+		this.adultCapacity = adultCapacity;
+		this.childCapacity = childCapacity;
+		this.adultCharge = adultCharge;
+		this.childCharge = childCharge;
+	}
+
+
 /**
  * 予約実行用
  * @param numOfAdults
@@ -169,7 +225,7 @@ public class Reserve implements Serializable {
 		this.childCapacity = childCapacity;
 		this.adultCharge = adultCharge;
 		this.childCharge = childCharge;
-    
+
 		this.guestId = guestId;
 		this.guestName = guestName;
 		this.guestKana = guestKana;

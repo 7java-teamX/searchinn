@@ -12,8 +12,9 @@ public class Guest implements Serializable{
 	private String mail;
 	private String address;
 
+	public Guest() {}
+
 	/**
-	 *
 	 * 	顧客情報一覧時使用
 	 *  管理者側顧客情報検索時使用
 	 * @param id
@@ -81,7 +82,7 @@ public class Guest implements Serializable{
 	}
 
 	/**
-	 * 
+	 *
 	 * @param name
 	 * @param kana
 	 * @param pass
