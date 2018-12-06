@@ -18,7 +18,7 @@
 <c:out value="小人料金：${reserve.childCharge}" /><br>
 
 <h3>予約詳細</h3>
-<c:out value="予約ID：${reserve.reserveId}" /><br>
+
 <c:out value="大人：${reserve.numOfAdults}" /><br>
 <c:out value="小人：${reserve.numOfChildren}" /><br>
 <c:out value="チェックイン日：${reserve.checkin}" /><br>
