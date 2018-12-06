@@ -46,7 +46,13 @@ public class Reserve implements Serializable {
 
 	public Reserve(){}
 
-	//予約状況管理時の検索情報保持に使用 インスタンス名
+	/**
+	 * 予約状況管理時の検索情報保持に使用 インスタンス名
+	 * @param day
+	 * @param hotelName
+	 * @param planName
+	 * @param guestName
+	 */
 	public Reserve(String day,String hotelName,String planName,String guestName){
 		this.day = day;
 		this.hotelName = hotelName;
@@ -54,7 +60,37 @@ public class Reserve implements Serializable {
 		this.guestName = guestName;
 	}
 
-	//予約状況詳細表示時に情報格納で使用
+	/**
+	 * 予約状況詳細表示時に情報格納で使用
+	 * @param guestId
+	 * @param guestName
+	 * @param guestKana
+	 * @param guestBirthday
+	 * @param guestTel
+	 * @param guestMail
+	 * @param guestAddress
+	 * @param reserveId
+	 * @param numOfAdults
+	 * @param numOfChildren
+	 * @param checkin
+	 * @param numOfNights
+	 * @param reserveDate
+	 * @param charge
+	 * @param reserveMemo
+	 * @param planName
+	 * @param planImage
+	 * @param planDetail
+	 * @param hotelName
+	 * @param hotelAddress
+	 * @param hotelTel
+	 * @param hotelMail
+	 * @param hotelImage
+	 * @param hotelDetail
+	 * @param adultCapacity
+	 * @param childCapacity
+	 * @param adultCharge
+	 * @param childCharge
+	 */
 	public Reserve(
 			int guestId,
 			String guestName,String guestKana, String guestBirthday,
@@ -154,42 +190,42 @@ public class Reserve implements Serializable {
 	}
 
 
-/**
- * 予約実行用
- * @param numOfAdults
- * @param numOfChildren
- * @param checkin
- * @param numOfNights
- * @param reserveDate
- * @param charge
- * @param reserveMemo
- * @param planId
- * @param planName
- * @param numOfRooms
- * @param planImage
- * @param planDetail
- * @param hotelId
- * @param hotelName
- * @param hotelTel
- * @param hotelAddress
- * @param hotelMail
- * @param hotelImage
- * @param hotelDetail
- * @param roomTypeId
- * @param roomTypeName
- * @param adultCapacity
- * @param childCapacity
- * @param adultCharge
- * @param childCharge
- * @param guestId
- * @param guestName
- * @param guestKana
- * @param guestPass
- * @param guestBirthday
- * @param guestTel
- * @param guestMail
- * @param guestAddress
- */
+	/**
+	 * 予約実行用
+	 * @param numOfAdults
+	 * @param numOfChildren
+	 * @param checkin
+	 * @param numOfNights
+	 * @param reserveDate
+	 * @param charge
+	 * @param reserveMemo
+	 * @param planId
+	 * @param planName
+	 * @param numOfRooms
+	 * @param planImage
+	 * @param planDetail
+	 * @param hotelId
+	 * @param hotelName
+	 * @param hotelTel
+	 * @param hotelAddress
+	 * @param hotelMail
+	 * @param hotelImage
+	 * @param hotelDetail
+	 * @param roomTypeId
+	 * @param roomTypeName
+	 * @param adultCapacity
+	 * @param childCapacity
+	 * @param adultCharge
+	 * @param childCharge
+	 * @param guestId
+	 * @param guestName
+	 * @param guestKana
+	 * @param guestPass
+	 * @param guestBirthday
+	 * @param guestTel
+	 * @param guestMail
+	 * @param guestAddress
+	 */
 
 	public Reserve(int numOfAdults, int numOfChildren, String checkin, int numOfNights,
 			String reserveDate, int charge, String reserveMemo, int planId, String planName, int numOfRooms,
@@ -198,7 +234,7 @@ public class Reserve implements Serializable {
 			String roomTypeName, int adultCapacity, int childCapacity, int adultCharge, int childCharge, int guestId,
 			String guestName, String guestKana, String guestPass, String guestBirthday, String guestTel,
 			String guestMail, String guestAddress) {
-//		this.reserveId = reserveId;
+		//this.reserveId = reserveId;
 		this.numOfAdults = numOfAdults;
 		this.numOfChildren = numOfChildren;
 		this.checkin = checkin;
@@ -236,8 +272,10 @@ public class Reserve implements Serializable {
 		this.guestAddress = guestAddress;
 	}
 
-	//getter
-	//検索条件で利用
+	/**
+	 * getter検索条件で利用
+	 * @return
+	 */
 	public String getDay() { return day; }
 	public String getHotelName() { return hotelName; }
 	public String getPlanName() { return planName; }
@@ -279,7 +317,11 @@ public class Reserve implements Serializable {
 	public String getRoomTypeName() {return roomTypeName;}
 	public String getGuestPass() {return guestPass;}
 
-  public void setNumOfAdults(int numOfAdults) {this.numOfAdults = numOfAdults;}
+	/**
+	 * setter
+	 */
+	public void setNumOfAdults(int numOfAdults) {this.numOfAdults = numOfAdults;}
 	public void setNumOfChildren(int numOfChildren) {this.numOfChildren = numOfChildren;}
 	public void setCharge(int charge) {this.charge = charge;}
+	public void setReserveMemo(String reserveMemo) {this.reserveMemo = reserveMemo;}
 }
