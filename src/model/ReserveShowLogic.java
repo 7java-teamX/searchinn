@@ -5,7 +5,7 @@ import java.util.List;
 import dao.ReserveShowDAO;
 
 public class ReserveShowLogic {
-	//
+	//管理者用予約管理ロジック
 	public List<Reserve> excecute(Reserve refineSearch){
 		ReserveShowDAO dao = new ReserveShowDAO();
 		List<Reserve> reserveList = dao.selectReserve(refineSearch);

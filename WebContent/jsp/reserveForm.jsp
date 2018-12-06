@@ -52,6 +52,7 @@
 		</div>
 		<input type="submit" value="予約（確認画面へ）">
 	</form>
+	<hr>
 
 	<h4><c:out value="${calMap.year}年${calMap.month}月の空室状況"/></h4>
 

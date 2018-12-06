@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import model.Guest;
 import model.Plan;
 import model.Reserve;
+import model.ReserveCheck;
 import model.ReserveDateLogic;
 import model.ReserveDoneLogic;
 import model.ShowCalendarLogic;
@@ -81,17 +82,29 @@ public class PlanReserveServlet extends HttpServlet {
 		int charge = numOfAdults * plan.getAdultCharge();
 		String reserveMemo = request.getParameter("memo");
 
+		//planIdの呼び出し
+		int planId  = plan.getPlanId();
+
+		//予約期間内の部屋数が問題ないかを確認処理 return:boolean
+		ReserveCheck rc = new ReserveCheck();
+		boolean bool = rc.checkReserve(planId, checkin, numOfNights);
+		if(bool) {
+			Reserve reserve = new Reserve(numOfAdults, numOfChildren, checkin, numOfNights, reserveDate, charge
+					, reserveMemo, plan.getPlanId(), plan.getPlanName(), plan.getNumRoom(), plan.getPlanImage()
+					, plan.getPlanDetail(), plan.getHotelId(), plan.getHotelName(), plan.getHotelTel(), plan.getHotelAddress()
+					, plan.getHotelmail(), plan.getHotelImage(), plan.getHotelDetail(), plan.getRoomTypeId(), plan.getRoomTypeName()
+					, plan.getAdultCapacity(), plan.getChildCapacity(), plan.getAdultCharge(), plan.getChildCharge(), loginUser.getGuestId()
+					, loginUser.getName(), loginUser.getKana(), loginUser.getPass(), loginUser.getBirthday(), loginUser.getTel()
+					, loginUser.getMail(), loginUser.getAddress());
+			session.setAttribute("reserve", reserve);
+			path = "/jsp/reserveConfirm.jsp";
+		} else if(!bool) {
+			request.setAttribute("errMsg", "空き室が超過しているので予約できません");
+			path = "/jsp/reserveForm.jsp";
+		}
 
 
-		Reserve reserve = new Reserve(numOfAdults, numOfChildren, checkin, numOfNights, reserveDate, charge
-				, reserveMemo, plan.getPlanId(), plan.getPlanName(), plan.getNumRoom(), plan.getPlanImage()
-				, plan.getPlanDetail(), plan.getHotelId(), plan.getHotelName(), plan.getHotelTel(), plan.getHotelAddress()
-				, plan.getHotelmail(), plan.getHotelImage(), plan.getHotelDetail(), plan.getRoomTypeId(), plan.getRoomTypeName()
-				, plan.getAdultCapacity(), plan.getChildCapacity(), plan.getAdultCharge(), plan.getChildCharge(), loginUser.getGuestId()
-				, loginUser.getName(), loginUser.getKana(), loginUser.getPass(), loginUser.getBirthday(), loginUser.getTel()
-				, loginUser.getMail(), loginUser.getAddress());
-		session.setAttribute("reserve", reserve);
-		path = "/jsp/reserveConfirm.jsp";
+
 		RequestDispatcher dis = request.getRequestDispatcher(path);
 		dis.forward(request, response);
 	}
