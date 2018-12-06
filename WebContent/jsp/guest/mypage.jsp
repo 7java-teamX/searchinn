@@ -19,7 +19,7 @@
 	 	<div class="login-container">
 	 	<br>
 		<p><a href="#" class="square_btn">予約確認</a></p>
-		<p><a href="#" class="square_btn">会員情報</a></p>
+		<p><a href="/searchinn/gGuestInfoChangeForm.jsp" class="square_btn">会員情報</a></p>
 		<br>
 	</div>
 </div>

@@ -56,7 +56,7 @@ public class AdminLoginServlet extends HttpServlet {
 			RequestDispatcher dis = request.getRequestDispatcher("/jsp/admin/admin.jsp");
 			dis.forward(request, response);
 		} else {
-			response.sendRedirect("/adminLogin.jsp");
+			response.sendRedirect("/searchinn/jsp/admin/adminLogin.jsp");
 		}
 	}
 
