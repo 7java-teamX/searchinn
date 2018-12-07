@@ -1,5 +1,6 @@
 package model;
 
+import beans.Reserve;
 import dao.ReserveInsertDAO;
 
 public class ReserveDoneLogic {

@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.RoomType;
+import beans.RoomType;
 
 public class RoomTypeDAO {
 	private final String DRIVER_NAME = "com.mysql.jdbc.Driver";

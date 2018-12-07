@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import beans.Guest;
 import dao.GuestDAO;
-import model.Guest;
 import model.GuestLoginLogic;
 
 /**

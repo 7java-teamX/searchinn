@@ -9,7 +9,7 @@ import java.sql.SQLException; //DB関連のエラー
 import java.util.ArrayList; //
 import java.util.List; //
 
-import model.Reserve;
+import beans.Reserve;
 
 
 public class GReserveShowDAO {

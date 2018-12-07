@@ -2,6 +2,7 @@ package model;
 
 import java.util.List;
 
+import beans.Reserve;
 import dao.ReserveShowDAO;
 
 public class ReserveShowLogic {

@@ -1,5 +1,6 @@
 package model;
 
+import beans.RoomType;
 import dao.RoomTypeDAO;
 
 public class RoomTypeEditLogic {

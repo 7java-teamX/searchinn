@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import model.Guest;
+import beans.Guest;
 
 public class GuestDAO {
 	// ドライバーの設定

@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.Guest;
+import beans.Guest;
+import beans.Plan;
+import beans.Reserve;
 import model.MakeDay;
-import model.Plan;
-import model.Reserve;
 import model.ReserveCheck;
 import model.ReserveDateLogic;
 import model.ReserveDoneLogic;

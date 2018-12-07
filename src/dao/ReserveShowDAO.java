@@ -9,7 +9,7 @@ import java.sql.SQLException; //DB関連のエラー
 import java.util.ArrayList; //
 import java.util.List; //
 
-import model.Reserve;
+import beans.Reserve;
 
 //検索条件を元に予約情報をarrayListで抽出させる
 

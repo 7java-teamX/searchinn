@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import dao.AreaDAO;
+import dao.HotelDAO;
 import dao.PlanDAO;
 import dao.RoomTypeDAO;
 

@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import model.Reserve;
+import beans.Reserve;
 
 public class ReserveInsertDAO {
 	public boolean insert(Reserve reserve) {

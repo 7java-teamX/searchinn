@@ -2,6 +2,7 @@ package model;
 
 import java.util.List;
 
+import beans.Reserve;
 import dao.GReserveShowDAO;
 //ゲスト用予約管理ロジック
 

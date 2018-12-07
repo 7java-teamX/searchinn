@@ -1,5 +1,6 @@
 package model;
 
+import beans.Admin;
 import dao.AdminDAO;
 
 

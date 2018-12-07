@@ -1,5 +1,6 @@
 package model;
 
+import beans.Plan;
 import dao.PlanDAO;
 
 public class PlanEditLogic {

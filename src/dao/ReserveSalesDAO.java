@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.SalesInfo;
+import beans.SalesInfo;
 
 public class ReserveSalesDAO {
 	public List<SalesInfo> hotelSales(String term) {

@@ -1,5 +1,6 @@
 package model;
 
+import beans.Guest;
 import dao.GuestDAO;
 
 public class RegisterGuestLogic {

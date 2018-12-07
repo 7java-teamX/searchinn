@@ -2,6 +2,7 @@ package model;
 
 import java.util.List;
 
+import beans.Plan;
 import dao.PlanDAO;
 
 public class HotelSelectLogic {

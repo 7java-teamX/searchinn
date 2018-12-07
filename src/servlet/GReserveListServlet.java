@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import beans.Guest;
+import beans.Reserve;
 import model.GReserveShowLogic;
-import model.Guest;
-import model.Reserve;
 
 @WebServlet("/GReserveListServlet")
 public class GReserveListServlet extends HttpServlet {

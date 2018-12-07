@@ -1,5 +1,6 @@
 package model;
 
+import beans.Guest;
 import dao.AlterGuestDAO;
 
 public class GuestAlterLogic {
