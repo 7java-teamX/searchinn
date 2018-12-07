@@ -16,10 +16,6 @@ import model.AdminLoginLogic;
 /**
  * Servlet implementation class AdminLoginServlet
  */
-/**
- * @author 3BC1_12
- *
- */
 @WebServlet("/AdminLoginServlet")
 public class AdminLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -40,24 +36,23 @@ public class AdminLoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// リクエストパラメーターの取得
 		request.setCharacterEncoding("UTF-8");
-		String id = request.getParameter("id");
+		String name = request.getParameter("name");
 		String pass = request.getParameter("pass");
 
-		Admin admin = new Admin(id, pass);
+		Admin admin = new Admin(name, pass);
 		//ログイン処理の生成
 		AdminLoginLogic adLog = new AdminLoginLogic();
 		boolean isLogin = adLog.execute(admin);
 		//ログイン成功時の処理
 		if (isLogin) {
-			//管理者情報をセッションスコープに保存
+			//ユーザー情報をセッションスコープに保存
 			HttpSession ses = request.getSession();
 			ses.setAttribute("admin", admin);
 			//ログイン結果を画面にフォワード
-			RequestDispatcher dis = request.getRequestDispatcher("/jsp/admin/admin.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("/admin.jsp");
 			dis.forward(request, response);
 		} else {
-			response.sendRedirect("/adminLogin.jsp");
+			response.sendRedirect("/searchinn/adminLogin.jsp");
 		}
 	}
-
 }
