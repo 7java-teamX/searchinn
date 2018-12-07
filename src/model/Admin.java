@@ -2,6 +2,7 @@ package model;
 
 import java.io.Serializable;
 
+
 public class Admin implements Serializable{
 	private String id;
 	private String pass;

@@ -1,8 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,28 +10,31 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.SalesInfo;
-import model.ShowSalesLogic;
+import model.Guest;
 
 /**
- * Servlet implementation class SalesServlet
+ * Servlet implementation class GuestInfoTEST
  */
-@WebServlet("/SalesServlet")
-public class SalesServlet extends HttpServlet {
+@WebServlet("/GuestInfoTEST")
+public class GuestInfoTEST extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ShowSalesLogic ssLogic = new ShowSalesLogic();
-		request.setCharacterEncoding("utf-8");
-		Map<String,List<SalesInfo>> salesMap = ssLogic.execute(request.getParameter("term"));
-		HttpSession session = request.getSession();
-		session.setAttribute("hotelSales", salesMap.get("hotelSales"));
-		session.setAttribute("areaSales", salesMap.get("areaSales"));
-		session.setAttribute("totalSales", salesMap.get("totalSales"));
-		RequestDispatcher dis =request.getRequestDispatcher("/jsp/sales.jsp");
+		int id = 1;
+		String name = "松野英治 ";
+		String kana = "マツノエイジ ";
+		String birthday = "1990-08-21";
+		//String pass = "1990-08-21";
+		String tel = "08096796401";
+		String mail = "0001@sample.ne.jp";
+		String address = "広島県呉市東三津田町";
+		Guest guest = new Guest(id,  name,  kana,  birthday,  tel, mail,  address);
+		HttpSession ses = request.getSession();
+		ses.setAttribute("loginUser",guest );
+		RequestDispatcher dis = request.getRequestDispatcher("/gGuestInfo.jsp");
 		dis.forward(request, response);
 	}
 
@@ -41,7 +42,8 @@ public class SalesServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

@@ -21,10 +21,11 @@
 
 	 	<h2 class="login-header">管理者ログイン画面</h2>
 
-	 	<form class="login-container">
-	    <p><input type="text" placeholder="管理者ID"></p>
-	    <p><input type="password" placeholder="Password"></p>
-	    <p><input type="submit" value="管理者ログイン" ></p>
+
+	 	<form class="login-container" action="/searchinn/AdminLoginServlet" method="post">
+		    <p><input type="text" name= "id" placeholder="管理者ID"></p>
+		    <p><input type="password" name="pass" placeholder="Password"></p>
+		    <p><input type="submit" value="管理者ログイン" ></p>
 	  	</form>
 
 		<p>

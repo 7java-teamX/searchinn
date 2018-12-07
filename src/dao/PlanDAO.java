@@ -16,6 +16,7 @@ public class PlanDAO {
 	private final String JDBC_URL = "jdbc:mysql://localhost:3306/inn";
 	private final String DB_USER = "root";
 	private final String DB_PASS = "root";
+	//private final String DB_PASS = "Reina9110Nao";
 	/**
 	 * ホテル選択後のプラン一覧表示に使用
 	 * @param hotelId
