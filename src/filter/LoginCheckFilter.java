@@ -20,6 +20,8 @@ public abstract class LoginCheckFilter implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 
+		//ログイン情報の確認
+
 
 		//フォワード処理
 		RequestDispatcher dis = request.getRequestDispatcher(path);
