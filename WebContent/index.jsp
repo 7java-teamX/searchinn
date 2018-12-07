@@ -69,7 +69,7 @@
 
 <body>
 
-	<jsp:include page="/jsp/header.jsp"/>
+	<jsp:include page="/include/header.jsp"/>
 
 	<div class="title">
 		<h1><a href="#">BOOKINN.com</a></h1>
@@ -89,7 +89,7 @@
 	<h4 class="siro">予約確定</h4>
 	</div>
 
-	<jsp:include page="/jsp/footer.jsp"/>
+	<jsp:include page="/include/footer.jsp"/>
 
 
 </body>
