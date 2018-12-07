@@ -2,10 +2,7 @@ package model;
 
 import dao.AdminDAO;
 
-/**
- * @author 3BC1_12
- *
- */
+
 public class AdminLoginLogic {
 	public boolean execute(Admin admin) {
 		AdminDAO adminDao = new AdminDAO();

@@ -14,6 +14,12 @@ public class Guest implements Serializable{
 
 	public Guest() {}
 
+	//顧客ログイン時に使用
+	public Guest(String mail,String pass) {
+		this.mail = mail;
+		this.pass = pass;
+	}
+
 	/**
 	 * 	顧客情報一覧時使用
 	 *  管理者側顧客情報検索時使用
