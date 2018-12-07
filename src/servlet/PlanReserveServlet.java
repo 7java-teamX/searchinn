@@ -55,7 +55,7 @@ public class PlanReserveServlet extends HttpServlet {
 			session.setAttribute("calMap", scLogic.execute(plan.getPlanId(),ym));
 			//
 
-			//今日の日付　3か月後の日付を取得しスコープに格納
+			//今日の日付 3か月後の日付を取得しスコープに格納
 			MakeDay make = new MakeDay();
 			String today = make.makeToday();
 			String afterDay = make.make3Month();
@@ -78,11 +78,12 @@ public class PlanReserveServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String path = null;
-//テスト用
-		Guest loginUser = new Guest(111, "井上健太郎", "いのうえけんたろう", "1234", "1986-02-17", "08012345678", "1234@sample.com", "大阪府");
-//
+		//テスト用
+		//Guest loginUser = new Guest(111, "井上健太郎", "いのうえけんたろう", "1234", "1986-02-17", "08012345678", "1234@sample.com", "大阪府");
+		//
 		Plan plan = (Plan)session.getAttribute("plan");
-//本番用		Guest loginUser = (Guest)session.getAttribute("loginUser");
+		//本番用
+		Guest loginUser = (Guest)session.getAttribute("loginUser");
 		int numOfAdults = Integer.parseInt(request.getParameter("numAdult"));
 		int numOfChildren = Integer.parseInt(request.getParameter("numChild"));
 		String checkin = request.getParameter("checkin");
@@ -109,7 +110,15 @@ public class PlanReserveServlet extends HttpServlet {
 					, loginUser.getName(), loginUser.getKana(), loginUser.getPass(), loginUser.getBirthday(), loginUser.getTel()
 					, loginUser.getMail(), loginUser.getAddress());
 			session.setAttribute("reserve", reserve);
-			path = "/jsp/reserveConfirm.jsp";
+
+			//
+			if(loginUser != null) {
+				path = "/jsp/reserveConfirm.jsp";
+			} else {
+				path = "/jsp/guest/reserveConfirm.jsp";
+			}
+
+
 		} else if(!bool) {
 			request.setAttribute("errMsg", "空き室が超過しているので予約できません");
 			path = "/jsp/reserveForm.jsp";
