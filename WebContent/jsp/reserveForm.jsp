@@ -14,7 +14,7 @@
 			<h3>【宿泊日程】</h3>
 			<p>
 				宿泊開始日：
-				<input type="date" name="checkin"
+				<input type="date" name="checkin" value="<c:out value="${today}" />"
 				min="<c:out value="${today}" />" max="<c:out value="${afterDay}" />">
 			</p>
 			<p>

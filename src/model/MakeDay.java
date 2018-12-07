@@ -5,12 +5,12 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class MakeDay {
-	//public static void main(String []args) {
-		//makeToday();
-		//make3Month();
-	//}
+	/*public static void main(String []args) {
+		makeToday();
+		make3Month();
+	}*/
 
-	public String makeToday(){
+	public  String makeToday(){
 		Date day = new Date();
 		String strDay ="";
         strDay = new SimpleDateFormat("yyyy-MM-dd").format(day);
@@ -18,7 +18,7 @@ public class MakeDay {
 		return strDay;
 	}
 
-	public String make3Month() {
+	public  String make3Month() {
 		Calendar cl = Calendar.getInstance();
 		cl.add(Calendar.MONTH, 3);
 		String afterDay= new SimpleDateFormat("yyyy-MM-dd").format(cl.getTime());
