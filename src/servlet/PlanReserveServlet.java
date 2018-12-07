@@ -62,6 +62,7 @@ public class PlanReserveServlet extends HttpServlet {
 
 			session.setAttribute("today",today );
 			session.setAttribute("afterDay",afterDay );
+
 			path = "/jsp/reserveForm.jsp";
 			break;
 		}
