@@ -22,11 +22,23 @@
 				</tr>
 				<tr>
 					<th>ホテルID</th>
-					<td><input type="number" min="1" name="hotelId" value="<c:out value="${plan.hotelId}" />" /></td>
+					<td>
+					<select>
+						<c:forEach var="hotel" items="${hotelAll}">
+							<option value="${hotel.hotelId}">${hotel.hotelId}(${hotel.hotelName})</option>
+						</c:forEach>
+					</select>
+					</td>
 				</tr>
 				<tr>
 					<th>部屋タイプID</th>
-					<td><input type="number" name="roomTypeId" value="<c:out value="${plan.roomTypeId}" />" /></td>
+						<td>
+							<select>
+								<c:forEach var="roomType" items="${roomTypeAll}">
+								 	<option value="${roomType.roomTypeId}">${roomType.roomTypeId}(${roomType.roomTypeName}：大人最大${roomType.adultCapacity}人，小人最大${roomType.childCapacity}人，大人料金${roomType.adultCharge}円，小人料金${roomType.childCharge}円)</option>
+								</c:forEach>
+							</select>
+						</td>
 				</tr>
 				<tr>
 					<th>部屋数</th>
