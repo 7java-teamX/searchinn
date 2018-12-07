@@ -10,14 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.RoomType;
-import model.RoomTypeLogic;
+import model.Plan;
+import model.PlanEditLogic;
 
 /**
- * Servlet implementation class RoomTypeServlet
+ * Servlet implementation class PlanEditServlet
  */
-@WebServlet("/RoomTypeServlet")
-public class RoomTypeServlet extends HttpServlet {
+@WebServlet("/PlanEditServlet")
+public class PlanEditServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -27,29 +27,25 @@ public class RoomTypeServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		String action = request.getParameter("action");
 		String path = null;
-		RoomType roomType = (RoomType) session.getAttribute("roomType");
-		RoomTypeLogic rtLogic = new RoomTypeLogic();
+		Plan plan = (Plan) session.getAttribute("plan");
+		PlanEditLogic peLogic = new PlanEditLogic();
 
 		switch (action) {
 		case "editDone":
-			rtLogic.update(roomType);
+			peLogic.update(plan);
 
 			path = "/jsp/done.jsp";
 //			path = "/FacilityServlet";
 			break;
 
 		case "insertDone":
-			rtLogic.insert(roomType);
 
-			path = "/jsp/done.jsp";
-//			path = "/FacilityServlet";
 			break;
 		default:
 			break;
 		}
 		RequestDispatcher dis = request.getRequestDispatcher(path);
-		dis.forward(request, response);
-	}
+		dis.forward(request, response);	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -58,31 +54,35 @@ public class RoomTypeServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
 		String action = request.getParameter("action");
-		RoomType roomType = null;
-		String path =null;
 
-		String roomTypeName = request.getParameter("roomTypeName");
-		int adultCapacity = Integer.parseInt(request.getParameter("adultCapacity"));
-		int childCapacity = Integer.parseInt(request.getParameter("childCapacity"));
-		int adultCharge = Integer.parseInt(request.getParameter("adultCharge"));
-		int childCharge = Integer.parseInt(request.getParameter("childCharge"));
+		String planName = request.getParameter("planName");
+		int hotelId = Integer.parseInt(request.getParameter("hotelId"));
+		int roomTypeId = Integer.parseInt(request.getParameter("roomTypeId"));
+		int numRoom = Integer.parseInt(request.getParameter("numRoom"));
+		String planImage = request.getParameter("planImage");
+		String planDetail = request.getParameter("planDetail");
+		Plan plan = null;
+		String path = null;
+
 
 		switch (action) {
 		case "editConfirm":
-			int roomTypeId =  Integer.parseInt(request.getParameter("roomTypeId"));
-			roomType = new RoomType(roomTypeId, roomTypeName, adultCapacity, childCapacity, adultCharge, childCharge);
-			path = "/jsp/roomTypeEditConfirm.jsp";
+			int planId = Integer.parseInt(request.getParameter("planId"));
+
+			plan = new Plan(planId, planName, hotelId, roomTypeId, numRoom, planImage, planDetail);
+			path = "/jsp/planEditConfirm.jsp";
 			break;
 
 		case "insertConfirm":
-			roomType = new RoomType(roomTypeName, adultCapacity, childCapacity, adultCharge, childCharge);
-			path = "/jsp/roomTypeInsertConfirm.jsp";
+
 			break;
 		}
-		session.setAttribute("roomType", roomType);
+
+		session.setAttribute("plan", plan);
 
 		RequestDispatcher dis = request.getRequestDispatcher(path);
 		dis.forward(request, response);
+
 	}
 
 }

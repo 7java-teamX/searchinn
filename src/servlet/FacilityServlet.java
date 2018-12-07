@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.Plan;
 import model.RoomType;
 import model.ShowFacilityLogic;
 
@@ -25,10 +26,12 @@ public class FacilityServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@SuppressWarnings("unchecked")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String path = null;
 		String action = request.getParameter("action");
+		int index;
 
 		if(action == null) {
 			ShowFacilityLogic sfLogic = new ShowFacilityLogic();
@@ -42,7 +45,7 @@ public class FacilityServlet extends HttpServlet {
 		}else {
 			switch (action) {
 			case "roomTypeEdit":
-				int index = Integer.parseInt(request.getParameter("index"));
+				index = Integer.parseInt(request.getParameter("index"));
 				List<RoomType> roomTypeAll = (List<RoomType>) session.getAttribute("roomTypeAll");
 				session.setAttribute("roomType", roomTypeAll.get(index));
 
@@ -50,10 +53,17 @@ public class FacilityServlet extends HttpServlet {
 				break;
 
 			case "roomTypeAdd":
-
-
 				path = "/jsp/roomTypeInsert.jsp";
 				break;
+
+			case "planEdit":
+				index = Integer.parseInt(request.getParameter("index"));
+				List<Plan> planAll = (List<Plan>) session.getAttribute("planAll");
+				session.setAttribute("plan", planAll.get(index));
+
+				path = "/jsp/planEdit.jsp";
+				break;
+
 			} //switch
 		} //if else
 

@@ -101,7 +101,7 @@
 					<td><c:out value="${plan.numRoom}" /></td>
 					<td><c:out value="${plan.planImage}" /></td>
 					<td><c:out value="${plan.planDetail}" /></td>
-					<td><a href="/searchinn/FacilityServlet?action=roomType&index=${status.index}">編集</a></td>
+					<td><a href="/searchinn/FacilityServlet?action=planEdit&index=${status.index}">編集</a></td>
 				</tr>
 			</c:forEach>
 		</table>

@@ -2,7 +2,7 @@ package model;
 
 import dao.RoomTypeDAO;
 
-public class RoomTypeLogic {
+public class RoomTypeEditLogic {
 	public void update(RoomType roomType ) {
 		RoomTypeDAO rtDAO = new RoomTypeDAO();
 		rtDAO.update(roomType);

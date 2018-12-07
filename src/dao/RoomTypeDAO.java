@@ -68,16 +68,17 @@ public class RoomTypeDAO {
 			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
 
 			String sql ="UPDATE room_type_t"
-					+ " SET room_type_id=?,room_type_name=?"
-					+ " ,adult_capacity=?,child_capacity=?,adult_charge=?,child_charge=?";
+					+ " SET room_type_name=?"
+					+ " ,adult_capacity=?,child_capacity=?,adult_charge=?,child_charge=?"
+					+ " WHERE room_type_id=?";
 
 			PreparedStatement pSmt = conn.prepareStatement(sql);
-			pSmt.setInt(1, roomType.getRoomTypeId());
-			pSmt.setString(2, roomType.getRoomTypeName());
-			pSmt.setInt(3, roomType.getAdultCapacity());
-			pSmt.setInt(4, roomType.getChildCapacity());
-			pSmt.setInt(5, roomType.getAdultCharge());
-			pSmt.setInt(6, roomType.getChildCharge());
+			pSmt.setString(1, roomType.getRoomTypeName());
+			pSmt.setInt(2, roomType.getAdultCapacity());
+			pSmt.setInt(3, roomType.getChildCapacity());
+			pSmt.setInt(4, roomType.getAdultCharge());
+			pSmt.setInt(5, roomType.getChildCharge());
+			pSmt.setInt(6, roomType.getRoomTypeId());
 
 			int result = pSmt.executeUpdate();
 			if(result != 1) {
