@@ -27,7 +27,6 @@
 		</div>
 
 		<div class ="area">
-
 			<div class="box" id="kinki">
 				<div class="areaName">近畿エリア</div><br>
 				<div class="descriptArea">
@@ -123,8 +122,6 @@
 		});
 	});
 </script>
-
-
 
 </body>
 </html>
