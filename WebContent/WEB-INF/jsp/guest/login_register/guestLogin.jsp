@@ -12,7 +12,7 @@
 </head>
 <body>
 
-	<jsp:include page="/jsp/header.jsp"/>
+	<jsp:include page="/include/header.jsp"/>
 
 	<div class="login">
  	<div class="login-triangle"></div>
@@ -34,7 +34,7 @@
 	</h2>
 
 	</div>
-	<jsp:include page="/jsp/footer.jsp"/>
+	<jsp:include page="/include/footer.jsp"/>
 
 </body>
 </html>
