@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>	変更完了</title>
+<title>キャンセル確定</title>
 </head>
 <body>
-<h2>変更完了</h2>
-<p><a href="/searchinn/AGuestListServlet?action=list">一覧ページ</a></p>
+<h1>予約はキャンセルされました</h1>
+
+<a class="btn" href="/searchinn/GReserveListServlet">予約一覧へ戻る</a>
 </body>
 </html>

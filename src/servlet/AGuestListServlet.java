@@ -33,7 +33,7 @@ public class AGuestListServlet extends HttpServlet {
 		// リクエストパラメーターの取得
 		request.setCharacterEncoding("UTF-8");
 		String action = request.getParameter("action");
-		System.out.println(action);
+	System.out.println(action);
 		if (action != null && action.equals("list")) {
 			System.out.println("aGuestListServlet");
 			GuestShowLogic guestShowLogic = new GuestShowLogic();
