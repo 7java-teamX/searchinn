@@ -8,8 +8,6 @@
 <link rel="stylesheet" type="text/css" href="/searchinn/css/registerGuestFormStyle.css">
 <title>会員情報入力確認</title>
 
-
-
 </head>
 <body>
 <div class="main1">

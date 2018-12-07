@@ -77,5 +77,6 @@ public class RegisterGuestServlet extends HttpServlet {
 			dis.forward(request, response);
 		}
 
+
 	}
 }

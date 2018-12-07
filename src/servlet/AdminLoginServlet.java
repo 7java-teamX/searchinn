@@ -54,7 +54,5 @@ public class AdminLoginServlet extends HttpServlet {
 		} else {
 			response.sendRedirect("/searchinn/adminLogin.jsp");
 		}
-
 	}
-
 }

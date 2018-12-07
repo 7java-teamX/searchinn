@@ -2,6 +2,7 @@ package model;
 
 import dao.AdminDAO;
 
+
 public class AdminLoginLogic {
 	public boolean execute(Admin admin) {
 		AdminDAO adminDao = new AdminDAO();

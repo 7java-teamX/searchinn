@@ -16,6 +16,7 @@
 
 	<p>
 		<a class="center" href="/searchinn/jsp/index.jsp">TOPへ戻る</a>
+
 	</p>
 	</div>
 
