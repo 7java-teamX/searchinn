@@ -14,7 +14,8 @@
 			<h3>【宿泊日程】</h3>
 			<p>
 				宿泊開始日：
-				<input type="date" name="checkin">
+				<input type="date" name="checkin"
+				min="<c:out value="${today}" />" max="<c:out value="${afterDay}" />">
 			</p>
 			<p>
 				泊数：
@@ -52,6 +53,11 @@
 		</div>
 		<input type="submit" value="予約（確認画面へ）">
 	</form>
+
+	<c:if test="${not empty errMsg}">
+		<h3><c:out value="${errMsg}"></c:out></h3>
+	</c:if><!-- 予約重複時にエラーメッセージの出力を行う -->
+
 	<hr>
 
 	<h4><c:out value="${calMap.year}年${calMap.month}月の空室状況"/></h4>

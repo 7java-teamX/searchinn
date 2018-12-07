@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.Guest;
+import model.MakeDay;
 import model.Plan;
 import model.Reserve;
 import model.ReserveCheck;
@@ -53,6 +54,14 @@ public class PlanReserveServlet extends HttpServlet {
 			Plan plan = (Plan)session.getAttribute("plan");
 			session.setAttribute("calMap", scLogic.execute(plan.getPlanId(),ym));
 			//
+
+			//今日の日付　3か月後の日付を取得しスコープに格納
+			MakeDay make = new MakeDay();
+			String today = make.makeToday();
+			String afterDay = make.make3Month();
+
+			session.setAttribute("today",today );
+			session.setAttribute("afterDay",afterDay );
 			path = "/jsp/reserveForm.jsp";
 			break;
 		}
@@ -85,7 +94,9 @@ public class PlanReserveServlet extends HttpServlet {
 		//planIdの呼び出し
 		int planId  = plan.getPlanId();
 
-		//予約期間内の部屋数が問題ないかを確認処理 return:boolean
+		//予約期間内の部屋数が問題ないかを確認処理
+		//return:boolean   true時 reserveConfirm.jspにフォワード処理
+		//false時はreserveForm.jspにフォワード処理
 		ReserveCheck rc = new ReserveCheck();
 		boolean bool = rc.checkReserve(planId, checkin, numOfNights);
 		if(bool) {

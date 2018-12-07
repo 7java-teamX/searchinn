@@ -18,8 +18,8 @@ public class ReserveDAO {
 		String DRIVER_NAME ="com.mysql.jdbc.Driver" ;
 		String JDBC_URL = "jdbc:mysql://localhost:3306/inn";
 		String DB_user = "root";
-		//String DR_pass = "root";
-		String DR_pass = "Reina9110Nao";
+		String DR_pass = "root";
+		//String DR_pass = "Reina9110Nao";
 
 		int reserveMax[] = new int[31];
 		int reserveCount[] = new int[31];  //最大31日まで部屋の予約数を配列で格納
@@ -95,8 +95,8 @@ public class ReserveDAO {
 		String DRIVER_NAME ="com.mysql.jdbc.Driver" ;
 		String JDBC_URL = "jdbc:mysql://localhost:3306/inn";
 		String DB_user = "root";
-		//String DR_pass = "root";
-		String DR_pass = "Reina9110Nao";
+		String DR_pass = "root";
+		//String DR_pass = "Reina9110Nao";
 
 		//配列では固定長のため可変長利用する
 		List<Integer> roomNumList = new ArrayList<>();
