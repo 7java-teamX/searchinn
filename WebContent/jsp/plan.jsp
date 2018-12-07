@@ -7,32 +7,54 @@
 <head>
 <meta charset="UTF-8">
 <title>BOOKINN | プラン選択</title>
+<link rel="stylesheet" type="text/css" href="/searchinn/css/headerStyle.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/footerStyle.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/reserve.css">
 </head>
 <body>
-<jsp:include page="header.jsp"/>
+<header>
+	<jsp:include page="header.jsp"/>
+</header>
 
-<c:forEach var="plan" items="${planList}" varStatus="status">
-	<div>
-		<div>
+<div class="container">
+	<c:forEach var="plan" items="${planList}" varStatus="status">
+	<div class="box">
+		<span class="planName">
 			<c:out value="${plan.planName}" />
-			<c:out value="${plan.planDetail}" />
-			部屋タイプ：<c:out value="${plan.roomTypeName}" /><br>
-			大人：<c:out value="${plan.adultCapacity}" />・
-			小人：<c:out value="${plan.childCapacity}" />まで<br>
+		</span>
 
-			大人：<c:out value="${plan.adultCharge}" />円
-			小人：<c:out value="${plan.childCharge}" />円
+		<div class="descriptArea">
+			<div class="descript">
+				部屋タイプ：<c:out value="${plan.roomTypeName}" /><br>
+
+				<small>詳細</small>
+				<div class="text">
+					<c:out value="${plan.planDetail}" />
+				</div>
+				<p>
+					大人：<c:out value="${plan.adultCapacity}" />人・
+					小人：<c:out value="${plan.childCapacity}" />人まで<br>
+				</p>
+				<p>
+					大人：<c:out value="${plan.adultCharge}" />円
+					小人：<c:out value="${plan.childCharge}" />円
+				</p>
+			</div>
+			<img src="<c:out value="${plan.planImage}" />" width="300" height="300">
 		</div>
-		<div>
-			<c:out value="${plan.planImage}" />
-		</div>
-		<div>
-			<a href="/searchinn/PlanSelectServlet?action=toReserve&index=${status.index}">空室確認・予約</a>
-		</div>
+
+		<a href="/searchinn/PlanSelectServlet?action=toReserve&index=${status.index}">空室確認・予約</a>
+
 	</div>
-</c:forEach>
+	</c:forEach>
+</div>
 
-<jsp:include page="footer.jsp" />
+
+
+<footer>
+	<jsp:include page="footer.jsp" />
+</footer>
+
 
 
 </body>
