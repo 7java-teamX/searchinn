@@ -122,4 +122,25 @@ public class Plan implements Serializable {
 	public String getHotelDetail() {
 		return hotelDetail;
 	}
+
+	/**
+	 * plan_tのぶんだけ
+	 * @param planId
+	 * @param planName
+	 * @param numRoom
+	 * @param planImage
+	 * @param planDetail
+	 * @param roomTypeId
+	 * @param hotelId
+	 */
+	public Plan(int planId, String planName, int hotelId, int roomTypeId, int numRoom, String planImage, String planDetail) {
+		super();
+		this.planId = planId;
+		this.planName = planName;
+		this.numRoom = numRoom;
+		this.planImage = planImage;
+		this.planDetail = planDetail;
+		this.roomTypeId = roomTypeId;
+		this.hotelId = hotelId;
+	}
 }
