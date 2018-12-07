@@ -1,0 +1,164 @@
+@charset "UTF-8";
+
+body {
+	width: 1048px;
+	margin: 0 auto;
+}
+
+.container {
+	margin: 0 auto;
+	width: 90%;
+	border: medium solid #ff006a;
+}
+
+/*日本地図CSS */
+#map {
+	margin: 10px auto;
+	width: 500px;
+	position: relative;
+	border: solid 3px #66FFCC;
+	background: #CCFFFF;
+}
+
+.kinki {
+	position: absolute;
+	bottom: 130px;
+	right: 200px;
+}
+
+.hokkaido {
+	position: absolute;
+	top: 40px;
+	right: 70px;
+}
+
+.kanto {
+	position: absolute;
+	bottom: 100px;
+	right: 80px;
+}
+
+.tyugoku {
+	position: absolute;
+	bottom: 130px;
+	left: 170px;
+}
+
+.sikoku {
+	position: absolute;
+	bottom: 65px;
+	left: 170px;
+}
+
+.kyusyu {
+	position: absolute;
+	bottom: 90px;
+	left: 75px;
+}
+
+.btn {
+	padding: 1px;
+	width: 50px;
+	font-size: 15px;
+	text-align: center; border : solid 1px rgb( 247, 246, 247);
+	border-radius: 5px;
+	background-color: rgb(216, 222, 217);
+	border: solid 1px rgb(247, 246, 247);
+}
+
+.btn:hover {
+	background-color: rgba(231, 113, 38, 0.8);
+	color: rgb(251, 251, 251);
+	cursor: pointer;
+	transition: .8s;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	color: rgb(231, 116, 32);
+}
+
+/* hoteljsp用CSS */
+.area {
+	margin: 10px 25px;
+}
+
+.box {
+	border-bottom: medium solid #66FFCC;
+	border-top: medium solid #66FFCC;
+	margin: 25px;
+	padding: 20px;
+}
+
+.areaName {
+	display: inline-block;
+	border-bottom: solid 3px skyblue;
+	position: relative;
+}
+
+.areaName:after {
+	position: absolute;
+	content: " ";
+	border-bottom: solid 3px #ffc778;
+	bottom: -3px;
+	width: 30%;
+}
+
+.photo {
+	float: left;
+}
+
+.descriptArea{
+	display: flex;
+	justify-content: space-around;
+
+}
+
+/* plan.jsp用CSS */
+.planName {
+	padding: .25em 0 .25em .5em;
+	border-left: 6px solid #AAAAAA;
+	text-align:left;
+}
+.descript{
+	width:400px;
+}
+.text{
+	border-top:solid 3px #CCCCCC;
+	border-bottom:solid 3px #CCCCCC;
+	margin-bottom:10px;
+	height:7em;
+}
+/* topに戻すボタンCSS  */
+#pageTop {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	margin: 80px;
+}
+
+#pageTop i {
+	padding-top: 6px;
+}
+
+#pageTop a {
+	display: block;
+	z-index: 999;
+	padding: 8px;
+	border-radius: 30px;
+	width: 35px;
+	height: 35px;
+	background-color: #ff4500;
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+}
+
+#pageTop a:hover {
+	text-decoration: none;
+	opacity: 0.7;
+}
