@@ -33,7 +33,7 @@ public class SalesServlet extends HttpServlet {
 		session.setAttribute("hotelSales", salesMap.get("hotelSales"));
 		session.setAttribute("areaSales", salesMap.get("areaSales"));
 		session.setAttribute("totalSales", salesMap.get("totalSales"));
-		RequestDispatcher dis =request.getRequestDispatcher("/jsp/sales.jsp");
+		RequestDispatcher dis =request.getRequestDispatcher("/WEB-INF/jsp/admin/sales/sales.jsp");
 		dis.forward(request, response);
 	}
 
