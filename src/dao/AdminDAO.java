@@ -30,8 +30,9 @@ public class AdminDAO {
 			Class.forName(DRIVER_NAME);
 			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
 			//select文の準備
-			String sql = "SELECT admin_id , admin_pass FROM admin_t " +
-						  "WHERE admin_id = ? AND admin_pass = ?";
+			String sql = "SELECT admin_id,admin_pass"
+					+ " FROM admin_t"
+					+ " WHERE admin_id=? AND admin_pass=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setString(1, admin.getId());
 			pStmt.setString(2, admin.getPass());
@@ -42,10 +43,13 @@ public class AdminDAO {
 			if (rs.next()) {
 				isExist = true;
 			}
+			System.out.println(isExist);
 		} catch (SQLException e) {
 			e.printStackTrace();
+			return false;
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
+			return false;
 		} finally {
 			//データベース切断
 			if (conn != null) {
@@ -53,6 +57,7 @@ public class AdminDAO {
 					conn.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
+					return false;
 				}
 			}
 		}

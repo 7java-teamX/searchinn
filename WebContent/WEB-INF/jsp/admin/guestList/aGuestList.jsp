@@ -8,8 +8,8 @@
 <title>顧客情報</title>
 </head>
 <body>
-<p><a href = "/searchinn/jsp/admin/admin.jsp">"管理者機能一覧へ</a></p>
-<p><a href = "/searchinn/AGuestListServlet?action=list">"顧客情報一覧へ</a></p>
+<p><a href = "/searchinn/AdminMenuServlet">"管理者機能一覧へ</a></p>
+<p><a href = "/searchinn/AGuestListServlet?action=list">"顧客情報一覧表示</a></p>
 <p>絞り込み検索</p>
 <form action="/searchinn/GuestInfoServlet" method="post">
 	<p>ゲストID:<input type="number" name="id"></p>

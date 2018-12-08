@@ -32,14 +32,22 @@ public class GuestInfoServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// リクエストパラメーターの取得
 		request.setCharacterEncoding("UTF-8");
-		int id = Integer.parseInt(request.getParameter("id"));
-		GuestShowLogic guestShowLogic = new GuestShowLogic();
-		Guest guest = guestShowLogic.detailSearch(id);
-		HttpSession ses = request.getSession();
-		//1件のユーザー情報の詳細をセッションスコープに保存
-		ses.setAttribute("guestDetail", guest);
-		RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/guest/aGuestInfoDetail.jsp");
+		String action = request.getParameter("action");
+		String path = null;
+		if(action == null) {
+			int id = Integer.parseInt(request.getParameter("id"));
+			GuestShowLogic guestShowLogic = new GuestShowLogic();
+			Guest guest = guestShowLogic.detailSearch(id);
+			HttpSession ses = request.getSession();
+			//1件のユーザー情報の詳細をセッションスコープに保存
+			ses.setAttribute("guestDetail", guest);
+			path = "/WEB-INF/jsp/admin/guestList/aGuestInfoDetail.jsp";
+		} else if(action.equals("change")) {
+			path = "/WEB-INF/jsp/admin/guestList/aGuestInfoChangeForm.jsp";
+		}
+		RequestDispatcher dis = request.getRequestDispatcher(path);
 		dis.forward(request, response);
+
 
 	}
 
@@ -71,7 +79,7 @@ public class GuestInfoServlet extends HttpServlet {
 				List<Guest> guestList = guestShowLogic.refineSearch(guest);
 				//絞り込み検索したユーザー情報をセッションスコープに保存
 				ses.setAttribute("guestList", guestList);
-				RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/guest/aGuestList.jsp");
+				RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/admin/guestList/aGuestList.jsp");
 				dis.forward(request, response);
 
 	}

@@ -33,18 +33,24 @@ public class GuestInfoChangeServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String action = request.getParameter("action");
 		HttpSession ses = request.getSession();
-		Guest guest = (Guest) ses.getAttribute("update");
-		GuestAlterLogic guestAlterLogic = new GuestAlterLogic();
-		//ユーザー情報の変更実行
-		guestAlterLogic.update(guest);
-		if (action.equals("guest")) {
-			ses.setAttribute("loginUser", guest);
-			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/guest//mypage/guestInfo/gGuestInfoChangeDone.jsp");
+		if(action.equals("change")) {
+			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/admin/guestList/aGuestInfoChangeForm.jsp");
 			dis.forward(request, response);
-		} else if(action.equals("admin")){
-			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/guest//mypage/guestInfo/aGuestInfoChangeDone.jsp");
-			dis.forward(request, response);
+		}else {
+			Guest guest = (Guest) ses.getAttribute("update");
+			GuestAlterLogic guestAlterLogic = new GuestAlterLogic();
+			//ユーザー情報の変更実行
+			guestAlterLogic.update(guest);
+			if (action.equals("guest")) {
+				ses.setAttribute("loginUser", guest);
+				RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/guest/mypage/guestInfo/gGuestInfoChangeDone.jsp");
+				dis.forward(request, response);
+			} else if(action.equals("admin")){
+				RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/admin/guestList/aGuestInfoChangeDone.jsp");
+				dis.forward(request, response);
+			}
 		}
+
 	}
 
 	/**
@@ -64,12 +70,12 @@ public class GuestInfoChangeServlet extends HttpServlet {
 		Guest guest = new Guest(guestId, name, kana, tel, email, address);
 		HttpSession ses = request.getSession();
 		ses.setAttribute("update", guest);
-System.out.println(action);
+		System.out.println(action);
 		if (action.equals("guest")) {
-			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/guest//mypage/guestInfo/gGuestInfoChangeConfirm.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/guest/mypage/guestInfo/gGuestInfoChangeConfirm.jsp");
 			dis.forward(request, response);
 		} else if(action.equals("admin")){
-			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/guest//mypage/guestInfo/aGuestInfoChangeConfirm.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/admin/guestList/aGuestInfoChangeConfirm.jsp");
 			dis.forward(request, response);
 		}
 	}

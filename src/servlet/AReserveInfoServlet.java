@@ -36,7 +36,7 @@ public class AReserveInfoServlet extends HttpServlet {
 		session.setAttribute("reserveInfo",reserveInfo);
 
 		//aReserveList.jspのフォワード処理
-		RequestDispatcher dis = request.getRequestDispatcher("aReserveDetail.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/admin/reserveList/aReserveDetail.jsp");
 		dis.forward(request,response);
 
 	}

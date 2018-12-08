@@ -27,7 +27,7 @@ public class AReserveInfoChangeServlet extends HttpServlet {
 		String pass = "";
 
 		if(action == null) {
-			pass = "aReserveInfoChangeForm.jsp";
+			pass = "/WEB-INF/jsp/admin/guestList/aReserveInfoChangeForm.jsp";
 		}
 		else if(action.equals("done")) {
 			//変更確定の処理
@@ -35,7 +35,7 @@ public class AReserveInfoChangeServlet extends HttpServlet {
 			Reserve reserveInfo = (Reserve)session.getAttribute("reserveInfo");
 			ReserveShowLogic rSL = new ReserveShowLogic();
 			rSL.excecute2(reserveInfo);
-			pass = "aReserveInfoChangeDone.jsp";
+			pass = "/WEB-INF/jsp/admin/guestList/aReserveInfoChangeDone.jsp";
 		}
 
 		//aReserveList.jspのフォワード処理
@@ -66,7 +66,7 @@ public class AReserveInfoChangeServlet extends HttpServlet {
 		session.setAttribute("reserveInfo", reserveInfo);
 
 		//aReserveList.jspのフォワード処理
-		RequestDispatcher dis = request.getRequestDispatcher("aReserveInfoChangeConfirm.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/admin/reserveList/aReserveInfoChangeConfirm.jsp");
 		dis.forward(request,response);
 	}
 
