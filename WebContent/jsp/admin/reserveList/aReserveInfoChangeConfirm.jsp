@@ -5,21 +5,61 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>予約変更確認</title>
+
+<link rel="stylesheet" type="text/css" href="/searchinn/css/common.css" >
+<link rel="stylesheet" type="text/css" href="/searchinn/css/admin.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/reserveList.css">
+<title>予約内容変更確認</title>
 </head>
+
 <body>
-<h1>予約内容変更確認</h1>
+<jsp:include page="/include/header.jsp"/>
 
-予約ID:<c:out value="${reserveInfo.reserveId}"/><br>
-メモ:<c:out value="${reserveInfo.reserveMemo}"/><br>
-宿泊日数：<c:out value="${reserveInfo.numOfNights}"/>日<br>
-宿泊期間：<c:out value="${reserveInfo.reserveDate}"/><br>
-大人人数：<c:out value="${reserveInfo.numOfAdults}"/>人<br>
-子供人数：<c:out value="${reserveInfo.numOfChildren}"/>人<br>
-合計料金：<c:out value="${reserveInfo.charge}"/>
+<h2>予約内容変更確認</h2>
+<div class="container">
+	<table class="guest-text2">
+		<tr>
+			<th class="guest-text2">予約ID</th>
+			<td class="guest-text2"><c:out value="${reserveInfo.reserveId}"/></td>
+		</tr>
+		<tr>
+			<th class="guest-text2">宿泊期間</th>
+			<td class="guest-text2"><c:out value="${reserveInfo.reserveDate}"/></td>
+		</tr>
+		<tr>
+			<th class="guest-text2">宿泊日数</th>
+			<td class="guest-text2"><c:out value="${reserveInfo.numOfNights}"/>泊</td>
+		</tr>
 
-<a class="btn" href="AReserveInfoChangeServlet?action=done">予約変更</a>
-<a class="btn" href="AReserveInfoChangeServlet">戻る</a>
+		<tr>
+			<th class="guest-text2">大人人数</th>
+			<td class="guest-text2"><c:out value="${reserveInfo.numOfAdults}"/>人</td>
+		</tr>
+		<tr>
+			<th class="guest-text2">子供人数</th>
+			<td class="guest-text2"><c:out value="${reserveInfo.numOfChildren}"/>人</td>
+		</tr>
+		<tr>
+			<th class="guest-text2">合計料金</th>
+			<td class="guest-text2"><c:out value="${reserveInfo.charge}"/></td>
+		</tr>
+		<tr>
+			<th class="guest-text2">メモ</th>
+			<td class="guest-text2"><c:out value="${reserveInfo.reserveMemo}"/></td>
+		</tr>
+	</table>
+	<p>
+		<small>この内容でお間違いないですか？</small>
+	</p>
 
+
+	<p>
+		<a class="btn" href="AReserveInfoChangeServlet?action=done">予約変更</a>
+		<a class="btn" href="AReserveInfoChangeServlet">戻る</a>
+	</p>
+
+</div>
+<jsp:include page="/include/footer.jsp"/>
 </body>
 </html>

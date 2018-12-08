@@ -68,7 +68,7 @@
 </head>
 
 <body>
-
+	
 	<jsp:include page="/include/header.jsp"/>
 
 	<div class="title">
@@ -79,7 +79,6 @@
 
 	<br>
 	<div id="main">
-
 	<h4 class="siro">ご予約の流れ</h4><span class="spanao">→</span>
 	<h4 class="ao">エリア/ホテル選択</h4><span class="spanao">→</span>
 	<h4 class="ao">プラン選択</h4><span class="spanao">→</span>

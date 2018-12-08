@@ -4,6 +4,7 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="/searchinn/css/common.css" >
+<link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
 <link rel="stylesheet" type="text/css" href="/searchinn/css/admin.css">
 
 <meta charset="UTF-8">
@@ -11,6 +12,7 @@
 </head>
 <body>
 
+<jsp:include page="/include/header.jsp"/>
 	<div class="container">
 		<div class="main_menu">
 			<h2>管理者画面</h2>
@@ -22,9 +24,9 @@
 			</div>
 		</div>
 
-		<p><a class="whiteText" href="/searchinn/jsp/index.jsp">TOPへ戻る</a></p>
 	</div>
 
+<jsp:include page="/include/footer.jsp"/>
 
 </body>
 </html>

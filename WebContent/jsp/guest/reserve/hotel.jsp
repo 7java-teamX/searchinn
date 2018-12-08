@@ -53,7 +53,6 @@
 				<div class="descriptArea">
 					<a href="#"><img  src="/searchinn/photo/kyoto.jpeg" width="280" align="top"></a>
 					<div class="hotel">
-
 					</div>
 				</div>
 			</div>
@@ -61,7 +60,7 @@
 			<div class="box" id="tyugoku">
 				<div class="areaName">中国エリア</div><br>
 				<div class="descriptArea">
-					<a href="#"><img src="/searchinn/photo/kyoto.jpeg" width="280" align="top"></a>
+					<a href="#"><img src="/searchinn//kyoto.jpeg" width="280" align="top"></a>
 					<div class="hotel">
 
 					</div>
@@ -81,7 +80,7 @@
 			<div class="box" id="kyuusyuu">
 				<div class="areaName">九州エリア</div><br>
 				<div class="descriptArea">
-					<a href="#"><img src="/searchinn/photo/kyoto.jpeg" width="280" align="top"></a>
+					<a href="#" class="btn" ><img src="/searchinn/photo/okinawa.jpeg" width="280" align="top"></a>
 					<div class="hotel">
 						<a href="/searchinn/PlanSelectServlet?action=toPlan&hotelId=5">キジムナー</a><br>
 						<a href="/searchinn/PlanSelectServlet?action=toPlan&hotelId=6">マリーナ</a><br>

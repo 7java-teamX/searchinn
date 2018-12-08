@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+.container{
+	border:7px double white;
+	background-color:#c2faf0;
+}
+
+/* aReserveDetail.jsp*/
+.contents-box{
+	border: 2px solid white;
+	height:270px;
+	margin-bottom:20px;
+	background-color:gray;
+}
+.title{
+
+}
+.text{
+	margin-top:10px;
+	border-bottom:3px inset white;
+}
+.info{
+	height:300px;
+	display:flex;
+	justify-content: space-around;
+	background-color:#e1e4e6;
+}
+
+.text-box{
+	margin-top:10px;
+	padding:5px 10px;
+	width:370px;
+	height:240px;
+	border:solid 1px white;
+}
+
+
+.guest-text{
+	border:none;
+	background-color:#e1e4e6;
+	padding:3px;
+	font-size:15px;
+}
+.photo{
+	margin-top:10px;
+	width:370px;
+	height:240px;
+	border:solid 3px white;
+}
+
+
+/* aReserveChangeConfirm.jsp */
+
+.guest-text2{
+	border:none;
+	background-color:#ffffff;
+	padding:3px;
+	font-size:15px;
+}
+.bold{
+	font-weight: bold;
+	font-size: 20px;
+}

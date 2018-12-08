@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-
 .container{
 	margin: 0 auto;
 	width: 1024px;
@@ -16,13 +15,11 @@
 }
 
 .btn {
-
-	padding: 4px 8px;
-	width: 50px;
-	font-size: 15px;
-	text-align: center; border : solid 1px rgb( 247, 246, 247);
-	border-radius: 20px;
-	background-color: skyblue;
+	padding: 5px 10px;
+	text-align: center;
+	border : solid 1px rgb( 247, 246, 247);
+	border-radius: 10px;
+	background-color: #7bf7b6;
 	border: solid 1px #bbffff;
 }
 
@@ -31,6 +28,11 @@
 	color: rgb(251, 251, 251);
 	cursor: pointer;
 	transition: .8s;
+}
+
+.btn:active{
+	bottom: -4px;
+  	margin-bottom: 4px;
 }
 
 /* 送信ボタンcss*/

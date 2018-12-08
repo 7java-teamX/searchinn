@@ -6,18 +6,37 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>売上集計画面</title>
+<link rel="stylesheet" type="text/css" href="/searchinn/css/common.css" >
+<link rel="stylesheet" type="text/css" href="/searchinn/css/admin.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/sales.css">
 </head>
+
 <body>
+<jsp:include page="/include/header.jsp"/>
+<h2>売り上げ集計</h2>
+<div class="container">
+	<p>
+		<a href="/searchinn/jsp/admin/admin.jsp" class="btn">管理者TOP</a>
+	</p>
 	<form action="/searchinn/SalesServlet" method="get">
+	<p>
 		<input type="month" name="term">
-		<input type="submit" value="決定">
+		<input type="submit" value="決定" id="submit">
+	</p>
 	</form>
-	<div>
-		<h3><c:out value="${year}年${month}月の売上" /></h3>
-		<div>
+	<hr>
+	<p>
+			<c:out value="${year}年${month}月の売上" />
+	</p>
+
+	<div class="sales-box">
+	<!-- ホテルの売上 -->
+	<div class="box">
+		<div class="hotelSales">
 			<h4>ホテル</h4>
-			<table class="hotelSales">
+			<table>
 				<tr>
 					<th>エリアID</th>
 					<th>エリア名</th>
@@ -36,37 +55,44 @@
 				</c:forEach>
 			</table>
 		</div>
-		<div>
-			<table class="areaSales">
-			<h4>エリア</h4>
-				<tr>
-					<th>エリアID</th>
-					<th>エリア名</th>
-					<th>売上</th>
-				</tr>
-				<c:forEach var="salesInfo" items="${areaSales}">
+		</div> <!-- box -->
+
+		<div class="box">
+			<div class="areaSales">
+				<table>
+				<h4>エリア</h4>
 					<tr>
-						<td><c:out value="${salesInfo.areaId}" /></td>
-						<td><c:out value="${salesInfo.areaName}" /></td>
-						<td><c:out value="${salesInfo.sales}" /></td>
+						<th>エリアID</th>
+						<th>エリア名</th>
+						<th>売上</th>
 					</tr>
-				</c:forEach>
-			</table>
-		</div>
-		<div>
-			<table class="totalSales">
-			<h4>全体</h4>
-				<tr>
-					<th>売上</th>
-				</tr>
-				<c:forEach var="salesInfo" items="${totalSales}">
+					<c:forEach var="salesInfo" items="${areaSales}">
+						<tr>
+							<td><c:out value="${salesInfo.areaId}" /></td>
+							<td><c:out value="${salesInfo.areaName}" /></td>
+							<td><c:out value="${salesInfo.sales}" /></td>
+						</tr>
+					</c:forEach>
+				</table>
+			</div>
+			<div  class="totalSales">
+				<table>
+				<h4>全体</h4>
 					<tr>
-						<td><c:out value="${salesInfo.sales}" /></td>
+						<th>売上</th>
+						<td>
+							<c:forEach var="salesInfo" items="${totalSales}">
+								<c:out value="${salesInfo.sales}" />
+							</c:forEach>
+						</td>
 					</tr>
-				</c:forEach>
-			</table>
-		</div>
-	</div>
-	<a href="/searchinn/jsp/admin/admin.jsp">管理者TOP</a>
+				</table>
+			</div>
+
+		</div> <!-- box -->
+	</div>  <!--sales-box  -->
+</div>  <!-- continer -->
+
+<jsp:include page="/include/footer.jsp"/>
 </body>
 </html>

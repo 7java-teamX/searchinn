@@ -8,18 +8,21 @@
 
 
 #nav{
-    background-color: #000033;
+    background-color: rgb(33,47,109);
     padding: 10px 70px ;
+      line-height:100px;
 }
 #nav ul{
     padding: 0px;
     margin: 0px;
+
 }
 
 
 #nav ul li {
     display: inline;
     margin-right: 1em;
+
 }
 
 

@@ -10,21 +10,46 @@
 table,th,td{border: solid 1px black;}
 .bg{ 	height:35px; }
 </style>
+<link rel="stylesheet" type="text/css" href="/searchinn/css/common.css" >
+<link rel="stylesheet" type="text/css" href="/searchinn/css/admin.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/reserveList.css">
 </head>
-<body>
-<h2>予約状況閲覧</h2>
-<form action="/searchinn/AReserveInfoServlet" method="post">
-	期間：<input type="date" name="day" value="<c:out value="${refineSearch.day}" />" ><br>
-	ホテルの名前：<input type="text" name="hotelName"
-	value="<c:out value="${refineSearch.hotelName}" />"><br>
-	プランの名前：<input type="text" name="planName"
-	value="<c:out value="${refineSearch.planName}" />"><br>
-	予約者の名前：<input type="text" name="guestName"
-	value="<c:out value="${refineSearch.guestName}" />"><br>
-	<input type="submit" value="送信" class="bg">
-	<a href="/searchinn/AReserveListServlet?action=delete" class="bg">検索条件のリセット</a>
-</form>
 
+<body>
+<jsp:include page="/include/header.jsp"/>
+<h2>予約状況閲覧</h2>
+<div class="container">
+
+<p>
+	<a class="btn" href="/searchinn/jsp/admin/admin.jsp">管理者TOP</a>
+
+</p>
+
+<form action="/searchinn/AReserveInfoServlet" method="post">
+	<table>
+				<tr>
+					<td>期間<input type="date" name="day" value="<c:out value="${refineSearch.day}" />"></td>
+					<td><input type="text" name="hotelName"  value="<c:out value="${refineSearch.hotelName}" />"
+					placeholder="ホテルの名前"></td>
+					<td><input type="text" name="planName"	value="<c:out value="${refineSearch.planName}" />"
+					placeholder="プランの名前"></td>
+					<td><input type="text" name="guestName" value="<c:out value="${refineSearch.guestName}" />"
+					placeholder="予約者の名前"></td>
+					<td>
+						<input type="submit" value="検索" id="submit">&nbsp;	&nbsp;
+						<input type="reset" value="リセット" id="submit">
+					</td>
+				<tr>
+		</table>
+		<p>
+			<small>※予約情報は日付  ホテル名 プラン名 予約者の名前  で絞り込み検索が可能です</small>
+		</p>
+		<p>
+			<a href="/searchinn/AReserveListServlet?action=delete" class="bg">検索条件のリセット</a>
+		</p>
+
+	</form>
 <hr>
 
 <table style="border: solid 1px black;">
@@ -52,7 +77,10 @@ table,th,td{border: solid 1px black;}
 	</tr>
 	</c:forEach>
 </table>
-<hr>
-<a href="/searchinn/jsp/admin/admin.jsp">管理者TOP</a>
+
+
+</div>
+
+<jsp:include page="/include/footer.jsp"/>
 </body>
 </html>
