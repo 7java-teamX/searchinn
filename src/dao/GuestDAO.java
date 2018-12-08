@@ -173,9 +173,9 @@ public class GuestDAO {
 					String kana = rs.getString("guest_kana");
 					String birthday = rs.getString("guest_birthday");
 					String tel = rs.getString("guest_tel");
-					String address = rs.getString("guest_address");
 					String mail = rs.getString("guest_mail");
-					guest = new Guest(guestId, name, kana, birthday, tel, address, mail);
+					String address = rs.getString("guest_address");
+					guest = new Guest(guestId, name, kana, birthday, tel, mail, address);
 
 				}
 			} catch (SQLException e) {

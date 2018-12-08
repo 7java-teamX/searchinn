@@ -6,6 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>予約変更確認</title>
+<link rel="stylesheet" type="text/css" href="/searchinn/css/headerStyle.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/footerStyle.css">
+
 <style>
 .container{
 	margin: 0 auto;
@@ -54,7 +57,12 @@
 </style>
 </head>
 <body>
+<header>
+	<jsp:include page="/include/header.jsp"/>
+</header>
 <h1>予約内容変更確認</h1>
+以下の内容に予約を変更します。<br>
+よろしければ確定ボタンを，修正したい場合は戻るボタンを押してください。<br>
 <c:out value="${reserveInfo.planName}"/><br>
 予約ID:<c:out value="${reserveInfo.reserveId}"/><br>
 メモ:<br><c:out value="${reserveInfo.reserveMemo}"/><br>
@@ -66,10 +74,14 @@
 <div class="">
 こちらの内容で問題ないですか？
 <div class="btnArea">
-	<a class="btn" href="GReserveInfoChangeServlet?index=done">はい</a>
+	<a class="btn" href="GReserveInfoChangeServlet?index=done">確定</a>
 	<a class="btn" href="GReserveInfoChangeServlet">戻る</a>
 </div>
 
 </div>
+<footer>
+	<jsp:include page="/include/footer.jsp" />
+</footer>
+
 </body>
 </html>

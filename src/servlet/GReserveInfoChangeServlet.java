@@ -36,7 +36,7 @@ public class GReserveInfoChangeServlet extends HttpServlet {
 			Reserve reserveInfo = (Reserve)session.getAttribute("reserveInfo");
 			GReserveShowLogic rSL = new GReserveShowLogic();
 			rSL.excecute2(reserveInfo);
-			pass = "gReserveChangeDone.jsp";
+			pass = "/WEB-INF/jsp/guest/mypage/reserve/gReserveChangeDone.jsp";
 			//session.remove
 		}
 		else if(strIndex != null) {
@@ -45,7 +45,7 @@ public class GReserveInfoChangeServlet extends HttpServlet {
 			// indexの数値を元にarrayListから取得しsession-scopeに格納
 			Reserve reserveInfo = reserveList.get(index);
 			session.setAttribute("reserveInfo", reserveInfo);
-			pass = "gReserveChangeForm.jsp";
+			pass = "/WEB-INF/jsp/guest/mypage/reserve/gReserveChangeForm.jsp";
 		}
 
 		//aReserveList.jspのフォワード処理
@@ -77,7 +77,7 @@ public class GReserveInfoChangeServlet extends HttpServlet {
 		session.setAttribute("reserveInfo", reserveInfo);
 
 		//aReserveList.jspのフォワード処理
-		RequestDispatcher dis = request.getRequestDispatcher("gReserveChangeConfirm.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/guest/mypage/reserve/gReserveChangeConfirm.jsp");
 		dis.forward(request,response);
 	}
 

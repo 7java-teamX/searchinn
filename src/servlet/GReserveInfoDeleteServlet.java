@@ -35,7 +35,7 @@ public class GReserveInfoDeleteServlet extends HttpServlet {
 
 		//フォワード処理
 		//aReserveList.jspのフォワード処理
-		RequestDispatcher dis = request.getRequestDispatcher("gReserveCancelDone.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/guest/mypage/reserve/gReserveCancelDone.jsp");
 		dis.forward(request,response);
 	}
 

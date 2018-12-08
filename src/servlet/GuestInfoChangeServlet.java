@@ -39,10 +39,10 @@ public class GuestInfoChangeServlet extends HttpServlet {
 		guestAlterLogic.update(guest);
 		if (action.equals("guest")) {
 			ses.setAttribute("loginUser", guest);
-			RequestDispatcher dis = request.getRequestDispatcher("/gGuestInfoChangeDone.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/guest//mypage/guestInfo/gGuestInfoChangeDone.jsp");
 			dis.forward(request, response);
 		} else if(action.equals("admin")){
-			RequestDispatcher dis = request.getRequestDispatcher("/aGuestInfoChangeDone.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/guest//mypage/guestInfo/aGuestInfoChangeDone.jsp");
 			dis.forward(request, response);
 		}
 	}
@@ -66,10 +66,10 @@ public class GuestInfoChangeServlet extends HttpServlet {
 		ses.setAttribute("update", guest);
 System.out.println(action);
 		if (action.equals("guest")) {
-			RequestDispatcher dis = request.getRequestDispatcher("/gGuestInfoChangeConfirm.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/guest//mypage/guestInfo/gGuestInfoChangeConfirm.jsp");
 			dis.forward(request, response);
 		} else if(action.equals("admin")){
-			RequestDispatcher dis = request.getRequestDispatcher("/aGuestInfoChangeConfirm.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/guest//mypage/guestInfo/aGuestInfoChangeConfirm.jsp");
 			dis.forward(request, response);
 		}
 	}

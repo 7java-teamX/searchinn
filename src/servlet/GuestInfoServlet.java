@@ -38,7 +38,7 @@ public class GuestInfoServlet extends HttpServlet {
 		HttpSession ses = request.getSession();
 		//1件のユーザー情報の詳細をセッションスコープに保存
 		ses.setAttribute("guestDetail", guest);
-		RequestDispatcher dis = request.getRequestDispatcher("/aGuestInfoDetail.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/guest/aGuestInfoDetail.jsp");
 		dis.forward(request, response);
 
 	}
@@ -71,7 +71,7 @@ public class GuestInfoServlet extends HttpServlet {
 				List<Guest> guestList = guestShowLogic.refineSearch(guest);
 				//絞り込み検索したユーザー情報をセッションスコープに保存
 				ses.setAttribute("guestList", guestList);
-				RequestDispatcher dis = request.getRequestDispatcher("/aGuestList.jsp");
+				RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/guest/aGuestList.jsp");
 				dis.forward(request, response);
 
 	}

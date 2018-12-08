@@ -6,6 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>予約状況変更</title>
+<link rel="stylesheet" type="text/css" href="/searchinn/css/headerStyle.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/footerStyle.css">
+
 <style>
 .container{
 	margin: 0 auto;
@@ -54,6 +57,9 @@
 </style>
 </head>
 <body>
+<header>
+	<jsp:include page="/include/header.jsp"/>
+</header>
 <div class="container">
 	<h1>予約状況変更</h1>
 	<div class="reserveBox">
@@ -100,6 +106,9 @@
 		</div>
 	</div>
 </div>
+<footer>
+	<jsp:include page="/include/footer.jsp" />
+</footer>
 
 
 

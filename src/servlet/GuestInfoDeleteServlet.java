@@ -29,7 +29,7 @@ public class GuestInfoDeleteServlet extends HttpServlet {
 		int id = guest.getGuestId();
 		GuestAlterLogic guestAlterLogic = new GuestAlterLogic();
 		guestAlterLogic.delete(id);
-		RequestDispatcher dis = request.getRequestDispatcher("/aGuestInfoDeleteDone.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/guest//mypage/guestInfo/aGuestInfoDeleteDone.jsp");
 		dis.forward(request, response);
 
 	}

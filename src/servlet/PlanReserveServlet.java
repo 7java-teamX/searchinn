@@ -92,7 +92,7 @@ public class PlanReserveServlet extends HttpServlet {
 		int numOfNights = Integer.parseInt(request.getParameter("nights"));
 		ReserveDateLogic rdLogic = new ReserveDateLogic();
 		String reserveDate = rdLogic.forDayAdd(checkin, numOfNights);
-		int charge = numOfAdults * plan.getAdultCharge();
+		int charge = (numOfAdults * plan.getAdultCharge() + numOfChildren * plan.getChildCharge()) * numOfNights;
 		String reserveMemo = request.getParameter("memo");
 		//planIdの呼び出し
 		int planId  = plan.getPlanId();
