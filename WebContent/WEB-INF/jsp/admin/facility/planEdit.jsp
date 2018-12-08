@@ -23,7 +23,7 @@
 				<tr>
 					<th>ホテルID</th>
 					<td>
-					<select>
+					<select name="hotelId">
 						<c:forEach var="hotel" items="${hotelAll}">
 							<option value="${hotel.hotelId}">${hotel.hotelId}(${hotel.hotelName})</option>
 						</c:forEach>
@@ -33,7 +33,7 @@
 				<tr>
 					<th>部屋タイプID</th>
 						<td>
-							<select>
+							<select name="roomTypeId">
 								<c:forEach var="roomType" items="${roomTypeAll}">
 								 	<option value="${roomType.roomTypeId}">${roomType.roomTypeId}(${roomType.roomTypeName}：大人最大${roomType.adultCapacity}人，小人最大${roomType.childCapacity}人，大人料金${roomType.adultCharge}円，小人料金${roomType.childCharge}円)</option>
 								</c:forEach>

@@ -36,7 +36,7 @@
 				<td><c:out value="${roomType.childCharge}" /></td>
 			</tr>
 		</table>
-		<a href="/searchinn/RoomTypeServlet?action=editDone">確定</a>
+		<a href="/searchinn/RoomTypeEditServlet?action=editDone">確定</a>
 	</div>
 </body>
 </html>
