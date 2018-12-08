@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-      <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,9 +17,9 @@
 <p>TEL:${guestDetail.tel} </p>
 <p>Email:${guestDetail.mail}</p>
 <p>住所:${guestDetail.address}</p>
-<p><a href = "/searchinn/aGuestInfoChangeForm.jsp">変更</a></p>
+<p><a href = "/searchinn/GuestInfoChangeServlet?action=change">変更</a></p>
 <p><a href = "/searchinn/GuestInfoDeleteServlet">削除</a></p>
-<p><a href = "/searchinn/aGuestList.jsp">戻る</a></p>
+<p><a href = "/searchinn/AGuestListServlet">戻る</a></p>
 
 
 </body>

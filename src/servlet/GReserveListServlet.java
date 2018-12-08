@@ -24,11 +24,11 @@ public class GReserveListServlet extends HttpServlet {
 
 		// session-scopeからユーザ情報取得
 		HttpSession session = request.getSession();
-		Guest loginuser = (Guest) session.getAttribute("loginuser");
+		Guest loginUser = (Guest) session.getAttribute("loginUser");
 
 		//idをもとに自動で予約情報の取得を行う
-		//int guestId = loginuser.getGuestId();
-		int guestId = 2; // テスト用です ユーザid 2の予約情報取得のため
+		int guestId = loginUser.getGuestId();
+//		int guestId = 2; // テスト用です ユーザid 2の予約情報取得のため
 
 		//logicでsqlの実行
 		GReserveShowLogic gsl = new GReserveShowLogic();
@@ -38,7 +38,7 @@ public class GReserveListServlet extends HttpServlet {
 		session.setAttribute("reserveList", reserveList);
 
 		//main.jspのフォワードを行う
-		RequestDispatcher dis = request.getRequestDispatcher("gReserveList.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/guest/mypage/reserve/gReserveList.jsp");
 		dis.forward(request, response);
 	}
 

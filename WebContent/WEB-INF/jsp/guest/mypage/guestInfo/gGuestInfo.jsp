@@ -13,7 +13,7 @@
 <p>TEL:${loginUser.tel}</p>
 <p>EMail:${loginUser.mail}</p>
 <p>Adress:${loginUser.address}</p>
-<p><a href="/searchinn/gGuestInfoChangeForm.jsp">変更</a></p>
-<p><a href="/searchinn/jsp/guest/mypage.jsp">マイページへ</a></p>
+<p><a href="/searchinn/GGuestInfoServlet?action=edit">編集</a></p>
+<p><a href="/searchinn/MainServlet?action=mypage">マイページへ</a></p>
 </body>
 </html>

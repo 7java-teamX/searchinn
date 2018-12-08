@@ -37,7 +37,7 @@ public class AReserveListServlet extends HttpServlet {
 			session.removeAttribute("refineSearch");
 		}
 		//main.jspのフォワードを行う
-		RequestDispatcher dis = request.getRequestDispatcher("aReserveList.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/admin/reserveList/aReserveList.jsp");
 		dis.forward(request, response);
 	}
 

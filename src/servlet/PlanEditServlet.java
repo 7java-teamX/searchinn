@@ -34,12 +34,12 @@ public class PlanEditServlet extends HttpServlet {
 		case "editDone":
 			peLogic.update(plan);
 
-			path = "/jsp/done.jsp";
-//			path = "/FacilityServlet";
+//			path = "/jsp/done.jsp";
+			path = "/FacilityServlet";
 			break;
 
 		case "insertDone":
-
+			//未実装
 			break;
 		default:
 			break;
@@ -70,11 +70,11 @@ public class PlanEditServlet extends HttpServlet {
 			int planId = Integer.parseInt(request.getParameter("planId"));
 
 			plan = new Plan(planId, planName, hotelId, roomTypeId, numRoom, planImage, planDetail);
-			path = "/jsp/planEditConfirm.jsp";
+			path = "/WEB-INF/jsp//admin/facility/planEditConfirm.jsp";
 			break;
 
 		case "insertConfirm":
-
+			//未実装
 			break;
 		}
 

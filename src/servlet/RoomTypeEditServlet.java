@@ -34,15 +34,15 @@ public class RoomTypeEditServlet extends HttpServlet {
 		case "editDone":
 			rtLogic.update(roomType);
 
-			path = "/jsp/done.jsp";
-//			path = "/FacilityServlet";
+//			path = "/WEB-INF/jsp/admin/facility/done.jsp";
+			path = "/FacilityServlet";
 			break;
 
 		case "insertDone":
 			rtLogic.insert(roomType);
 
-			path = "/jsp/done.jsp";
-//			path = "/FacilityServlet";
+//			path = "/WEB-INF/jsp/admin/facilit/done.jsp";
+			path = "/FacilityServlet";
 			break;
 		default:
 			break;
@@ -71,12 +71,12 @@ public class RoomTypeEditServlet extends HttpServlet {
 		case "editConfirm":
 			int roomTypeId =  Integer.parseInt(request.getParameter("roomTypeId"));
 			roomType = new RoomType(roomTypeId, roomTypeName, adultCapacity, childCapacity, adultCharge, childCharge);
-			path = "/jsp/roomTypeEditConfirm.jsp";
+			path = "/WEB-INF/jsp/admin/facility/roomTypeEditConfirm.jsp";
 			break;
 
 		case "insertConfirm":
 			roomType = new RoomType(roomTypeName, adultCapacity, childCapacity, adultCharge, childCharge);
-			path = "/jsp/roomTypeInsertConfirm.jsp";
+			path = "/WEB-INF/jsp/admin/facility/roomTypeInsertConfirm.jsp";
 			break;
 		}
 		session.setAttribute("roomType", roomType);

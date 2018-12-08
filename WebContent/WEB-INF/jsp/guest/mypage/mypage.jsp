@@ -10,20 +10,22 @@
 <title>マイページ</title>
 </head>
 <body>
-
-<jsp:include page="/include/header.jsp"/>
-
+<header>
+	<jsp:include page="/include/header.jsp"/>
+</header>
 <div class="login">
 	<div class="login-triangle"></div>
 	 	<h2 class="login-header">マイページ</h2>
 	 	<div class="login-container">
 	 	<br>
 		<p><a href="/searchinn/GReserveListServlet" class="square_btn">予約確認</a></p>
-		<p><a href="/searchinn/gGuestInfoChangeForm.jsp" class="square_btn">会員情報</a></p>
+		<p><a href="/searchinn/GGuestInfoServlet?action=info" class="square_btn">会員情報</a></p>
 		<br>
 	</div>
 </div>
-<jsp:include page="/include/footer.jsp"/>
+<footer>
+	<jsp:include page="/include/footer.jsp" />
+</footer>
 
 </body>
 </html>

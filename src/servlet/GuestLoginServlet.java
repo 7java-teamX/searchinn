@@ -53,14 +53,14 @@ public class GuestLoginServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("loginUser",loginUser);
 			//フォワード処理 index.jsp
-			forwardPath = "jsp/index.jsp";
+			forwardPath = "/index.jsp";
 		} else {
 			String errMsg = "ログインできませんでした";
 			System.out.println("ログイン失敗");
 			request.setAttribute("errMsg", errMsg);
 			String errms = (String)request.getAttribute("errMsg");
 			System.out.println("リクエストスコープ : "+errms);
-			forwardPath = "jsp/guest/guestLogin.jsp";
+			forwardPath = "/WEB-INF/jsp/guest/login_register/guestLogin.jsp";
 
 		}
 

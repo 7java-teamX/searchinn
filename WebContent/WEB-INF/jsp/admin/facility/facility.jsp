@@ -107,6 +107,7 @@
 		</table>
 <%--		<a href="/searchinn/FacilityServlet">プラン追加</a>	--%>
 	</div>
+<a href="/searchinn/AdminMenuServlet">管理者TOP</a>
 
 
 

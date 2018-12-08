@@ -32,15 +32,15 @@ public class FacilityServlet extends HttpServlet {
 		String path = null;
 		String action = request.getParameter("action");
 		int index;
-
-		if(action == null) {
+		System.out.println(action);
+		if(action == null || action.equals("editDone") || action.equals("insertDone")) {
 			ShowFacilityLogic sfLogic = new ShowFacilityLogic();
 			Map<String,Object> facilityMap = sfLogic.execute();
 			session.setAttribute("areaAll", facilityMap.get("area"));
 			session.setAttribute("hotelAll", facilityMap.get("hotel"));
 			session.setAttribute("planAll", facilityMap.get("plan"));
 			session.setAttribute("roomTypeAll", facilityMap.get("roomType"));
-			path = "/jsp/facility.jsp";
+			path = "/WEB-INF/jsp/admin/facility/facility.jsp";
 
 		}else {
 			switch (action) {
@@ -49,11 +49,11 @@ public class FacilityServlet extends HttpServlet {
 				List<RoomType> roomTypeAll = (List<RoomType>) session.getAttribute("roomTypeAll");
 				session.setAttribute("roomType", roomTypeAll.get(index));
 
-				path = "/jsp/roomTypeEdit.jsp";
+				path = "/WEB-INF/jsp/admin/facility/roomTypeEdit.jsp";
 				break;
 
 			case "roomTypeAdd":
-				path = "/jsp/roomTypeInsert.jsp";
+				path = "/WEB-INF/jsp/admin/facility/roomTypeInsert.jsp";
 				break;
 
 			case "planEdit":
@@ -61,7 +61,7 @@ public class FacilityServlet extends HttpServlet {
 				List<Plan> planAll = (List<Plan>) session.getAttribute("planAll");
 				session.setAttribute("plan", planAll.get(index));
 
-				path = "/jsp/planEdit.jsp";
+				path = "/WEB-INF/jsp/admin/facility/planEdit.jsp";
 				break;
 
 			} //switch

@@ -1,91 +1,72 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" %>
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="#">
-	<script type="text/javascript" src="m.js"></script>
-	<title>売上集計</title>
-	<style>
-		*{
-			color:lime;
-			background:black;
-		}
-
-		.title{
-			margin:10px 20px;
-		}
-
-		.subcontainer{
-			border-style: solid;
-			margin:10px 20px;
-			float:left;
-		}
-
-		.space{
-			margin: 5px;
-		}
-
-
-	</style>
+<meta charset="UTF-8">
+<title>Insert title here</title>
 </head>
 <body>
-
-<form action="#" method="post">
-	<div class="title">
-		<h2>売上集計</h2>
-		<a href= "../admin/admin.html">管理者画面へ</a>
-		<p>
-			<input type="month">
-			<input type="submit" value="表示">
-		</p>
-	</div>
+	<form action="/searchinn/SalesServlet" method="get">
+		<input type="month" name="term">
+		<input type="submit" value="決定">
 	</form>
-		<div class ="subcontainer">
-			<table border="1">
-				<p class="space">▼ホテル</p>
+	<div>
+		<h3><c:out value="${year}年${month}月の売上" /></h3>
+		<div>
+			<h4>ホテル</h4>
+			<table class="hotelSales">
+				<tr>
+					<th>エリアID</th>
+					<th>エリア名</th>
+					<th>ホテルID</th>
+					<th>ホテル名</th>
+					<th>売上</th>
+				</tr>
+				<c:forEach var="salesInfo" items="${hotelSales}" >
 					<tr>
-						<th>ホテル</th>
-			   			<th>エリア</th>
-			   			<th>合計金額</th>
-					</tr>
-				<c:forEach var="#" items="${#}">
-					<tr>
-			 			<td><c:out value="${#}"/></td>
-			 			<td><c:out value="${#}"/></td>
-			 			<td><c:out value="${#}"/></td>
+						<td><c:out value="${salesInfo.areaId}" /></td>
+						<td><c:out value="${salesInfo.areaName}" /></td>
+						<td><c:out value="${salesInfo.hotelId}" /></td>
+						<td><c:out value="${salesInfo.hotelName}" /></td>
+						<td><c:out value="${salesInfo.sales}" /></td>
 					</tr>
 				</c:forEach>
 			</table>
 		</div>
-	<div class ="subcontainer">
-		<table border="1">
-			<p class="space">▼エリア</p>
+		<div>
+			<h4>エリア</h4>
+			<table class="areaSales">
 				<tr>
-		   			<th>エリア</th>
-		   			<th>合計金額</th>
+					<th>エリアID</th>
+					<th>エリア名</th>
+					<th>売上</th>
 				</tr>
-			<c:forEach var="#" items="${#}">
+				<c:forEach var="salesInfo" items="${areaSales}">
+					<tr>
+						<td><c:out value="${salesInfo.areaId}" /></td>
+						<td><c:out value="${salesInfo.areaName}" /></td>
+						<td><c:out value="${salesInfo.sales}" /></td>
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
+		<div>
+			<h4>全体</h4>
+			<table class="totalSales">
 				<tr>
-		 			<td><c:out value="${#}"/></td>
-		 			<td><c:out value="${#}"/></td>
+					<th>売上</th>
 				</tr>
-			</c:forEach>
-		</table>
-		<table border="1">
-			<p class="space">▼全体</p>
-				<tr>
-	   				<th>合計金額</th>
-				</tr>
-			<c:forEach var="#" items="${#}">
-				<tr>
-		 			<td><c:out value="${#}"/></td>
-				</tr>
-			</c:forEach>
-		</table>
+				<c:forEach var="salesInfo" items="${totalSales}">
+					<tr>
+						<td><c:out value="${salesInfo.sales}" /></td>
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
 	</div>
-
-
+	<a href="/searchinn/AdminMenuServlet">管理者TOP</a>
 </body>
 </html>

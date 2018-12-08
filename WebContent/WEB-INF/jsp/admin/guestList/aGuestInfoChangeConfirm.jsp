@@ -21,6 +21,6 @@
 <p>Email:${update.mail}</p>
 <p>住所:${update.address}</p>
 <p><a href="/searchinn/GuestInfoChangeServlet?action=admin">変更</a></p>
-<p><a href="/searchinn/aGuestList.jsp">キャンセル</a></p>
+<p><a href="/searchinn/AGuestListServlet">キャンセル</a></p>
 </body>
 </html>

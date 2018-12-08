@@ -12,9 +12,9 @@
 	<div class="container">
 		<h2>管理者画面</h2>
 		<div class="center">
-			<p><a href="#" class="square_btn">顧客情報管理</a></p>
-			<p><a href="/searchinn/jsp/admin/sales.jsp" class="square_btn">売上集計</a></p>
-			<p><a href="#" class="square_btn">予約状況一覧</a></p>
+			<p><a href="/searchinn/AGuestListServlet" class="square_btn">顧客情報管理</a></p>
+			<p><a href="/searchinn/AReserveListServlet" class="square_btn">予約状況一覧</a></p>
+			<p><a href="/searchinn/SalesServlet" class="square_btn">売上集計</a></p>
 			<p><a href="/searchinn/FacilityServlet" class="square_btn">施設管理</a></p>
 		</div>
 

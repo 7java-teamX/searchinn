@@ -24,14 +24,14 @@ public class GuestInfoDeleteServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		HttpSession ses = request.getSession();
 		Guest guest = (Guest) ses.getAttribute("guestDetail");
 		int id = guest.getGuestId();
 		GuestAlterLogic guestAlterLogic = new GuestAlterLogic();
 		guestAlterLogic.delete(id);
-		RequestDispatcher dis = request.getRequestDispatcher("/aGuestInfoDeleteDone.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/admin/guestList/aGuestInfoDeleteDone.jsp");
 		dis.forward(request, response);
-
 	}
 
 	/**

@@ -19,14 +19,13 @@ import beans.Reserve;
 @WebServlet("/AReserveInfoServlet")
 public class AReserveInfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	@SuppressWarnings("unchecked")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		int index = Integer.parseInt(request.getParameter("index"));
 
 		HttpSession session = request.getSession();
 
-		//キャスト必要?? 後日チェック
-		@SuppressWarnings("unchecked")
 		List<Reserve> reserveList = (List<Reserve>)session.getAttribute("reserveList");
 
 		Reserve reserveInfo = new Reserve();
@@ -36,7 +35,7 @@ public class AReserveInfoServlet extends HttpServlet {
 		session.setAttribute("reserveInfo",reserveInfo);
 
 		//aReserveList.jspのフォワード処理
-		RequestDispatcher dis = request.getRequestDispatcher("aReserveDetail.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/admin/reserveList/aReserveDetail.jsp");
 		dis.forward(request,response);
 
 	}

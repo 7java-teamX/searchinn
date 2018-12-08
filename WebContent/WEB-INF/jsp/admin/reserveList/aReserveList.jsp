@@ -53,6 +53,6 @@ table,th,td{border: solid 1px black;}
 	</c:forEach>
 </table>
 <hr>
-<a href="/searchinn/jsp/admin/admin.jsp">管理者TOP</a>
+<a href="/searchinn/AdminMenuServlet">管理者TOP</a>
 </body>
 </html>

@@ -6,6 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>予約状況閲覧</title>
+<link rel="stylesheet" type="text/css" href="/searchinn/css/headerStyle.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/footerStyle.css">
+
 <style>
 .container{
 	margin: 0 auto;
@@ -60,6 +63,9 @@
 </style>
 </head>
 <body>
+<header>
+	<jsp:include page="/include/header.jsp"/>
+</header>
 <div class="container">
 	<h2>予約内容閲覧</h2>
 	<hr>
@@ -96,10 +102,13 @@
 		</div><!--  -->
 	</c:forEach>
 </div><!-- container -->
+<footer>
+	<jsp:include page="/include/footer.jsp" />
+</footer>
 
 <script>
 function doConfirm(reservId){
-  if(window.confirm("予約のキャンセル確認になります\nよろしければ<はい>を押してください")){
+  if(window.confirm("予約を取り消します\nよろしいですか")){
     location.href = "/searchinn/GReserveInfoDeleteServlet?reserveId="+ reservId;
   }
 }

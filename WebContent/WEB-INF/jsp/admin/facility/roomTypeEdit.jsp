@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div>
-		<form action="/searchinn/RoomTypeServlet" method="post">
+		<form action="/searchinn/RoomTypeEditServlet" method="post">
 			<table>
 				<tr>
 					<th>ID</th>
