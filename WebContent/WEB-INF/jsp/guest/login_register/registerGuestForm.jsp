@@ -58,7 +58,7 @@
 	</div>
 
 	<p>
-		<a class="center" href="/searchinn/jsp/index.jsp">TOPへ戻る</a>
+		<a class="center" href="/searchinn/index.jsp">TOPへ戻る</a>
 	</p>
 </body>
 

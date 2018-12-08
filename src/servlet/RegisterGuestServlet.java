@@ -31,9 +31,9 @@ public class RegisterGuestServlet extends HttpServlet {
 			RegisterGuestLogic registerGuestLogic = new RegisterGuestLogic();
 			registerGuestLogic.isInsert(insertGuest);
 
-			fowardPath = "/jsp/guest/registerGuestDone.jsp";
+			fowardPath = "/WEB-INF/jsp/guest/login_register/registerGuestDone.jsp";
 		} else if (action.equals("null")) {
-			fowardPath = "/jsp/guest/registerGuestForm.jsp";
+			fowardPath = "/WEB-INF/jsp/guest/login_register/registerGuestForm.jsp";
 		}
 		//フォワード
 		RequestDispatcher dis = request.getRequestDispatcher(fowardPath);
@@ -67,13 +67,13 @@ public class RegisterGuestServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("loginGuest", guest);
 			//フォワード
-			RequestDispatcher dis = request.getRequestDispatcher("/jsp/guest/registerGuestConfirm.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/guest/login_register/registerGuestConfirm.jsp");
 			dis.forward(request, response);
 		}else {
 			String errmsg = "メールアドレスが重複しています";
 			//エラーメッセージをリクエストスコープに格納
 			request.setAttribute("errmsg", errmsg);
-			RequestDispatcher dis = request.getRequestDispatcher("/jsp/guest/registerGuestForm.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/guest/login_register/registerGuestForm.jsp");
 			dis.forward(request, response);
 		}
 

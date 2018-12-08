@@ -24,6 +24,7 @@ public class PlanSelectServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@SuppressWarnings("unchecked")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String path = null;
 		request.setCharacterEncoding("utf-8");
@@ -34,15 +35,15 @@ public class PlanSelectServlet extends HttpServlet {
 			//hotelIDを取得，HotelSelectLogicからDAOを実行し，planListをセッションスコープにセット，フォワード先を設定
 			HotelSelectLogic hsLogic = new HotelSelectLogic();
 			session.setAttribute("planList", hsLogic.execute(request.getParameter("hotelId")));
-			path = "/jsp/plan.jsp";
+			path = "/WEB-INF/jsp/guest/reserve/plan.jsp";
 			break;
 		case "toReserve":
 			//planListとindexを取得，該当のplanをセッションスコープに保存，フォワード先を設定
 			List<Plan> planList = (List<Plan>)session.getAttribute("planList");
-//			System.out.println(request.getParameter("index"));
-//			System.out.println(planList.get((int) request.getParameter("index")));
+			System.out.println("planList index:" + request.getParameter("index"));
+			System.out.println(planList.get(Integer.parseInt(request.getParameter("index"))));
 			session.setAttribute("plan", planList.get(Integer.parseInt(request.getParameter("index"))));
-			path = "/PlanReserveServlet?action=show";
+			path = "/PlanReserveServlet";
 			break;
 		}
 		//フォワード

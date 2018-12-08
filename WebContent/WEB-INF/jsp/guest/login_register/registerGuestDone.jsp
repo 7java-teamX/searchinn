@@ -12,10 +12,10 @@
 <div class="main1">
 		<h2>会員情報確定画面</h2>
 		<p>会員情報を確定します。</p>
-		<input type="button" value="ログイン画面へ" onClick="location.href='/searchinn/MainServlet?action=login'">
+		<input type="button" value="確定・ログイン画面へ" onClick="location.href='/searchinn/MainServlet?action=login'">
 
 	<p>
-		<a class="center" href="/searchinn/jsp/index.jsp">TOPへ戻る</a>
+		<a class="center" href="/searchinn/index.jsp">TOPへ戻る</a>
 
 	</p>
 	</div>

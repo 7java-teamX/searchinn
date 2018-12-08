@@ -6,6 +6,7 @@
 		<ul>
 		<li><a href="/searchinn/MainServlet?action=top">TOP</a></li>
 		<li><a href="/searchinn/MainServlet?action=login">ログイン/会員登録</a></li>
+		<li><a href="/searchinn/MainServlet?action=reserve">宿泊予約</a></li>
 		<li><a href="/searchinn/MainServlet?action=mypage">マイページ</a></li>
 		<li><a href="/searchinn/MainServlet?action=admin">管理者画面</a></li>
 		</ul>
