@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="/searchinn/css/loginStyle.css">
 	<link rel="stylesheet" type="text/css" href="/searchinn/css/headerStyle.css">
 	<link rel="stylesheet" type="text/css" href="/searchinn/css/footerStyle.css">
+	<link rel="stylesheet" type="text/css" href="/searchinn/css/common.css">
 	<title>ログイン</title>
 </head>
 <body>

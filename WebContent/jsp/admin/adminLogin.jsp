@@ -4,9 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="../css/loginStyle.css">
-<link rel="stylesheet" type="text/css" href="../css/headerStyle.css">
-<link rel="stylesheet" type="text/css" href="../css/footerStyle.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/loginStyle.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
 <link rel="stylesheet" type="text/css" href="/searchinn/css/loginStyle.css">
 <link rel="stylesheet" type="text/css" href="/searchinn/css/headerStyle.css">
 <link rel="stylesheet" type="text/css" href="/searchinn/css/footerStyle.css">
@@ -15,6 +14,7 @@
 <body>
 
 	<jsp:include page="/include/header.jsp"/>
+
 
 	<div class="login">
  		<div class="login-triangle"></div>

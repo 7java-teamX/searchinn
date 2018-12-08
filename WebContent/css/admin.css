@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+body{
+	background: #456;
+	//text-align: center;
+}
+
+ul{
+	list-style: none;
+}
+/* admin.jsp */
+
+
+.main_menu{
+	width : 450px;
+	height : 400px;
+	margin: 0 auto;
+	background: #ebebeb;
+	border-radius: 3px;
+}
+
+h2{
+	background: #28d;
+	color: #fff;
+	margin-bottom: 50px;
+	padding: 20px;
+	border-radius: 3px;
+	text-align:center;
+}
+.msg{
+
+	font-size:20px;
+	font-weight:bold;
+	border-radius: 3px;
+	text-align:center;
+	display:inline-block;
+	margin:20px 0 ;
+}
+
+.center{
+	width :400px;
+	margin : 0 auto;
+	border-radius: 3px;
+	text-align:center;
+}
+.container p{
+	text-align:center;
+}
+
+.square_btn{
+	display : inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #28d;/*ボタン色*/
+    color: #FFF;
+    width:200px;
+    margin-bottom:10px;
+    border-radius: 3px;
+}
+
+.square_btn:active{/*ボタンを押したとき*/
+    transform: translateY(4px);/*下に動く*/
+
+}
+
+.whiteText{
+	color:#fff;
+}
+
+/*done.jsp */
+.answer{
+	width : 450px;
+	height : 200px;
+	margin: 0 auto;
+	background: #ebebeb;
+	border-radius: 3px;
+}
+.air{
+	height : 400px;
+}
+
+/* 管理者用テーブルcss*/
+table {
+    border-collapse: separate;  /* 表の線と線の間を空ける */
+    margin:  10px auto;
+
+}
+td, th{
+	border:2px solid skyblue;
+	border-radius: 3x;
+	background-color:#5893b1;
+}
+th,td{
+	padding : 5px 10px;
+
+}
