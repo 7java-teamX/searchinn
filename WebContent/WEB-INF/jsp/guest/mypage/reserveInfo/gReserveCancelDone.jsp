@@ -10,8 +10,9 @@
 <link rel="stylesheet" type="text/css" href="/searchinn/css/reserveInfo.css">
 </head>
 <body>
-
-<jsp:include page="/include/header.jsp"/>
+<header>
+	<jsp:include page="/include/header.jsp"/>
+</header>
 
 <div class="container">
 	<div class="box">

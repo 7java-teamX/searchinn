@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>ホテル選択</title>
-
+<link rel="stylesheet" type="text/css" href="/searchinn/css/common.css" >
 <link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
 <link rel="stylesheet" type="text/css" href="/searchinn/css/reserve.css">
 </head>

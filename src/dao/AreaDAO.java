@@ -14,7 +14,8 @@ public class AreaDAO {
 	private final String DRIVER_NAME = "com.mysql.jdbc.Driver";
 	private final String JDBC_URL = "jdbc:mysql://localhost:3306/inn";
 	private final String DB_USER = "root";
-	private final String DB_PASS = "root";
+	//private final String DB_PASS = "root";
+	private final String DB_PASS = "Reina9110Nao";
 
 	public List<Area> showAll(){
 		Connection conn = null;

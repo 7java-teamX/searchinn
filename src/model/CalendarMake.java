@@ -50,7 +50,7 @@ public class CalendarMake {
 			if(num < startdayOfWeek || num > lastdayOfMonth + startdayOfWeek - 1){
 				sb.append("<td></td>");
 			}else{
-				sb.append("<td>"+date+"<br>残り："+reserveCount[date-1]+"</td>");
+				sb.append("<td>"+date+"<br><hr>残り："+reserveCount[date-1]+"</td>");
 				date++;
 			}
 			// 7マスごとにカレンダーを改行

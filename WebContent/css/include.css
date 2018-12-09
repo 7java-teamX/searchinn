@@ -8,6 +8,10 @@
 header{
 	background-color: rgb(33,47,109);
 }
+header,footer{
+	width:1048px;
+	margin:0 auto;
+}
 
 #nav{
     background-color: rgb(33,47,109);
@@ -19,19 +23,22 @@ header{
 	display: flex;
 	 justify-content: space-around;
 	 align-items:flex-end;
-
-
-
 }
-/**
-background-color: #c0c0c0;
-	padding:5px 10px;
-*/
 
 .button:hover{
 	background-color: #ffffff;
 	color: #c0c0c0;
 	border-radius: 3px;
+
+}
+
+.userInfo{
+	width:200px;
+	display:block;
+	padding:10px;
+	background-color: #dddddd;
+	text-align: center;
+	line-height: 1.8em;
 }
 /* ここから下がボタンのCSS　*/
 .button{
@@ -41,6 +48,7 @@ background-color: #c0c0c0;
   font-weight: bold;
   padding:5px 10px;
   position: relative;
+  background-color: #99d8fd;
   text-decoration: none;
   text-transform: uppercase;
   border: 1px solid transparent;

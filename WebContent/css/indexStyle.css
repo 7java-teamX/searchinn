@@ -9,12 +9,7 @@ body{
 }
 
 .title{
-	margin-right: 70px;
-	margin-left: 70px;
-}
-
-*{
-	margin: 0 ;
+	margin:0 auto;
 }
 
 .center{
@@ -28,6 +23,9 @@ h1{
 	margin-bottom : 10px;
 }
 
+.air{
+	height:500px;
+}
 
 
 /*----------*/

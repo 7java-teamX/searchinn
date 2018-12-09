@@ -8,53 +8,7 @@
 <title>予約状況変更</title>
 <link rel="stylesheet" type="text/css" href="/searchinn/css/common.css" >
 <link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
-
-<style>
-.container{
-	margin: 0 auto;
-	width: 1000px;
-}
-.str{
-	border-bottom: solid 2px #D3D3D3;
-	display: inline-block;
-	margin-bottom:5px;
-}
-
-.reserveBox, .planArea, .reserveArea,.text{
-	border: solid 2px silver;
-	padding:10px 15px;
-}
-.planArea{
-	display:flex;
-	justify-content: space-around;
-	margin-bottom:10px;
-}
-.btn{
-	text-decoration: none;
-	border-bottom: solid 4px #B0E0E6;
-	background-color:#AFEEEE;
-	padding : 3px 10px;
-	display: inline-block;
-	border-radius: 5px;
-	margin-right:5px;
-}
-.btn:active{
-	 transform: translateY(4px);
-	 border: none;
-}
-.reserveBox{
-	background-color : #FFEBCD ;
-}
-.planArea, .reserveArea,.text{
-	background-color : #fff ;
-}
-.btn:visited {
-	color: black;
-}
-.btnArea{
-	text-align:center;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="/searchinn/css/reserveInfo.css">
 </head>
 <body>
 <header>
@@ -71,7 +25,7 @@
 				予約内容の詳細<c:out value="${reserveInfo.planDetail}"/><br><!--予約内容の詳細  -->
 			</div>
 			<img src="<c:out value="${reserve.planImage}"/>" width="300" height="300" alt="<c:out value="${reserve.reserveId}"/>sasas"><!--予約プランの画像  -->
-		</div>
+		</div> <!-- planArea -->
 
 		<div class="reserveArea">
 			<div class="str">予約内容</div>
@@ -103,29 +57,14 @@
 					<a href="/searchinn/GReserveListServlet" class="btn">戻る</a>
 				</div>
 			</div>
-		</div>
-	</div>
-</div>
+		</div><!-- reserveArea -->
+	</div><!-- reserveBox -->
+</div> <!-- container -->
+
 <footer>
 	<jsp:include page="/include/footer.jsp" />
 </footer>
 
 
-
-<script type="text/javascript">
-window.onload = function ()	{
-	//var adultCh = document.getElementsById("adultCh").value;
-	//var childCh = document.getElementsById("childCh").value;
-	var adultNum = document.form.numOfAdult.value;
-	var childNum = document.form.numOfChild.value;
-
-	console.log(adultCharge);
-	console.log(adultNum);
-	console.log(childCharge);
-	console.log(childNum);
-	console.log(adultCharge * adultNum + childCharge * childNum);
-}
-    //document.getElementsByName("Charge").innerHTML = (childCh * childNum) + (adultCh * adultNum);
-</script>
 </body>
 </html>

@@ -19,7 +19,8 @@ public class ReserveSalesDAO {
 		String DRIVER_NAME ="com.mysql.jdbc.Driver" ;
 		String JDBC_URL = "jdbc:mysql://localhost:3306/inn";
 		String DB_user = "root";
-		String DR_pass = "root";
+		//String DR_pass = "root";
+		String DR_pass  = "Reina9110Nao";
 
 		List<SalesInfo> salesInfoList = new ArrayList<>();
 		SalesInfo salesInfo = null;

@@ -15,7 +15,7 @@
 
 <div class="container">
 	<div class="box">
-		<h3 class="title" >予約内容変更確認</h3>
+		<h3 class="title" >予約変更確定</h3>
 		<div class="center_area none">
 			<br><h3>予約内容は変更されました</h3><br><br>
 			<a class="btn" href="/searchinn/GReserveListServlet">予約一覧</a>

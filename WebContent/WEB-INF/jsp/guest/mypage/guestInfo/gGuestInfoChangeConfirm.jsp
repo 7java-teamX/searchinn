@@ -10,7 +10,9 @@
 <title>登録内容変更確認</title>
 </head>
 <body>
-<jsp:include page="/include/header.jsp"/>
+<header>
+	<jsp:include page="/include/header.jsp"/>
+</header>
 
 <div class="container">
 	<div class="box">

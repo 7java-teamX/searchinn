@@ -202,10 +202,35 @@ a:visited {	color: black;}
 	width:75%;
 	 text-align: center;
 }
-.calendar{
+.calendarArea{
 	height:500px;
 	background-color:;
 }
+.calendar{
+	width: 400px;
+}
+.calendar table{
+	width:700px;
+
+	border-collapse: separate;
+}
+.calendar th, .calendar td{
+	background-color: #ffffff;
+	text-align: center;
+	border:solid 1px black;
+}
+.calendar th{
+
+}
+.calendar th:first-child{
+	color:red;
+}
+.calendar td{
+
+}
+
+
+
 /* topに戻すボタンCSS   -------------------------------------                      */
 #pageTop {
 	position: fixed;

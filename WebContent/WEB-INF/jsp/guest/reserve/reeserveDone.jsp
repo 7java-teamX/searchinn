@@ -21,6 +21,7 @@
 		<h4 class="siro">予約確定</h4>
 	</div>
 </header>
+
 <div class="container">
 	<div class="box">
 	<br><br><br><br><br>

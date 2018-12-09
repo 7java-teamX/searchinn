@@ -10,8 +10,9 @@
 <title>ユーザ情報</title>
 </head>
 <body>
-<jsp:include page="/include/header.jsp"/>
-
+<header>
+	<jsp:include page="/include/header.jsp"/>
+</header>
 <div class="container">
 
 	<div class="box">

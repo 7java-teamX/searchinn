@@ -13,9 +13,17 @@
 <header>
 	<jsp:include page="/include/header.jsp"/>
 </header>
-<h1>予約はキャンセルされました</h1>
+<div class="container">
+	<div class="box">
+		<h3 class="title" >キャンセル完了画面</h3>
+		<h2 class="center_area none">予約はキャンセルされました</h2>
+		<div class="center_area none">
+			<a class="btn" href="/searchinn/GReserveListServlet">予約一覧</a>
+		</div>
+	</div>
+</div>
 
-<a class="btn" href="/searchinn/GReserveListServlet">予約一覧へ戻る</a>
+
 <footer>
 	<jsp:include page="/include/footer.jsp" />
 </footer>

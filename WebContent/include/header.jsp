@@ -7,20 +7,25 @@
     		style="background-color:skyblue;">
     		<div class="link">
 	    			<a href="/searchinn/MainServlet?action=top" class="button">TOP</a>&nbsp;	&nbsp;
-					<a href="/searchinn/MainServlet?action=login" class="button">ログイン/会員登録</a>&nbsp;	&nbsp;
-					<a href="/searchinn/MainServlet?action=reserve" class="button">宿泊予約</a>&nbsp;	&nbsp;
-					<c:choose>
+	    			<a href="/searchinn/MainServlet?action=reserve" class="button">宿泊予約</a>&nbsp;	&nbsp;
+
+	    			<!-- ログイン中: ログアウトボタン　マイページ表示  -->
+	    			<c:if test="${loginUser.name!=null}">
+	    				<a href="/searchinn/MainServlet?action=mypage"  class="button">マイページ</a>&nbsp;	&nbsp;
+	    			</c:if>
+
+	    			<c:choose>
 						<c:when test="${loginUser.name!=null}">
-							<c:out value="ログイン中：${loginUser.name}さん" />
-							<a href="/searchinn/MainServlet?action=mypage"  class="button">マイページ</a>
 						</c:when>
-					</c:choose>
+						<c:when test="${loginUser.name == null}">
+							<a href="/searchinn/MainServlet?action=login" class="button">ログイン/会員登録</a>&nbsp;	&nbsp;
+						</c:when>
+					</c:choose>&nbsp;	&nbsp;
     		</div>
     		<div class="userInfo">
-   				<c:choose>
-					<c:when test="${loginUser.name!=null}">
-						<b><c:out value="ログイン中：${loginUser.name}さん" /></b>
-					</c:when>
-				</c:choose>
+    			<c:if test="${loginUser.name!=null}">
+	    				<c:out value="ログイン中：${loginUser.name}さん" />
+	    				<a href="/searchinn/MainServlet?action=mypage"  class="button">ログアウト</a>&nbsp;	&nbsp;
+	    			</c:if>
 			</div>
 		</div>

@@ -23,6 +23,7 @@
 		<h4 class="ao">予約確定</h4>
 	</div>
 </header>
+
 <div class="container">
 	<div class="box">
 	<form action="/searchinn/PlanReserveServlet" method="post">
@@ -61,34 +62,29 @@
 				</select>
 				名
 			</p>
-
-
 			備考欄：
-			<input type="text" name="memo">
-
-					<input type="submit" value="予約（確認画面へ）" id="submit"">
+			<textarea name="memo" cols="40" rows="3"></textarea>
+			<input type="submit" value="予約（確認画面へ）" id="submit"">
 			</div>
 	</form>
 
+	<!-- 予約重複時にエラーメッセージの出力を行う -->
 	<c:if test="${not empty errMsg}">
 		<h3><c:out value="${errMsg}"></c:out></h3>
-	</c:if><!-- 予約重複時にエラーメッセージの出力を行う -->
+	</c:if>
 
-	<hr>
-	<div class="calendar detail2">
+	<hr><!-- カレンダ-の作成 -->
+	<div class="calendarArea detail2">
 		<h4><c:out value="${calMap.year}年${calMap.month}月の空室状況"/></h4>
-		<div>
-			<form action="/searchinn/PlanReserveServlet" method="get">
-				<input type="month" name="ym" value=<c:out value="${calMap.ym}" /> >
-				<input type="submit" value="表示"/>
-			</form>
+		<form action="/searchinn/PlanReserveServlet" method="get">
+			<input type="month" name="ym" value=<c:out value="${calMap.ym}" /> >
+			<input type="submit" value="表示"/>
+		</form>
+		<div class="calendar">
+			${calMap.calendar}
 		</div>
 	</div>
-	<div>
-		${calMap.calendar}
-	</div>
-
-	</div>
+		</div>
 	</div>
 </body>
 </html>

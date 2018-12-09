@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>BOOKINN | プラン選択</title>
-
+<link rel="stylesheet" type="text/css" href="/searchinn/css/common.css" >
 <link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
 <link rel="stylesheet" type="text/css" href="/searchinn/css/reserve.css">
 </head>
@@ -24,13 +24,13 @@
 		<h4 class="ao">予約確定</h4>
 	</div>
 </header>
+
 <div class="container">
 	<c:forEach var="plan" items="${planList}" varStatus="status">
 	<div class="box">
 		<span class="planName">
 			<c:out value="${plan.planName}" />
 		</span>
-
 		<div class="descriptArea">
 			<div class="descript">
 				部屋タイプ：<c:out value="${plan.roomTypeName}" /><br>
@@ -50,9 +50,9 @@
 			</div>
 			<img src="<c:out value="${plan.planImage}" />" width="300" height="300">
 		</div>
-
-		<a href="/searchinn/PlanSelectServlet?action=toReserve&index=${status.index}">空室確認・予約</a>
-
+		<div class="btn_area">
+			<a href="/searchinn/PlanSelectServlet?action=toReserve&index=${status.index}" class="btn">空室確認・予約</a>
+		</div>
 	</div>
 	</c:forEach>
 </div>

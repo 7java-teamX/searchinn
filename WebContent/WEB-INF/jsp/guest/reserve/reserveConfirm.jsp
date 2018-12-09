@@ -23,8 +23,8 @@
 		<h4 class="ao">予約確定</h4>
 	</div>
 </header>
-<div class="container">
 
+<div class="container">
 	<div class="box">
 		<div class="title">&nbsp;	プラン詳細</div>
 		<div class="flex" style="width:97%;">
