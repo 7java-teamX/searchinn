@@ -7,15 +7,23 @@
 <head>
 <meta charset="UTF-8">
 <title>BOOKINN | プラン選択</title>
-<link rel="stylesheet" type="text/css" href="/searchinn/css/headerStyle.css">
-<link rel="stylesheet" type="text/css" href="/searchinn/css/footerStyle.css">
+
+<link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
 <link rel="stylesheet" type="text/css" href="/searchinn/css/reserve.css">
 </head>
 <body>
 <header>
 	<jsp:include page="/include/header.jsp"/>
+	<div id="main">
+		<h4 class="ao">ご予約の流れ</h4><span class="spanao">→</span>
+		<h4 class="ao">エリア/ホテル選択</h4><span class="spanao">→</span>
+		<h4 class="siro">プラン選択</h4><span class="spanao">→</span>
+		<h4 class="ao">予約情報入力</h4><span class="spanao">→</span>
+		<h4 class="ao">会員登録</h4><span class="spanao">→</span>
+		<h4 class="ao">入力確認</h4><span class="spanao">→</span>
+		<h4 class="ao">予約確定</h4>
+	</div>
 </header>
-
 <div class="container">
 	<c:forEach var="plan" items="${planList}" varStatus="status">
 	<div class="box">
@@ -51,9 +59,8 @@
 
 
 
-<footer>
 	<jsp:include page="/include/footer.jsp" />
-</footer>
+
 
 
 

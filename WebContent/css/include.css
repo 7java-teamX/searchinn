@@ -5,25 +5,67 @@
 /*--header--*/
 /*----------*/
 
-
+header{
+	background-color: rgb(33,47,109);
+}
 
 #nav{
     background-color: rgb(33,47,109);
     padding: 10px 70px ;
-      line-height:100px;
+    display: flex;
+     justify-content: space-between;
 }
-#nav ul{
-    padding: 0px;
-    margin: 0px;
+.link{
+	display: flex;
+	 justify-content: space-around;
+	 align-items:flex-end;
 
-}
 
-
-#nav ul li {
-    display: inline;
-    margin-right: 1em;
 
 }
+/**
+background-color: #c0c0c0;
+	padding:5px 10px;
+*/
+
+.button:hover{
+	background-color: #ffffff;
+	color: #c0c0c0;
+	border-radius: 3px;
+}
+/* ここから下がボタンのCSS　*/
+.button{
+  color: #FFF;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  padding:5px 10px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  outline: 1px solid;
+  outline-color: rgba(255, 255, 255, 0.5);
+  outline-offset: 0px;
+  text-shadow: none;
+  transition: all 1.2s cubic-bezier(0.2, 1, 0.2, 1);
+}
+
+.button:hover {
+  border-color: #FFF;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
+  outline-color: transparent;
+  outline-offset: 12px;
+  text-shadow: 2px 2px 3px #000;
+}
+
+
+
+a:visited{
+	color:black;
+}
+
+
 
 
 #nav ul li a {
@@ -78,3 +120,32 @@ a{
 	text-decoration:none;
 }
 
+/*  headerの予約流れエリアについて*/
+#main{
+	padding: 30px 70px 30px 70px;
+	background-color:  #a6b0e3;
+	border-top:double #ffff2b 2px;
+}
+
+
+.spanao{
+	color: #364e96;
+}
+
+h4.ao {
+	color: #364e96;/*文字色*/
+	border: solid 3px #ffffff;/*線色*/
+	padding: 0.5em;/*文字周りの余白*/
+	border-radius: 0.5em;/*角丸*/
+	display: inline;
+	background-color:  #cfcfcf;
+}
+
+h4.siro {
+	color: #000000;/*文字色*/
+	border: solid 3px yellow;/*線色*/
+	padding: 0.5em;/*文字周りの余白*/
+	border-radius: 0.5em;/*角丸*/
+	display: inline;
+	background-color:  #ffffff;
+}

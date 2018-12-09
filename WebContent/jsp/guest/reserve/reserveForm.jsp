@@ -6,16 +6,32 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/reserve.css">
+<title>予約入力画面</title>
 </head>
 <body>
+<header>
+	<jsp:include page="/include/header.jsp"/>
+	<div id="main">
+		<h4 class="ao">ご予約の流れ</h4><span class="spanao">→</span>
+		<h4 class="ao">エリア/ホテル選択</h4><span class="spanao">→</span>
+		<h4 class="ao">プラン選択</h4><span class="spanao">→</span>
+		<h4 class="siro">予約情報入力</h4><span class="spanao">→</span>
+		<h4 class="ao">会員登録</h4><span class="spanao">→</span>
+		<h4 class="ao">入力確認</h4><span class="spanao">→</span>
+		<h4 class="ao">予約確定</h4>
+	</div>
+</header>
+<div class="container">
+	<div class="box">
 	<form action="/searchinn/PlanReserveServlet" method="post">
-		<div>
+		<div class="detail2">
 			<h3>【宿泊日程】</h3>
 			<p>
 				宿泊開始日：
-				<input type="date" name="checkin" value="<c:out value="${today}" />"
-				min="<c:out value="${today}" />" max="<c:out value="${afterDay}" />">
+					<input type="date" name="checkin" value="<c:out value="${today}" />"
+					min="<c:out value="${today}" />" max="<c:out value="${afterDay}" />">
 			</p>
 			<p>
 				泊数：
@@ -25,8 +41,7 @@
 					</c:forEach>
 				</select>
 			</p>
-		</div>
-		<div>
+
 			<h3>【利用者】</h3>
 			<p>
 				大人：
@@ -46,12 +61,13 @@
 				</select>
 				名
 			</p>
-		</div>
-		<div>
+
+
 			備考欄：
 			<input type="text" name="memo">
-		</div>
-		<input type="submit" value="予約（確認画面へ）">
+
+					<input type="submit" value="予約（確認画面へ）" id="submit"">
+			</div>
 	</form>
 
 	<c:if test="${not empty errMsg}">
@@ -59,17 +75,23 @@
 	</c:if><!-- 予約重複時にエラーメッセージの出力を行う -->
 
 	<hr>
+	<div class="calendar detail2">
+		<h4><c:out value="${calMap.year}年${calMap.month}月の空室状況"/></h4>
 
-	<h4><c:out value="${calMap.year}年${calMap.month}月の空室状況"/></h4>
-
-	<div>
-		<form action="/searchinn/PlanReserveServlet?action=show" method="get">
-			<input type="month" name="ym" value=<c:out value="${calMap.ym}" /> >
-			<input type="submit" value="表示"/>
-		</form>
+		<div>
+			<form action="/searchinn/PlanReserveServlet?action=show" method="get">
+				<input type="month" name="ym" value=<c:out value="${calMap.ym}" /> >
+				<input type="submit" value="表示"/>
+			</form>
+		</div>
 	</div>
+
+
 	<div>
 		${calMap.calendar}
+	</div>
+
+	</div>
 	</div>
 </body>
 </html>

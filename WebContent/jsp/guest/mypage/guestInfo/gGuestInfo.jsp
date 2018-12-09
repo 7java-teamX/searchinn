@@ -5,26 +5,31 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="/searchinn/css/common.css" >
-<link rel="stylesheet" type="text/css" href="/searchinn/css/guestInfo.css">
 <link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/guestInfo.css">
 <title>ユーザ情報</title>
 </head>
 <body>
 
 <jsp:include page="/include/header.jsp"/>
-</head>
-<body>
-<h2>ユーザー登録情報</h2>
+
 <div class="container">
 
+	<div class="box">
+		<div class="center_area">
+		<h2 >ユーザー登録情報</h2>
+			ユーザー名:${loginUser.name}<br>
+			かな:${loginUser.kana}<br>
+			TEL:${loginUser.tel}<br>
+			EMail:${loginUser.mail}<br>
+			Adress:${loginUser.address}<br>
+		</div>
+		<p class="center_area">
+			<a href="/searchinn/gGuestInfoChangeForm.jsp" class="btn">変更</a>
+			<a href="/searchinn/jsp/guest/mypage.jsp" class="btn">マイページへ</a>
+		</p>
+	</div>
 </div>
-<p>ユーザー名:${loginUser.name}</p>
-<p>かな:${loginUser.kana}</p>
-<p>TEL:${loginUser.tel}</p>
-<p>EMail:${loginUser.mail}</p>
-<p>Adress:${loginUser.address}</p>
-<p><a href="/searchinn/gGuestInfoChangeForm.jsp">変更</a></p>
-<p><a href="/searchinn/jsp/guest/mypage.jsp">マイページへ</a></p>
 
 <jsp:include page="/include/footer.jsp"/>
 </body>

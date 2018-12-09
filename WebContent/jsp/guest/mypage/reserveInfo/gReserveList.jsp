@@ -7,59 +7,14 @@
 <meta charset="UTF-8">
 <title>予約状況閲覧</title>
 <style>
-.container{
-	margin: 0 auto;
-	width: 1000px;
-}
-.str{
-	border-bottom: solid 2px #D3D3D3;
-	display: inline-block;
-	margin-bottom:5px;
-}
-
-.reserveBox, .planArea, .reserveArea,.text{
-	border: solid 2px silver;
-	padding:10px 15px;
-}
-.planArea{
-	display:flex;
-	justify-content: space-around;
-	margin-bottom:10px;
-}
-.text{
-	width:400px;
-}
-.reserveText,.reserveBox{
-	margin-bottom:10px;
-}
-.btn{
-	text-decoration: none;
-	border-bottom: solid 4px #B0E0E6;
-	background-color:#AFEEEE;
-	padding : 3px 10px;
-	display: inline-block;
-	border-radius: 5px;
-	margin-right:5px;
-}
-.btn:active{
-	 transform: translateY(4px);
-	 border: none;
-}
-.reserveBox{
-	background-color : #FFEBCD ;
-}
-.planArea, .reserveArea,.text{
-	background-color : #fff ;
-}
-.btn:visited {
-	color: black;
-}
-.btnArea{
-	text-align:center;
-}
 </style>
+<link rel="stylesheet" type="text/css" href="/searchinn/css/common.css" >
+<link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/reserveInfo.css">
 </head>
 <body>
+
+<jsp:include page="/include/header.jsp"/>
 <div class="container">
 	<h2>予約内容閲覧</h2>
 	<hr>
@@ -86,7 +41,6 @@
 					合計料金：￥<c:out value="${reserveInfo.charge}"/><br><!--子供人数  -->
 					メモ<br><c:out value="${reserveInfo.reserveMemo}"/><br><!--メモ -->
 				</div>
-
 				<div class="btnArea">
 					<a href="/searchinn/GReserveInfoChangeServlet?index=<c:out value="${status.index}" />" class="btn">予約内容変更</a>
 					<a href="#" class="btn" onclick="doConfirm(<c:out value="${reserveInfo.reserveId}" />)">
@@ -96,6 +50,8 @@
 		</div><!--  -->
 	</c:forEach>
 </div><!-- container -->
+
+<jsp:include page="/include/footer.jsp"/>
 
 <script>
 function doConfirm(reservId){
