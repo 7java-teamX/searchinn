@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import beans.SalesInfo;
-import model.ShowSalesLogic;
+import model.SalesLogic;
 
 /**
  * Servlet implementation class SalesServlet
@@ -26,7 +26,7 @@ public class SalesServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ShowSalesLogic ssLogic = new ShowSalesLogic();
+		SalesLogic ssLogic = new SalesLogic();
 		request.setCharacterEncoding("utf-8");
 		Map<String,List<SalesInfo>> salesMap = ssLogic.execute(request.getParameter("term"));
 		HttpSession session = request.getSession();
