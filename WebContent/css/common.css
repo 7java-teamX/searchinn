@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+.container{
+	margin: 0 auto;
+	width: 1024px;
+}
+
+.center-box{
+	width :400px;
+	margin : 20px auto;
+	border-radius: 20px;
+	text-align:center;
+	padding: 10px;
+	background-color:#C0C0C0;
+}
+
+.btn {
+	padding: 5px 10px;
+	text-align: center;
+	border : solid 1px rgb( 247, 246, 247);
+	border-radius: 5px;
+	background-color: #7bf7b6;
+	border: solid 1px #bbffff;
+	text-decoration: none;
+}
+
+.btn:hover {
+	background-color: rgba(231, 113, 38, 0.8);
+	color: rgb(251, 251, 251);
+	cursor: pointer;
+	transition: .8s;
+}
+
+.btn:active{
+	bottom: -4px;
+  	margin-bottom: 4px;
+}
+
+/* 送信ボタンcss*/
+#submit{
+	padding:5px 10px;
+	font-weight:bold;
+	font-size:15px;
+}

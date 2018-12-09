@@ -34,27 +34,4 @@ h1{
 /*--main--*/
 /*----------*/
 
-#main{
-	padding: 10px 70px 20px 70px;
-}
-
-h4.ao {
-color: #364e96;/*文字色*/
-border: solid 3px #364e96;/*線色*/
-padding: 0.5em;/*文字周りの余白*/
-border-radius: 0.5em;/*角丸*/
-display: inline;
-}
-
-h4.siro {
-color: #364e96;/*文字色*/
-border: solid 3px yellow;/*線色*/
-padding: 0.5em;/*文字周りの余白*/
-border-radius: 0.5em;/*角丸*/
-display: inline;
-}
-
-.spanao{
-	color: #364e96;
-}
 

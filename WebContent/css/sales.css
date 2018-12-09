@@ -1,0 +1,29 @@
+@charset "UTF-8";
+.container{
+	background: #c0c0c0;
+	padding:10px;
+}
+.box{
+	padding:10px;
+	margin:0 20px 20px 20px;
+}
+
+.sales-box{
+	display: flex;
+	justify-content: space-around;
+
+}
+
+.hotelSales, .areaSales, .totalSales{
+	border:4px double white;
+	padding:10px;
+}
+
+.btn {
+	padding: 5px;
+	font-size:15px;
+	border : solid 1px #ff8000;
+	border-radius: 10px;
+	background-color: #bbffff;
+	border: solid 1px #bbffff;
+}

@@ -5,22 +5,58 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/common.css" >
+<link rel="stylesheet" type="text/css" href="/searchinn/css/admin.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/guestList.css">
 <title>顧客情報詳細</title>
 </head>
+
 <body>
-<h1>顧客情報詳細</h1>
+<jsp:include page="/include/header.jsp"/>
+<h2>顧客情報削除完了</h2>
+<div class="container">
+	<div class="center-box">
+		<table>
+			<tr>
+				<th>id:</th>
+				<td>${guestDetail.guestId}</td>
+			</tr>
+			<tr>
+				<th>名前:</th>
+				<td>${guestDetail.name}</td>
+			</tr>
+			<tr>
+				<th>かな:</th>
+				<td>${guestDetail.kana}</td>
+			</tr>
+			<tr>
+				<th>誕生日:</th>
+				<td>${guestDetail.birthday}</td>
+			</tr>
+			<tr>
+				<th>TEL:</th>
+				<td>${guestDetail.tel}</td>
+			</tr>
+			<tr>
+				<th>Email:</th>
+				<td>${guestDetail.mail}</td>
+			</tr>
+			<tr>
+				<th>住所:</th>
+				<td>${guestDetail.address}</td>
+			</tr>
 
-<p>id:${guestDetail.guestId} </p>
-<p>名前:${guestDetail.name} </p>
-<p>かな:${guestDetail.kana}</p>
-<p>誕生日:${guestDetail.birthday}</p>
-<p>TEL:${guestDetail.tel} </p>
-<p>Email:${guestDetail.mail}</p>
-<p>住所:${guestDetail.address}</p>
-<p><a href = "/searchinn/GuestInfoChangeServlet?action=change">変更</a></p>
-<p><a href = "/searchinn/GuestInfoDeleteServlet">削除</a></p>
-<p><a href = "/searchinn/AGuestListServlet">戻る</a></p>
+		</table>
 
+		<p>
+			<a href = "/searchinn/GuestInfoChangeServlet?action=change">変更</a>
+			<a href = "/searchinn/GuestInfoDeleteServlet">削除</a>
+			<a href = "/searchinn/AGuestListServlet">戻る</a>
+		</p>
+	</div>
 
+</div>
+<jsp:include page="/include/footer.jsp"/>
 </body>
 </html>

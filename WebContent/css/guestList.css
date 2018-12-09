@@ -1,0 +1,16 @@
+@charset "UTF-8";
+td,th{
+	background-color: #bbffff;
+
+}
+td,th{
+	border:2px solid #fff;
+}
+
+.container{
+	border:7px double white;
+	background-color:#c2faf0;
+}
+.cc{
+	margin: auto;
+}

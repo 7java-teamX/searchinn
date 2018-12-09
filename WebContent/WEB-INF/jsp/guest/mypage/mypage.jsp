@@ -4,12 +4,11 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="/searchinn/css/loginStyle.css">
-<link rel="stylesheet" type="text/css" href="/searchinn/css/headerStyle.css">
-<link rel="stylesheet" type="text/css" href="/searchinn/css/footerStyle.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
 <meta charset="UTF-8">
 <title>マイページ</title>
 </head>
-<body>
+<body style="background-color: white;">
 <header>
 	<jsp:include page="/include/header.jsp"/>
 </header>

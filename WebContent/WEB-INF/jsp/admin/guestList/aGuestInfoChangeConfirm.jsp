@@ -4,23 +4,34 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/common.css" >
+<link rel="stylesheet" type="text/css" href="/searchinn/css/admin.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/guestList.css">
+<title>顧客内容確認画面</title>
 <title>変更確認</title>
 </head>
 <body>
-<h2>変更確認</h2>
-<h3>変更前</h3>
-<p>名前:${guestDetail.name} </p>
-<p>かな:${guestDetail.kana}</p>
-<p>TEL:${guestDetail.tel} </p>
-<p>Email:${guestDetail.mail}</p>
-<p>住所:${guestDetail.address}</p>
-<h3>変更後</h3>
-<p>名前:${update.name} </p>
-<p>かな:${update.kana}</p>
-<p>TEL:${update.tel} </p>
-<p>Email:${update.mail}</p>
-<p>住所:${update.address}</p>
-<p><a href="/searchinn/GuestInfoChangeServlet?action=admin">変更</a></p>
-<p><a href="/searchinn/AGuestListServlet">キャンセル</a></p>
+<div class="container">
+	<h2>顧客内容確認画面</h2>
+	<div class="center-box">
+		<p>名前:${guestDetail.name} </p>
+		<p>かな:${guestDetail.kana}</p>
+		<p>TEL:${guestDetail.tel} </p>
+		<p>Email:${guestDetail.mail}</p>
+		<p>住所:${guestDetail.address}</p>
+	</div>
+	<div class="center-box">
+
+	<p>名前:${update.name} </p>
+	<p>かな:${update.kana}</p>
+	<p>TEL:${update.tel} </p>
+	<p>Email:${update.mail}</p>
+	<p>住所:${update.address}</p>
+	<p><a href="/searchinn/GuestInfoChangeServlet?action=admin">変更</a></p>
+	<p><a href="/searchinn/AGuestListServlet">キャンセル</a></p>
+	</div>
+</div>
+<jsp:include page="/include/footer.jsp"/>
 </body>
 </html>

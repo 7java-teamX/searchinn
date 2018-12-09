@@ -4,14 +4,31 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>予約変更確定</title>
-</head>
-<body>
-予約変更確定
 
-予約内容は変更されました!!
-<a class="btn" href="AReserveListServlet">予約一覧へ戻る</a>
+<link rel="stylesheet" type="text/css" href="/searchinn/css/common.css" >
+<link rel="stylesheet" type="text/css" href="/searchinn/css/admin.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/reserveList.css">
+<title>予約変更確定</title>
+
+</head>
+
+<body>
+<jsp:include page="/include/header.jsp"/>
+
+<h2>予約変更確定</h2>
+<div class="container" style="margin-bottom:200px">
+
+<p class="bold">予約内容は変更されました!!</p>
+<p>
+	<a class="btn" href="AReserveListServlet">予約一覧へ戻る</a>
+</p>
 <hr>
-<a href="/searchinn/AdminMenuServlet">管理者TOP</a>
+<p>
+	<a href="/searchinn/AdminMenuServlet">管理者TOP</a>
+</p>
+</div>
+
+<jsp:include page="/include/footer.jsp"/>
 </body>
 </html>

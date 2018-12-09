@@ -1,16 +1,19 @@
 @charset "UTF-8";
 
 body{
-
 	background: #456;
 	text-align: center;
+}
+
+.container{
+	margin: 0 auto;
+	width: 1024px;
 }
 
 h2{
 	text-align: center;
 	background: #28d;
 	padding: 20px;
-	margin-bottom: 0;
 	color:#fff;
 	border-radius: 3px;
 }
@@ -26,6 +29,7 @@ div.main1{
 	width:400px;
 	margin: 0 auto;
 	border-radius: 3px;
+	background-color: white;
 }
 
 div.errmsg{
@@ -43,4 +47,11 @@ div.errmsg{
 .center{
 	text-align: center;
 	color:#fff;
+}
+
+table{
+	margin: 0 auto;
+}
+.box{
+	background-color:white;
 }

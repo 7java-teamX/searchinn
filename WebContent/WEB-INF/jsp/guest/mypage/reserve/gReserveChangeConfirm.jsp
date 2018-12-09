@@ -6,8 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>予約変更確認</title>
-<link rel="stylesheet" type="text/css" href="/searchinn/css/headerStyle.css">
-<link rel="stylesheet" type="text/css" href="/searchinn/css/footerStyle.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/common.css" >
+<link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
 
 <style>
 .container{

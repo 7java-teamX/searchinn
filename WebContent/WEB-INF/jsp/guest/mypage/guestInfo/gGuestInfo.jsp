@@ -4,16 +4,32 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/searchinn/css/common.css" >
+<link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/guestInfo.css">
+<title>ユーザ情報</title>
 </head>
 <body>
-<h2>ユーザー登録情報</h2>
-<p>ユーザー名:${loginUser.name}</p>
-<p>かな:${loginUser.kana}</p>
-<p>TEL:${loginUser.tel}</p>
-<p>EMail:${loginUser.mail}</p>
-<p>Adress:${loginUser.address}</p>
-<p><a href="/searchinn/GGuestInfoServlet?action=edit">編集</a></p>
-<p><a href="/searchinn/MainServlet?action=mypage">マイページへ</a></p>
+<jsp:include page="/include/header.jsp"/>
+
+<div class="container">
+
+	<div class="box">
+		<div class="center_area">
+		<h2 >ユーザー登録情報</h2>
+			ユーザー名:${loginUser.name}<br>
+			かな:${loginUser.kana}<br>
+			TEL:${loginUser.tel}<br>
+			EMail:${loginUser.mail}<br>
+			Adress:${loginUser.address}<br>
+		</div>
+		<p class="center_area">
+			<a href="/searchinn/GGuestInfoServlet?action=edit" class="btn">編集</a>
+			<a href="/searchinn/MainServlet?action=mypage" class="btn">マイページへ</a>
+		</p>
+	</div>
+</div>
+
+<jsp:include page="/include/footer.jsp"/>
 </body>
 </html>

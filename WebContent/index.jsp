@@ -61,8 +61,7 @@
 -->
 
 <link rel="stylesheet" type="text/css" href="/searchinn/css/indexStyle.css" >
-<link rel="stylesheet" type="text/css" href="/searchinn/css/headerStyle.css" >
-<link rel="stylesheet" type="text/css" href="/searchinn/css/footerStyle.css" >
+<link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
 
 <title>BOOKINN</title>
 
@@ -80,14 +79,13 @@
 
 	<br>
 	<div id="main">
-
-	<h4 class="siro">ご予約の流れ</h4><span class="spanao">→</span>
-	<h4 class="ao">エリア/ホテル選択</h4><span class="spanao">→</span>
-	<h4 class="ao">プラン選択</h4><span class="spanao">→</span>
-	<h4 class="ao">予約情報入力</h4><span class="spanao">→</span>
-	<h4 class="ao">会員登録</h4><span class="spanao">→</span>
-	<h4 class="ao">入力確認</h4><span class="spanao">→</span>
-	<h4 class="siro">予約確定</h4>
+		<h4 class="siro">ご予約の流れ</h4><span class="spanao">→</span>
+		<h4 class="ao">エリア/ホテル選択</h4><span class="spanao">→</span>
+		<h4 class="ao">プラン選択</h4><span class="spanao">→</span>
+		<h4 class="ao">予約情報入力</h4><span class="spanao">→</span>
+		<h4 class="ao">会員登録</h4><span class="spanao">→</span>
+		<h4 class="ao">入力確認</h4><span class="spanao">→</span>
+		<h4 class="siro">予約確定</h4>
 	</div>
 
 	<jsp:include page="/include/footer.jsp"/>
