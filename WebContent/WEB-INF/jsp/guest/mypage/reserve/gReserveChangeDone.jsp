@@ -20,7 +20,7 @@
 		<h3 class="title" >予約変更確定</h3>
 		<div class="center_area none">
 			<br><h3>予約内容は変更されました</h3><br><br>
-			<a class="btn" href="/searchinn/GReserveListServlet">予約一覧へ戻る</a>
+			<a class="btn" href="/searchinn/GReserveListServlet">予約一覧へ</a>
 		</div>
 	</div>
 </div>

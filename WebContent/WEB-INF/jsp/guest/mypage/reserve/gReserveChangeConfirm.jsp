@@ -34,7 +34,7 @@
 		<div class="center_area none">
 			<small>こちらの内容で問題ないですか？</small><br>
 			<a class="btn" href="/searchinn/GReserveInfoChangeServlet?index=done">はい</a>
-			<a class="btn" href="/searchinn/GReserveInfoChangeServlet?index=cancel">キャンセル</a>
+			<a class="btn" href="/searchinn/GReserveInfoChangeServlet?index=cancel">いいえ</a>
 		</div>
 	</div> <!-- box-->
 </div> <!-- container -->
