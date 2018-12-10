@@ -14,7 +14,7 @@
 
 <body>
 <jsp:include page="/include/header.jsp"/>
-<h2>顧客情報削除完了</h2>
+<h2>顧客情報詳細</h2>
 <div class="container">
 	<div class="center-box">
 		<table>
@@ -50,9 +50,9 @@
 		</table>
 
 		<p>
-			<a href = "/searchinn/GuestInfoChangeServlet?action=change">変更</a>
-			<a href = "/searchinn/GuestInfoDeleteServlet">削除</a>
-			<a href = "/searchinn/AGuestListServlet">戻る</a>
+			<a class="btn" href = "/searchinn/GuestInfoChangeServlet?action=change">変更</a>
+			<a class="btn"  href = "/searchinn/GuestInfoDeleteServlet">削除</a>
+			<a class="btn"  href = "/searchinn/AGuestListServlet">戻る</a>
 		</p>
 	</div>
 
