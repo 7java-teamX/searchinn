@@ -6,9 +6,16 @@
 <head>
 <meta charset="UTF-8">
 
+<link rel="stylesheet" type="text/css" href="/searchinn/css/common.css" >
+<link rel="stylesheet" type="text/css" href="/searchinn/css/admin.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/facilyty.css">
 <title>BOOKINN | 管理者・施設管理</title>
 </head>
 <body>
+<header>
+	<jsp:include page="/include/header.jsp"/>
+</header>
 	<h2>施設管理</h2>
 	<div>
 		<h3>エリア</h3>
@@ -76,7 +83,12 @@
 				</tr>
 			</c:forEach>
 		</table>
-		<a href="/searchinn/FacilityServlet?action=roomTypeAdd">部屋タイプ追加</a>
+
+		<p>
+			<a class="btn" href="/searchinn/FacilityServlet?action=roomTypeAdd">部屋タイプ追加</a>
+		</p>
+
+
 	</div>
 
 	<div>
@@ -105,11 +117,9 @@
 				</tr>
 			</c:forEach>
 		</table>
-<%--		<a href="/searchinn/FacilityServlet">プラン追加</a>	--%>
+
 	</div>
-<a href="/searchinn/AdminMenuServlet">管理者TOP</a>
 
-
-
+<jsp:include page="/include/footer.jsp"/>
 </body>
 </html>
