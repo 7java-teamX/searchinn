@@ -17,8 +17,7 @@ public class GReserveShowDAO {
 	private final String DriverName = "com.mysql.jdbc.Driver";
 	private final String JDBCURL = "jdbc:mysql://localhost:3306/inn"; //接続先データベース
 	private final String DBUser = "root"; // user名
-	//private final String DBPass = "root"; // pass名
-	private final String DBPass = "Reina9110Nao";
+	private final String DBPass = "root"; // pass名
 
 	////ゲストidを元に予約情報をarrayListで抽出するメソッド(つぶやきの内容取得)
 	public List<Reserve> selectReserve(int guestId) {

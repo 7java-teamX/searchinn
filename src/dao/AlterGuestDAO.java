@@ -12,8 +12,7 @@ public class AlterGuestDAO {
 	private final String DRIVER_NAME = "com.mysql.jdbc.Driver";
 	private final String JDBC_URL = "jdbc:mysql://localhost:3306/inn";
 	private final String DB_USER = "root";
-	//private final String DB_PASS = "root";
-	private final String DB_PASS = "Reina9110Nao";
+	private final String DB_PASS = "root";
 	/**
 	 * ログイン画面で入力した管理者名とpassがあっているか確かめる
 	 * @param admin
