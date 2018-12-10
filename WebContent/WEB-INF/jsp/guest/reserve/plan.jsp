@@ -48,7 +48,7 @@
 					小人：<c:out value="${plan.childCharge}" />円
 				</p>
 			</div>
-			<img src="<c:out value="${plan.planImage}" />" width="300" height="300">
+			<img src="/searchinn/image/imagesPlan/<c:out value="${plan.planImage}" />" width="300" height="300">
 		</div>
 		<div class="btn_area">
 			<a href="/searchinn/PlanSelectServlet?action=toReserve&index=${status.index}" class="btn">空室確認・予約</a>

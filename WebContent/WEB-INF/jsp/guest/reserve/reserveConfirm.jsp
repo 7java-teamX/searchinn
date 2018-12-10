@@ -37,7 +37,7 @@
 					小人料金：<c:out value="${reserve.childCharge}" />円/１人
 				</small>
 			</div>
-			<img alt="プランイメージ" src="<c:out value="${reserve.planImage}" />"
+			<img alt="プランイメージ" src="/searchinn/image/imagesPlan/<c:out value="${reserve.planImage}" />"
 			width="300" height="230" class="img"><br>
 		</div>
 	</div>
@@ -65,7 +65,7 @@
 				<c:out value="メール：${reserve.hotelMail}" /><br>
 				<c:out value="ホテル詳細：${reserve.hotelDetail}" /><br>
 			</div>
-			<img alt="ホテルイメージ" src="<c:out value="${reserve.hotelImage}" />"
+			<img alt="ホテルイメージ" src="/searchinn/image/imagesHotel/<c:out value="${reserve.hotelImage}" />"
 			 class="img" width="200" height="130"><br>
 		</div>
 	</div>
