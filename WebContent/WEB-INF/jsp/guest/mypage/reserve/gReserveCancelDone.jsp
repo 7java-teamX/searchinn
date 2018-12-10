@@ -7,7 +7,7 @@
 <title>キャンセル確定</title>
 <link rel="stylesheet" type="text/css" href="/searchinn/css/common.css" >
 <link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
-
+<link rel="stylesheet" type="text/css" href="/searchinn/css/reserveInfo.css">
 </head>
 <body>
 <header>

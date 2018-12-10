@@ -8,59 +8,7 @@
 <title>予約状況閲覧</title>
 <link rel="stylesheet" type="text/css" href="/searchinn/css/common.css" >
 <link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
-
-<style>
-.container{
-	margin: 0 auto;
-	width: 1000px;
-}
-.str{
-	border-bottom: solid 2px #D3D3D3;
-	display: inline-block;
-	margin-bottom:5px;
-}
-
-.reserveBox, .planArea, .reserveArea,.text{
-	border: solid 2px silver;
-	padding:10px 15px;
-}
-.planArea{
-	display:flex;
-	justify-content: space-around;
-	margin-bottom:10px;
-}
-.text{
-	width:400px;
-}
-.reserveText,.reserveBox{
-	margin-bottom:10px;
-}
-.btn{
-	text-decoration: none;
-	border-bottom: solid 4px #B0E0E6;
-	background-color:#AFEEEE;
-	padding : 3px 10px;
-	display: inline-block;
-	border-radius: 5px;
-	margin-right:5px;
-}
-.btn:active{
-	 transform: translateY(4px);
-	 border: none;
-}
-.reserveBox{
-	background-color : #FFEBCD ;
-}
-.planArea, .reserveArea,.text{
-	background-color : #fff ;
-}
-.btn:visited {
-	color: black;
-}
-.btnArea{
-	text-align:center;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="/searchinn/css/reserveInfo.css">
 </head>
 <body>
 <header>

@@ -40,9 +40,7 @@
 </div> <!-- container -->
 
 
-<footer>
 	<jsp:include page="/include/footer.jsp" />
-</footer>
 
 </body>
 </html>
