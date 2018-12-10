@@ -26,7 +26,7 @@ public class GuestLoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 		//
 		String forwardPath = "";
-		//リクエストパラメータの取得
+		//リクエス	トパラメータの取得
 		request.setCharacterEncoding("UTF-8");
 		String mail = request.getParameter("guestMail");
 		String pass = request.getParameter("guestPass");

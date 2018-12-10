@@ -54,7 +54,7 @@
 				<td>${guest.name}</td>
 				<td>${guest.kana}</td>
 				<td>${guest.tel}</td>
-				<td>${guest.mail}/td>
+				<td>${guest.mail}</td>
 				<td>
 					<a href="/searchinn/GuestInfoServlet?id=<c:out value="${guest.guestId}"/>">詳細</a>
 				</td>

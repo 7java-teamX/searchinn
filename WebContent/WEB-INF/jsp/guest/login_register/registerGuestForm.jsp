@@ -7,8 +7,8 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="/searchinn/css/registerGuestForm.css">
 <link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
-<script type="text/javascript" src="/searchinn/js/control.js"></script>
 <script type="text/javascript" src="/searchinn/js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="/searchinn/js/control.js"></script>
 <title>会員情報入力</title>
 </head>
 <body>
@@ -107,7 +107,7 @@
 	</div><!--main Fin-->
 
 	<p>
-		<a class="center" href="/searchinn/jsp/index.jsp">TOPへ戻る</a>
+		<a class="center" href="/searchinn">TOPへ戻る</a>
 	</p>
 
 <jsp:include page="/include/footer.jsp"/>

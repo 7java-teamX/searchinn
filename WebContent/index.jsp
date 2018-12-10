@@ -59,7 +59,7 @@
 
 -->
 <link rel="stylesheet" type="text/css" href="/searchinn/css/common.css" >
-<link rel="stylesheet" type="text/css" href="/searchinn/css/index.css" >
+<link rel="stylesheet" type="text/css" href="/searchinn/css/indexStyle.css" >
 <link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
 <title>BOOKINN</title>
 </head>
@@ -81,7 +81,7 @@
 <div class="title">
 	<h1><a href="#">BOOKINN.com</a></h1>
 	<h3 id="hoge">世界最小級のホテル予約サイト</h3><br>
-	<h3 id="hoge">ホテル予約ならBOOKINN.com</h3><br>
+	<h3 id="hoge">ホテル予約ならBOOKINN.com</h3>
 </div>
 <jsp:include page="/include/footer.jsp"/>
 
