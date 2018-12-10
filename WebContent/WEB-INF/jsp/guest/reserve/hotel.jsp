@@ -124,7 +124,7 @@
 							＜秋＞
 							山の幸、海の幸共に食べごろを迎えます！<br>
 							＜冬＞
-							観光名所と雪景色が一緒になった絶景が見られます！
+							観光名所と雪景色が一緒になった<a class="kakusiLink"href="kappa.jsp">絶景</a>が見られます！
 
 						</div>
 						<div class="hotelarea">

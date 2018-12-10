@@ -5,6 +5,23 @@ body {
 	margin: 0 auto;
 }
 
+a.kakusiLink{
+	cursor:no-drop;
+}
+
+a.kakusiLink:link{
+	color: black;
+}
+a.kakusiLink:visited {
+	color: black;
+	}
+a.kakusiLink:hover {
+	color: black;
+	}
+a.kakusiLink:active {
+	color: black;
+}
+
 .container {
 	margin: 0 auto;
 	width: 90%;

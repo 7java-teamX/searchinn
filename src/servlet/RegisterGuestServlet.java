@@ -27,7 +27,7 @@ public class RegisterGuestServlet extends HttpServlet {
 
 		if (action.equals("done")) {
 			HttpSession ses = request.getSession();
-			Guest insertGuest = (Guest) ses.getAttribute("loginGuest");
+			Guest insertGuest = (Guest) ses.getAttribute("regGuest");
 			RegisterGuestLogic registerGuestLogic = new RegisterGuestLogic();
 			registerGuestLogic.isInsert(insertGuest);
 
@@ -61,15 +61,17 @@ public class RegisterGuestServlet extends HttpServlet {
 
 		RegisterGuestLogic registerGuestLogic = new RegisterGuestLogic();
 		boolean isCheck = registerGuestLogic.isCheck(guest);
-		System.out.println("isCheck : " + isCheck);
+
 		if (isCheck) {
+			System.out.println("isCheck true");
 			//セッションスコープに登録ユーザーを保存
 			HttpSession session = request.getSession();
-			session.setAttribute("loginGuest", guest);
+			session.setAttribute("regGuest", guest);
 			//フォワード
 			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/guest/login_register/registerGuestConfirm.jsp");
 			dis.forward(request, response);
 		}else {
+			System.out.println("isCheck false");
 			String errmsg = "メールアドレスが重複しています";
 			//エラーメッセージをリクエストスコープに格納
 			request.setAttribute("errmsg", errmsg);

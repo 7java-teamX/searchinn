@@ -98,17 +98,28 @@ h2{
 }
 
 
-h2 a{
-	color: #fff;
-}
-
 .touroku{
 	text-decoration:none;
 }
 
+h2 a{
+	color: #fff;
+}
+
+a.touroku{
+	color: #fff;
+
+}
+
 h2.hover:hover{
 	 background: #17c;
+	 margin: 20px;
 }
+
+h2.hover{
+	 margin: 20px;
+}
+
 
 .whiteText{
 	color: #fff;
