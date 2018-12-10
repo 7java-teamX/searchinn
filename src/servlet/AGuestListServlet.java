@@ -44,6 +44,7 @@ public class AGuestListServlet extends HttpServlet {
 			ses.setAttribute("guestList", guestList);
 			System.out.println("AGuestListServlet: if");
 		}
+		System.out.println("AGusetListServlet dis");
 		RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/admin/guestList/aGuestList.jsp");
 		dis.forward(request, response);
 

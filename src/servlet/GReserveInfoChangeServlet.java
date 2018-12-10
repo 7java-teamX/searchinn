@@ -38,8 +38,9 @@ public class GReserveInfoChangeServlet extends HttpServlet {
 			rSL.excecute2(reserveInfo);
 			pass = "/WEB-INF/jsp/guest/mypage/reserve/gReserveChangeDone.jsp";
 			//session.remove
-		}
-		else if(strIndex != null) {
+		}else if(strIndex.equals("cancel")) {
+			pass = "/WEB-INF/jsp/guest/mypage/reserve/gReserveList.jsp";
+		}else if(strIndex != null) {
 			int index = Integer.parseInt(strIndex);
 
 			// indexの数値を元にarrayListから取得しsession-scopeに格納
@@ -47,7 +48,6 @@ public class GReserveInfoChangeServlet extends HttpServlet {
 			session.setAttribute("reserveInfo", reserveInfo);
 			pass = "/WEB-INF/jsp/guest/mypage/reserve/gReserveChangeForm.jsp";
 		}
-
 		//aReserveList.jspのフォワード処理
 		RequestDispatcher dis = request.getRequestDispatcher(pass);
 		dis.forward(request,response);

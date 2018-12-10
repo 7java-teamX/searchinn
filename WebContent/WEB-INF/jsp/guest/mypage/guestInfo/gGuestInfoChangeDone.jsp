@@ -20,8 +20,8 @@
 		<br><br>
 			変更完了しました
 		</p>
-		<p  class="center_area none">
-			<a href="/searchinn/gGuestInfo.jsp" class="btn">ゲスト情報ページ</a>
+		<p class="center_area none">
+			<a href="/searchinn/MainServlet?action=mypage" class="btn">ゲスト情報ページ</a>
 
 			<a href="/searchinn/MainServlet?action=mypage" class="btn">マイページ</a>
 		</p>
