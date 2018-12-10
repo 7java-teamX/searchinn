@@ -24,7 +24,7 @@ a.kakusiLink:active {
 
 .container {
 	margin: 0 auto;
-	width: 90%;
+	width: 1042px;
 	border: medium solid #ff8000;
 	background-color: #fee6c0;
 }
@@ -248,7 +248,21 @@ a:visited {	color: black;}
 
 
 
-/* topに戻すボタンCSS   -------------------------------------                      */
+/* topに戻すボタンCSS   -------------------------------------
+
+
+		div.wrap{
+			border: medium solid #ff006a;
+			margin: 25px;
+		}
+
+		div.box{
+			border: medium solid #66FFCC;
+			margin: 25px;
+			padding: 45px;
+
+		}
+                     */
 #pageTop {
 	position: fixed;
 	bottom: 20px;
@@ -258,7 +272,6 @@ a:visited {	color: black;}
 
 #pageTop i {
 	padding-top: 6px;
-	madin-bottom:5px;
 }
 
 #pageTop a {

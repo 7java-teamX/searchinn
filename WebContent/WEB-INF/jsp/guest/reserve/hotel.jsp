@@ -4,11 +4,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
 <title>ホテル選択</title>
 <link rel="stylesheet" type="text/css" href="/searchinn/css/common.css" >
 <link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
 <link rel="stylesheet" type="text/css" href="/searchinn/css/reserve.css">
+<link rel="shortcut icon" href="">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 <body>
 <header>
@@ -24,7 +29,7 @@
 	</div>
 </header>
 
-
+<div class="wrap">
 
 	<div class="container">
 		<div id="map">
@@ -161,7 +166,7 @@
 		</div>
 
 	</div>
-
+</div>
 
 	<jsp:include page="/include/footer.jsp"/>
 
