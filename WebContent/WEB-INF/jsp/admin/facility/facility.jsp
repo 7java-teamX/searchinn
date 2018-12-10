@@ -18,7 +18,7 @@
 </header>
 	<h2>施設管理</h2>
 	<div>
-	<a href="/searchinn/AdminMenuServlet" class="btn">管理画面へ</a>
+	<a href="/searchinn/AdminMenuServlet" class="btn">管理TOP</a>
 		<h3>エリア</h3>
 		<table>
 			<tr>
