@@ -28,8 +28,13 @@ public class SalesServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		SalesLogic ssLogic = new SalesLogic();
 		request.setCharacterEncoding("utf-8");
-		Map<String,List<SalesInfo>> salesMap = ssLogic.execute(request.getParameter("term"));
+		String term = request.getParameter("term");
+		Map<String,List<SalesInfo>> salesMap = ssLogic.execute(term);
+
 		HttpSession session = request.getSession();
+
+		//session-scopeに格納(年-月,ホテル,エリア,合計の売上)
+		session.setAttribute("term", term);
 		session.setAttribute("hotelSales", salesMap.get("hotelSales"));
 		session.setAttribute("areaSales", salesMap.get("areaSales"));
 		session.setAttribute("totalSales", salesMap.get("totalSales"));

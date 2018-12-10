@@ -28,7 +28,7 @@
 	</form>
 	<hr>
 	<p>
-			<c:out value="${year}年${month}月の売上" />
+			<c:out value="${term}の売上" />
 	</p>
 
 	<div class="sales-box">
