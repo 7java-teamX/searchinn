@@ -54,8 +54,8 @@
 							知床・大雪山といった雄大な大自然、水の美しい支笏湖や摩周湖など見どころは盛りだくさん。
 						</div>
 						<div class="hotelarea">
-							<a href="/searchinn/PlanSelectServlet?action=toPlan&hotelId=1"  class="btn2">コロポックル</a>
-							<a href="/searchinn/PlanSelectServlet?action=toPlan&hotelId=2" class="btn2">ススキノ</a><br>
+							<a href="/searchinn/PlanSelectServlet?action=toPlan&hotelId=1"  class="btn2">コロポックル・チセ</a>
+							<a href="/searchinn/PlanSelectServlet?action=toPlan&hotelId=2" class="btn2">ホテル・ニューススキノ</a><br>
 						</div>
 					</div>
 				</div>
@@ -64,7 +64,7 @@
 			<div class="box" id="kanto">
 				<div class="areaName">&nbsp;&nbsp;関東エリア</div>
 					<div class="descriptArea">
-						<a href="#"><img  src="/searchinn/image/imagesArea/kyoto.jpeg" width="280" align="top"></a>
+						<a href="#"><img  src="/searchinn/image/imagesArea/kanto.jpg" width="280" align="top"></a>
 						<div class="hotel">
 							<div class="textarea">
 								関東地方は有名なテーマパークや定番の観光地だけでなく、温泉地など癒しスポットも数多く点在する関東エリア。
@@ -91,7 +91,7 @@
 								また、日本最大の湖で楽しめるアクティビティもおすすめ！
 						</div>
 						<div class="hotelarea">
-							<a href="/searchinn/PlanSelectServlet?action=toPlan&hotelId=3"   class="btn2">琵琶湖</a>
+							<a href="/searchinn/PlanSelectServlet?action=toPlan&hotelId=3"   class="btn2">ロイヤル琵琶湖ホテル</a>
 						</div>
 					</div>
 				</div>
@@ -100,7 +100,7 @@
 			<div class="box" id="tyugoku">
 				<div class="areaName">&nbsp;&nbsp;中国エリア</div><br>
 				<div class="descriptArea">
-					<a href="#"><img src="/searchinn/image/imagesArea/kyoto.jpeg" width="280" align="top"></a>
+					<a href="#"><img src="/searchinn/image/imagesArea/cyugoku.jpg" width="280" align="top"></a>
 					<div class="hotel">
 						<div class="textarea">
 								中国地方は大自然や歴史的なスポットが数多くある日本海と瀬戸内海に面した地域を有するエリアです。
@@ -117,7 +117,7 @@
 			<div class="box" id="sikoku">
 				<div class="areaName">&nbsp;&nbsp;四国エリア</div><br>
 				<div class="descriptArea">
-					<a href="#"><img src="/searchinn/image/imagesArea/kyoto.jpeg" width="280" align="top"></a>
+					<a href="#"><img src="/searchinn/image/imagesArea/shikoku.jpg" width="280" align="top"></a>
 					<div class="hotel">
 						<div class="textarea">
 							四国地方は四季折々でさまざまな魅力があります。<br>
@@ -155,8 +155,8 @@
 								また、本州では見られないような美しい大自然も魅力的
 						</div>
 						<div class="hotelarea">
-							<a href="/searchinn/PlanSelectServlet?action=toPlan&hotelId=5"   class="btn2">キジムナー</a>
-							<a href="/searchinn/PlanSelectServlet?action=toPlan&hotelId=6"   class="btn2">マリーナ</a>
+							<a href="/searchinn/PlanSelectServlet?action=toPlan&hotelId=5"   class="btn2">キジムナー・ヤー</a>
+							<a href="/searchinn/PlanSelectServlet?action=toPlan&hotelId=6"   class="btn2">マリンリゾート沖縄</a>
 						</div>
 
 					</div>

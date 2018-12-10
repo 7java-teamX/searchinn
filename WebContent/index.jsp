@@ -83,8 +83,9 @@
 	<h3 id="hoge">世界最小級のホテル予約サイト</h3><br>
 	<h3 id="hoge">ホテル予約ならBOOKINN.com</h3>
 </div>
-<jsp:include page="/include/footer.jsp"/>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
+<jsp:include page="/include/footer.jsp"/>
 
 </body>
 </html>
