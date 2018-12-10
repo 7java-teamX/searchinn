@@ -18,6 +18,7 @@
 </header>
 	<h2>施設管理</h2>
 	<div>
+	<a href="/searchinn/AdminMenuServlet" class="btn">管理画面へ</a>
 		<h3>エリア</h3>
 		<table>
 			<tr>
@@ -43,7 +44,8 @@
 				<th>TEL</th>
 				<th>MAIL</th>
 				<th>image</th>
-				<th>詳細</th>
+				<th>ホテル説明</th>
+
 			</tr>
 			<c:forEach var="hotel" items="${hotelAll}">
 				<tr>
@@ -101,7 +103,7 @@
 				<th>部屋タイプID</th>
 				<th>部屋数</th>
 				<th>image</th>
-				<th>詳細</th>
+				<th>プラン詳細</th>
 				<th></th>
 			</tr>
 			<c:forEach var="plan" items="${planAll}" varStatus="status">
@@ -113,7 +115,9 @@
 					<td><c:out value="${plan.numRoom}" /></td>
 					<td><c:out value="${plan.planImage}" /></td>
 					<td><c:out value="${plan.planDetail}" /></td>
-					<td><a href="/searchinn/FacilityServlet?action=planEdit&index=${status.index}">編集</a></td>
+					<td>
+						<a class="btn" href="/searchinn/FacilityServlet?action=planEdit&index=${status.index}">編集</a>
+					</td>
 				</tr>
 			</c:forEach>
 		</table>
