@@ -3,6 +3,7 @@
 body{
 	margin: 0 auto;
 	width: 1048px;
+	background-image: linear-gradient(-90deg, #C7FFDD, #D8C7FF);
 }
 .container{
 	margin: 0 auto;
