@@ -17,7 +17,6 @@ public class GReserveShowLogic {
 	public void excecute2(Reserve reserveInfo){
 		GReserveShowDAO dao = new GReserveShowDAO();
 		dao.updateReserve(reserveInfo);
-
 	}
 	//delete実行時
 	public void excecute3(int reserveId){

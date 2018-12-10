@@ -25,7 +25,7 @@
     		<div class="userInfo">
     			<c:if test="${loginUser.name!=null}">
 	    				<c:out value="ログイン中：${loginUser.name}さん" />
-	    				<a href="/searchinn/MainServlet?action=mypage"  class="button">ログアウト</a>&nbsp;	&nbsp;
+	    				<a href="/searchinn/GuestLoginServlet" class="button">ログアウト</a>&nbsp;	&nbsp;
 	    			</c:if>
 			</div>
 		</div>
