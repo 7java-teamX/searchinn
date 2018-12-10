@@ -6,7 +6,7 @@ body {
 }
 
 a.kakusiLink{
-	cursor:no-drop;
+	cursor:text;
 }
 
 a.kakusiLink:link{
