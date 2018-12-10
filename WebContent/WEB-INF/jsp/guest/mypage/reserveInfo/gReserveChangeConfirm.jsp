@@ -25,8 +25,8 @@
 			宿泊期間：<c:out value="${reserveInfo.reserveDate}"/><br>
 			大人人数：<c:out value="${reserveInfo.numOfAdults}"/>人<br>
 			子供人数：<c:out value="${reserveInfo.numOfChildren}"/>人<br>
-			合計料金：<c:out value="${reserveInfo.charge}"/>
-			メモ:<br><c:out value="${reserveInfo.reserveMemo}"/><br>
+			合計料金：<c:out value="${reserveInfo.charge}"/><br>
+			メモ:<c:out value="${reserveInfo.reserveMemo}"/><br>
 		</div>
 
 
