@@ -75,8 +75,13 @@
 					<input type="submit" value="変更" id="submit">
 				</th>
 			</tr>
+
 		</table>
+
 		</form>
+			<c:if test="${Msg != null}">
+	<c:out value="${Msg}"/>
+</c:if>
 	</div>
 </div>
 <jsp:include page="/include/footer.jsp"/>
