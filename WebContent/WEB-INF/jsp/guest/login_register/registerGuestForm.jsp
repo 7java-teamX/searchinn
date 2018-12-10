@@ -25,19 +25,19 @@
 
 						<tr>
 							<th>お名前</th><!--ここに警告文が挿入-->
-							<td class ="left"><input type="text" size="30" name="name"></td>
+							<td class ="left"><input type="text" size="30" name="guestName"></td>
 							<td><div class="add" id="add1">	</div></td>
 						</tr>
 
 						<tr>
 							<th>カナ</th>
-							<td class ="left"><input type="text" size="30" name="kana"></td>
+							<td class ="left"><input type="text" size="30" name="guestKana"></td>
 							<td><div class="add" id="add2" ></div></td>
 						</tr>
 
 						<tr>
 							<th>パスワード</th>
-							<td class="left"><input type="password" name="pass"></td>
+							<td class="left"><input type="password" name="guestPass"></td>
 							<td><div class="add" id="add3"></div></td>
 						</tr>
 
@@ -51,7 +51,7 @@
 
 						<tr>
 							<th>生年月日</th>
-							<td class="left"><input type="text" name="birthday"></td>
+							<td class="left"><input type="text" name="guestBirthday"></td>
 							<td><div class="add" id="add4"></div></td>
 						</tr>
 
@@ -70,19 +70,19 @@
 
 						<tr>
 							<th>電話番号</th>
-							<td class="left"><input type="tel" name="tel"></td>
+							<td class="left"><input type="tel" name="guestTel"></td>
 							<td><div class="add" id="add5"></div></td>
 						</tr>
 
 						<tr>
 							<th>メールアドレス</th>
-							<td><input type="email" size="50"name="mail"></td>
+							<td><input type="email" size="50"name="guestMail"></td>
 							<td><div class="add" id="add6"></div></td>
 						</tr>
 
 						<tr>
 							<th>ご自宅住所</th>
-							<td><input type="text" size="50" name="address"></td>
+							<td><input type="text" size="50" name="guestAddress"></td>
 							<td><div class="add" id="add7"></div></td>
 						</tr>
 

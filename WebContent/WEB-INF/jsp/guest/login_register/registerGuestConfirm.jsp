@@ -21,41 +21,37 @@
 		<table >
 			<tr>
 				<th>お名前</th>
-				<td><c:out value="${loginGuest.name}" /></td>
+				<td><c:out value="${regGuest.name}" /></td>
 			</tr>
 
 			<tr>
 				<th>カナ</th>
-				<td><c:out value="${loginGuest.kana}" /></td>
-			</tr>
-			<tr>
-				<th>ログインＩＤ</th>
-				<td><c:out value="${loginGuest.guestId}" /></td>
+				<td><c:out value="${regGuest.kana}" /></td>
 			</tr>
 
 			<tr>
 				<th>パスワード</th>
-				<td><c:out value="${loginGuest.pass}" /></td>
+				<td><c:out value="${regGuest.pass}" /></td>
 			</tr>
 
 			<tr>
 				<th>生年月日</th>
-				<td><c:out value="${loginGuest.birthday}" /></td>
+				<td><c:out value="${regGuest.birthday}" /></td>
 			</tr>
 
 			<tr>
 				<th>メールアドレス</th>
-				<td><c:out value="${loginGuest.guestmail}" /></td>
+				<td><c:out value="${regGuest.mail}" /></td>
 			</tr>
 
 			<tr>
 				<th>電話番号</th>
-				<td><c:out value="${loginGuest.tel}" /></td>
+				<td><c:out value="${regGuest.tel}" /></td>
 			</tr>
 
 			<tr>
 				<th>住所</th>
-				<td><c:out value="${loginGuest.address}" /></td>
+				<td><c:out value="${regGuest.address}" /></td>
 			</tr>
 		</table>
 		<input type="button" value="登録" onClick="location.href='/searchinn/RegisterGuestServlet?action=done'">
@@ -63,7 +59,7 @@
 
 		<h3><a href="registerGuestDone.html"></a></h3>
 		<p>
-			<a class="center" href="/searchinn/jsp/index.jsp">TOPへ戻る</a>
+			<a class="center" href="/searchinn/index.jsp">TOPへ戻る</a>
 		</p>
 	</div>
 </div>
