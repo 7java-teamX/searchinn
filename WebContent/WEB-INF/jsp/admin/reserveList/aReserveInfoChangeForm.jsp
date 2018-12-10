@@ -49,20 +49,5 @@
 
 <jsp:include page="/include/footer.jsp"/>
 
-<script type="text/javascript">
-window.onload = function ()	{
-	//var adultCh = document.getElementsById("adultCh").value;
-	//var childCh = document.getElementsById("childCh").value;
-	var adultNum = document.form.numOfAdult.value;
-	var childNum = document.form.numOfChild.value;
-
-	console.log(adultCharge);
-	console.log(adultNum);
-	console.log(childCharge);
-	console.log(childNum);
-	console.log(adultCharge * adultNum + childCharge * childNum);
-}
-    //document.getElementsByName("Charge").innerHTML = (childCh * childNum) + (adultCh * adultNum);
-</script>
 </body>
 </html>

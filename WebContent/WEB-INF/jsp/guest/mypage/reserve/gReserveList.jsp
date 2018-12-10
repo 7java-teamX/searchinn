@@ -28,7 +28,7 @@
 					プラン名<c:out value="${reserveInfo.planName}"/><br><!--プラン名  -->
 					予約内容の詳細<c:out value="${reserveInfo.planDetail}"/><br><!--予約内容の詳細  -->
 				</div>
-				<img src="<c:out value="${reserve.planImage}"/>" width="300" height="300" alt="<c:out value="${reserve.reserveId}"/>sasas"><!--予約プランの画像  -->
+				<img src="/searchinn/image/imagesPlan/<c:out value="${reserve.planImage}"/>" width="300" height="300" alt="<c:out value="${reserve.reserveId}"/>sasas"><!--予約プランの画像  -->
 			</div>
 			<div class="reserveArea">
 				<div class="str">予約内容</div>
