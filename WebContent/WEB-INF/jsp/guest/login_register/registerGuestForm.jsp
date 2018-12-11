@@ -107,7 +107,7 @@
 	</div><!--main Fin-->
 
 	<p>
-		<a class="center" href="/searchinn">TOPへ戻る</a>
+		<a class="center1" href="/searchinn">TOPへ戻る</a>
 	</p>
 
 <jsp:include page="/include/footer.jsp"/>
