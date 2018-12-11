@@ -51,12 +51,21 @@
 
 		<p>
 			<a class="btn" href = "/searchinn/GuestInfoChangeServlet?action=change">変更</a>
-			<a class="btn"  href = "/searchinn/GuestInfoDeleteServlet">削除</a>
+			<a class="btn"  onclick="doConfirm()" >削除</a>
 			<a class="btn"  href = "/searchinn/AGuestListServlet">戻る</a>
 		</p>
 	</div>
 
 </div>
 <jsp:include page="/include/footer.jsp"/>
+
+
+<script>
+function doConfirm(){
+  if(window.confirm("予約のキャンセル確認になります\nよろしければ<はい>を押してください")){
+    location.href = "/searchinn/GuestInfoDeleteServlet";
+  }
+}
+</script>
 </body>
 </html>

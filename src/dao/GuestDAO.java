@@ -61,8 +61,7 @@ public class GuestDAO {
 		return false;
 	}
 
-
-	//会員登録時にメールアドレスの重複が存在するかを確認 select → guest_t
+	//会員登録時・変更時 メールアドレスの重複が存在するかを確認 select → guest_t
 	public boolean registerCheck(Guest guest) {
 		Connection conn = null;
 		boolean isExist = true;
