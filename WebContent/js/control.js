@@ -57,7 +57,7 @@
   		var i = 0;  //初期値
 
   		//名前のチェック①
-  		var value=$('input[name="name"]').val();
+  		var value=$('input[name="guestName"]').val();
   		if(value.length<=0){
   			errMsg ="名前は必須です\n";
   			$('#add1').html(errMsg);
@@ -68,7 +68,7 @@
   		}
 
   		//かなのチェック② //テキストボックス使用
-  		var value=$('input[name="kana"]').val();
+  		var value=$('input[name="guestKana"]').val();
   		if(value.length<=0){
   			errMsg ="カナは必須です\n";
   			$('#add2').html(errMsg);
@@ -84,7 +84,7 @@
   		}
 
   		//パスワードのチェック③ //テキストボックス使用
-  		var value=$('input[name="pass"]').val();
+  		var value=$('input[name="guestPass"]').val();
   		if(value.length <=0){
   			errMsg = "パスワードは必須です\n";
   			$('#add3').html(errMsg	);
@@ -103,7 +103,7 @@
 
 
   		//生年月日のチェック④ //テキストボックス使用
-  		var value=$('input[name="birthday"]').val();
+  		var value=$('input[name="guestBirthday"]').val();
   		if(value.length <=0){
   			errMsg = "生年月日は必須です\n";
   			$('#add4').html(errMsg);
@@ -122,7 +122,7 @@
 
 
   		//電話番号のチェック⑤
-  		var value=$('input[name="tel"]').val();
+  		var value=$('input[name="guestTel"]').val();
   		if(value.length<=0){
   			errMsg="電話番号は必須です";
   			$('#add5').html(errMsg);
@@ -140,7 +140,7 @@
   		}
 
   		//メールのチェック⑥
-  		var value=$('input[name="mail"]').val();
+  		var value=$('input[name="guestMail"]').val();
   		if(value.length<=0){
   			errMsg ="メールアドレスは必須です";
   			$('#add6').html(errMsg);
@@ -157,7 +157,7 @@
 
 
   		//趣味のチェック⑦
-  		var value=$('input[name="address"]').val();
+  		var value=$('input[name="guestAddress"]').val();
   		if(value.length<=0){
   			errMsg="住所は必須です\n";
   			$('#add7').html(errMsg);

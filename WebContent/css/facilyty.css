@@ -3,6 +3,10 @@
 
 /* facilyty.jsp */
 
-
+.submit{
+	border:solid 2px gray;
+	border-radius: 3px;
+	background-color: #c0c0c0;
+}
 
 /* */
