@@ -25,6 +25,12 @@
 	</div>
 </header>
 
+<p>ホテル名:${planList.get(0).getHotelName() }</p>
+<p>住所:${planList.get(0).getHotelAddress() }</p>
+<p>電話番号:${planList.get(0).getHotelTel() }</p>
+<p>eMail:${planList.get(0).getHotelmail()}</p>
+<p>${planList.get(0).getHotelImage() }</p>
+<p>ホテル情報:${planList.get(0).getHotelDetail() }</p>
 <div class="container">
 	<c:forEach var="plan" items="${planList}" varStatus="status">
 	<div class="box">
