@@ -98,14 +98,19 @@ h3{
 }
 /**/
 .text{
+	margin:0 auto ;
 	width:400px;
 }
 .reserveText,.reserveBox{
 	margin-bottom:10px;
 }
-.planArea, .reserveArea,.text{
-	background-color : #fff ;
+
+/* gReserveList.jsp*/
+.center{
+	margin:0 auto ;
+	width:80%;
 }
+
 .btn:visited {
 	color: black;
 }

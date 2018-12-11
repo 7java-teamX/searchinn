@@ -60,7 +60,7 @@ public class GReserveShowDAO {
 				 int numOfAdults = rs.getInt("num_of_adults");
 				 int numOfChildren = rs.getInt("num_of_children");
 				 String checkin = rs.getString("checkin");
-				 int numOfNights = rs.getInt("num_of_nights"); //泊数
+				 int numOfNights = rs.getInt("num_of_nights");     //泊数
 				 String reserveDate = rs.getString("reserve_date");
 				 int charge= rs.getInt("charge");
 
@@ -80,6 +80,9 @@ public class GReserveShowDAO {
 				 int childCapacity = rs.getInt("child_capacity");
 				 int adultCharge = rs.getInt("adult_charge");
 				 int childCharge = rs.getInt("child_charge");
+
+				 System.out.println("planImage:"+planImage+
+						 "\nhotelImage："+ hotelImage);
 
 				Reserve reserveInfo = new Reserve(
 						reserveId,numOfAdults,numOfChildren,checkin,numOfNights,reserveDate,  charge,reserveMemo,
