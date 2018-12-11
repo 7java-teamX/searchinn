@@ -61,21 +61,26 @@ public class GuestDAO {
 		return false;
 	}
 
-
-	//会員登録時にメールアドレスの重複が存在するかを確認 select → guest_t
+	//会員登録時・変更時 メールアドレスの重複が存在するかを確認 select → guest_t
 	public boolean registerCheck(Guest guest) {
 		Connection conn = null;
 		boolean isExist = true;
+		String guestIdStr = String.valueOf(guest.getGuestId());
 
+		if(guestIdStr != null && "".equals(guestIdStr)) {
+			guestIdStr = "-1";
+		}
 		try {
 			Class.forName(DRIVER_NAME);
 			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
 			//select文の準備
 			String sql = "SELECT guest_mail "
 					+ "from guest_t "
-					+ "WHERE guest_mail = ?  " ;
+					+ "WHERE guest_mail = ?  "
+					+ "AND guest_id != ?;";
 			java.sql.PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setString(1, guest.getMail());
+			pStmt.setString(2, guestIdStr);
 			//selectを実行し結果表(ResultSet)を取得
 			ResultSet rs = pStmt.executeQuery();
 

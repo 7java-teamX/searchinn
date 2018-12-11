@@ -25,6 +25,8 @@ public class GuestInfoDeleteServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
+
+		//session-scopeの取得 削除対象のレコード
 		HttpSession ses = request.getSession();
 		Guest guest = (Guest) ses.getAttribute("guestDetail");
 		int id = guest.getGuestId();
