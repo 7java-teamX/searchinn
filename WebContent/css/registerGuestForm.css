@@ -3,6 +3,8 @@
 body{
 	background-image: linear-gradient(-90deg, #C7FFDD, #D8C7FF);
 	text-align: center;
+	width: 1048px;
+	margin: auto;
 }
 
 h2{
