@@ -21,7 +21,6 @@ public class GuestShowDAO {
 	private final String DB_USER = "root";
 	private final String DB_PASS = "root";
 
-
 	public List<Guest> showAll(){
 		Connection conn = null;
 		List<Guest> guestList = new ArrayList<>();

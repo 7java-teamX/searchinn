@@ -37,7 +37,7 @@
 				</div>
 			</div>
 			<div class="photo">
-				<img src="<c:out value="${reserveInfo.planImage}"/>" width="370" height="240"><br><!-- プラン画像-->
+				<img src="/searchinn/image/imagesPlan/<c:out value="${reserveInfo.planImage}"/>" width="370" height="240"><br><!-- プラン画像-->
 			</div>
 
 		</div>

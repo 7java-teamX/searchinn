@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>BOOKINN | プラン選択</title>
-
+<link rel="stylesheet" type="text/css" href="/searchinn/css/common.css" >
 <link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
 <link rel="stylesheet" type="text/css" href="/searchinn/css/reserve.css">
 </head>
@@ -24,13 +24,37 @@
 		<h4 class="ao">予約確定</h4>
 	</div>
 </header>
+
+
+
 <div class="container">
+	<div class="hotelBox">
+		<span class="planName">
+			ホテル名:${planList.get(0).getHotelName() }
+		</span>
+		<div class="descriptArea">
+			<div class="descript">
+				<c:out value="${plan.roomTypeName}" /><br>
+				<p>ホテル情報<br>
+				${planList.get(0).getHotelDetail() }</p>
+				<div class="text" style="line-height:2em;">
+					住所:${planList.get(0).getHotelAddress() }<br>
+					電話番号:${planList.get(0).getHotelTel() }<br>
+					eMail:${planList.get(0).getHotelmail()}
+				</div>
+
+			</div>
+			<img src="/searchinn/image/imagesHotel/<c:out value="${plan.planImage}" />" width="300" height="300">
+		</div>
+
+	</div><!--  -->
+
+
 	<c:forEach var="plan" items="${planList}" varStatus="status">
 	<div class="box">
 		<span class="planName">
 			<c:out value="${plan.planName}" />
 		</span>
-
 		<div class="descriptArea">
 			<div class="descript">
 				部屋タイプ：<c:out value="${plan.roomTypeName}" /><br>
@@ -48,11 +72,11 @@
 					小人：<c:out value="${plan.childCharge}" />円
 				</p>
 			</div>
-			<img src="<c:out value="${plan.planImage}" />" width="300" height="300">
+			<img src="/searchinn/image/imagesPlan/<c:out value="${plan.planImage}" />" width="300" height="300">
 		</div>
-
-		<a href="/searchinn/PlanSelectServlet?action=toReserve&index=${status.index}">空室確認・予約</a>
-
+		<div class="btn_area">
+			<a href="/searchinn/PlanSelectServlet?action=toReserve&index=${status.index}" class="btn">空室確認・予約</a>
+		</div>
 	</div>
 	</c:forEach>
 </div>

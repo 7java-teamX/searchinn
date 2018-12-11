@@ -19,7 +19,7 @@ public class ReserveShowDAO {
 	private final String JDBCURL = "jdbc:mysql://localhost:3306/inn"; //接続先データベース
 	private final String DBUser = "root"; // user名
 	private final String DBPass = "root"; // pass名
-	//private final String DBPass = "Reina9110Nao"; // pass名
+
 
 
 	//検索条件で取得するメソッド(つぶやきの内容取得)

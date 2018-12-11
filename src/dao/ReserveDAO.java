@@ -19,7 +19,8 @@ public class ReserveDAO {
 		String JDBC_URL = "jdbc:mysql://localhost:3306/inn";
 		String DB_user = "root";
 		String DR_pass = "root";
-		//String DR_pass = "Reina9110Nao";
+
+
 
 		int reserveMax[] = new int[31];
 		int reserveCount[] = new int[31];  //最大31日まで部屋の予約数を配列で格納
@@ -98,12 +99,8 @@ public class ReserveDAO {
 		String DR_pass = "root";
 		//String DR_pass = "Reina9110Nao";
 
-		//配列では固定長のため可変長利用する
 		List<Integer> roomNumList = new ArrayList<>();
-
-		//チェックイン日時と泊数を元にしてレコードを抽出し、配列に格納
-		//泊数に限界がある場合は１日加算して再度selectを行う
-
+		//チェックイン日時と泊数を元にしてレコードを抽出し、ArrayListに格納
 		try {
 			Class.forName(DRIVER_NAME);
 			conn = DriverManager.getConnection(JDBC_URL,DB_user,DR_pass);
@@ -130,6 +127,7 @@ public class ReserveDAO {
 					// 対象プランでの空き室数
 					int reserveDays = rs.getInt("(SELECT DISTINCT num_of_rooms FROM plan_t)-count(*)");
 					roomNumList.add(reserveDays);
+					System.out.println(reserveDays);
 				}// if
 			}// for
 		}//try

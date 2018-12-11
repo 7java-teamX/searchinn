@@ -1,26 +1,24 @@
 @charset "UTF-8";
 
 body{
-	background: #456;
+	background-image: linear-gradient(-90deg, #C7FFDD, #D8C7FF);
 	text-align: center;
-}
-
-.container{
-	margin: 0 auto;
-	width: 1024px;
+	width: 1048px;
+	margin: auto;
 }
 
 h2{
 	text-align: center;
 	background: #28d;
 	padding: 20px;
+	margin-bottom: 0;
 	color:#fff;
 	border-radius: 3px;
 }
 
 
 div.main{
-	width:610px;
+	width:800px;
 	margin: 0 auto;
 	border-radius: 3px;
 }
@@ -29,14 +27,12 @@ div.main1{
 	width:400px;
 	margin: 0 auto;
 	border-radius: 3px;
-	background-color: white;
 }
 
 div.errmsg{
 	background: white;
 
 }
-
 
 .container{
 	background: #ebebeb;
@@ -46,12 +42,18 @@ div.errmsg{
 
 .center{
 	text-align: center;
-	color:#fff;
+	color:white;
+}
+.center1{
+	text-align: center;
+	color:#28d;
 }
 
-table{
-	margin: 0 auto;
+.left{
+	float:left
 }
-.box{
-	background-color:white;
+
+div.add{
+	text-align: left;
+	margin-left: 30px;
 }

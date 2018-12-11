@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import beans.Guest;
 import model.GuestAlterLogic;
-
+import model.RegisterGuestLogic;
 /**
 * @author 3BC1_12
 *
@@ -33,25 +33,39 @@ public class GuestInfoChangeServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String action = request.getParameter("action");
 		HttpSession ses = request.getSession();
-		if(action.equals("change")) {
-			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/admin/guestList/aGuestInfoChangeForm.jsp");
+		if (action.equals("change")) {
+			RequestDispatcher dis = request
+					.getRequestDispatcher("/WEB-INF/jsp/admin/guestList/aGuestInfoChangeForm.jsp");
 			dis.forward(request, response);
-		}else {
+		} else {
 			Guest guest = (Guest) ses.getAttribute("update");
-			GuestAlterLogic guestAlterLogic = new GuestAlterLogic();
-			//ユーザー情報の変更実行
-			guestAlterLogic.update(guest);
+			RegisterGuestLogic registerGuestLogic = new RegisterGuestLogic();
+			boolean isCheck = registerGuestLogic.isCheck(guest);
+			if (isCheck) {
+				GuestAlterLogic guestAlterLogic = new GuestAlterLogic();
+				//ユーザー情報の変更実行
+				guestAlterLogic.update(guest);
+			}else {
+				request.setAttribute("Msg", "メールアドレスが重複しています");
+				RequestDispatcher dis =
+						request.getRequestDispatcher("/WEB-INF/jsp/admin/guestList/aGuestInfoChangeForm.jsp");
+				dis.forward(request, response);
+			}
 			if (action.equals("guest")) {
 				ses.setAttribute("loginUser", guest);
-				RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/guest/mypage/guestInfo/gGuestInfoChangeDone.jsp");
+				RequestDispatcher dis = request
+						.getRequestDispatcher("/WEB-INF/jsp/guest/mypage/guestInfo/gGuestInfoChangeDone.jsp");
 				dis.forward(request, response);
-			} else if(action.equals("admin")){
-				RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/admin/guestList/aGuestInfoChangeDone.jsp");
+			} else if (action.equals("admin")) {
+				RequestDispatcher dis = request
+						.getRequestDispatcher("/WEB-INF/jsp/admin/guestList/aGuestInfoChangeDone.jsp");
 				dis.forward(request, response);
 			}
 		}
 
 	}
+
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -72,10 +86,12 @@ public class GuestInfoChangeServlet extends HttpServlet {
 		ses.setAttribute("update", guest);
 		System.out.println(action);
 		if (action.equals("guest")) {
-			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/guest/mypage/guestInfo/gGuestInfoChangeConfirm.jsp");
+			RequestDispatcher dis = request
+					.getRequestDispatcher("/WEB-INF/jsp/guest/mypage/guestInfo/gGuestInfoChangeConfirm.jsp");
 			dis.forward(request, response);
-		} else if(action.equals("admin")){
-			RequestDispatcher dis = request.getRequestDispatcher("/WEB-INF/jsp/admin/guestList/aGuestInfoChangeConfirm.jsp");
+		} else if (action.equals("admin")) {
+			RequestDispatcher dis = request
+					.getRequestDispatcher("/WEB-INF/jsp/admin/guestList/aGuestInfoChangeConfirm.jsp");
 			dis.forward(request, response);
 		}
 	}

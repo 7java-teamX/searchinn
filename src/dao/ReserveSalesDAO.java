@@ -21,6 +21,7 @@ public class ReserveSalesDAO {
 		String DB_user = "root";
 		String DR_pass = "root";
 
+
 		List<SalesInfo> salesInfoList = new ArrayList<>();
 		SalesInfo salesInfo = null;
 

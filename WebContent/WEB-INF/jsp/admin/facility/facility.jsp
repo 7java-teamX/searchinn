@@ -6,11 +6,19 @@
 <head>
 <meta charset="UTF-8">
 
+<link rel="stylesheet" type="text/css" href="/searchinn/css/common.css" >
+<link rel="stylesheet" type="text/css" href="/searchinn/css/admin.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
+<link rel="stylesheet" type="text/css" href="/searchinn/css/facilyty.css">
 <title>BOOKINN | 管理者・施設管理</title>
 </head>
 <body>
+<header>
+	<jsp:include page="/include/header.jsp"/>
+</header>
 	<h2>施設管理</h2>
 	<div>
+	<a href="/searchinn/AdminMenuServlet" class="btn">管理TOP</a>
 		<h3>エリア</h3>
 		<table>
 			<tr>
@@ -36,7 +44,8 @@
 				<th>TEL</th>
 				<th>MAIL</th>
 				<th>image</th>
-				<th>詳細</th>
+				<th>ホテル説明</th>
+
 			</tr>
 			<c:forEach var="hotel" items="${hotelAll}">
 				<tr>
@@ -76,7 +85,12 @@
 				</tr>
 			</c:forEach>
 		</table>
-		<a href="/searchinn/FacilityServlet?action=roomTypeAdd">部屋タイプ追加</a>
+
+		<p>
+			<a class="btn" href="/searchinn/FacilityServlet?action=roomTypeAdd">部屋タイプ追加</a>
+		</p>
+
+
 	</div>
 
 	<div>
@@ -89,7 +103,7 @@
 				<th>部屋タイプID</th>
 				<th>部屋数</th>
 				<th>image</th>
-				<th>詳細</th>
+				<th>プラン詳細</th>
 				<th></th>
 			</tr>
 			<c:forEach var="plan" items="${planAll}" varStatus="status">
@@ -101,15 +115,15 @@
 					<td><c:out value="${plan.numRoom}" /></td>
 					<td><c:out value="${plan.planImage}" /></td>
 					<td><c:out value="${plan.planDetail}" /></td>
-					<td><a href="/searchinn/FacilityServlet?action=planEdit&index=${status.index}">編集</a></td>
+					<td>
+						<a class="btn" href="/searchinn/FacilityServlet?action=planEdit&index=${status.index}">編集</a>
+					</td>
 				</tr>
 			</c:forEach>
 		</table>
-<%--		<a href="/searchinn/FacilityServlet">プラン追加</a>	--%>
+
 	</div>
-<a href="/searchinn/AdminMenuServlet">管理者TOP</a>
 
-
-
+<jsp:include page="/include/footer.jsp"/>
 </body>
 </html>

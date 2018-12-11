@@ -10,7 +10,9 @@
 <link rel="stylesheet" type="text/css" href="/searchinn/css/guestInfo.css">
 </head>
 <body>
-<jsp:include page="/include/header.jsp"/>
+<header>
+	<jsp:include page="/include/header.jsp"/>
+</header>
 
 <div class="container">
 	<div class="box">
@@ -18,8 +20,9 @@
 		<br><br>
 			変更完了しました
 		</p>
-		<p  class="center_area none">
-			<a href="/searchinn/gGuestInfo.jsp" class="btn">ゲスト情報ページ</a><br>
+		<p class="center_area none">
+			<a href="/searchinn/GGuestInfoServlet?action=info" class="btn">ゲスト情報ページ</a>
+
 			<a href="/searchinn/MainServlet?action=mypage" class="btn">マイページ</a>
 		</p>
 	</div>

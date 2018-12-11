@@ -18,7 +18,6 @@ public class GReserveShowDAO {
 	private final String JDBCURL = "jdbc:mysql://localhost:3306/inn"; //接続先データベース
 	private final String DBUser = "root"; // user名
 	private final String DBPass = "root"; // pass名
-	//private final String DBPass = "Reina9110Nao"; // pass名自宅用
 
 	////ゲストidを元に予約情報をarrayListで抽出するメソッド(つぶやきの内容取得)
 	public List<Reserve> selectReserve(int guestId) {
@@ -61,7 +60,7 @@ public class GReserveShowDAO {
 				 int numOfAdults = rs.getInt("num_of_adults");
 				 int numOfChildren = rs.getInt("num_of_children");
 				 String checkin = rs.getString("checkin");
-				 int numOfNights = rs.getInt("num_of_nights"); //泊数
+				 int numOfNights = rs.getInt("num_of_nights");     //泊数
 				 String reserveDate = rs.getString("reserve_date");
 				 int charge= rs.getInt("charge");
 
@@ -81,6 +80,9 @@ public class GReserveShowDAO {
 				 int childCapacity = rs.getInt("child_capacity");
 				 int adultCharge = rs.getInt("adult_charge");
 				 int childCharge = rs.getInt("child_charge");
+
+				 System.out.println("planImage:"+planImage+
+						 "\nhotelImage："+ hotelImage);
 
 				Reserve reserveInfo = new Reserve(
 						reserveId,numOfAdults,numOfChildren,checkin,numOfNights,reserveDate,  charge,reserveMemo,

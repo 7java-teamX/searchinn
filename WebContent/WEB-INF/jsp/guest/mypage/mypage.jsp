@@ -3,12 +3,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="/searchinn/css/common.css" >
 <link rel="stylesheet" type="text/css" href="/searchinn/css/loginStyle.css">
 <link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
 <meta charset="UTF-8">
 <title>マイページ</title>
 </head>
 <body style="background-color: white;">
+
 <header>
 	<jsp:include page="/include/header.jsp"/>
 </header>

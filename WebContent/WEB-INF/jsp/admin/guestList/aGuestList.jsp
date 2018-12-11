@@ -18,8 +18,8 @@
 <h2>顧客情報一覧</h2>
 <div class="container">
 		<p>
-			<a href = "/searchinn/AdminMenuServlet" class="btn">管理者機能一覧</a>&nbsp;&nbsp;
-			<a href = "/searchinn/AGuestListServlet?action=list" class="btn">顧客情報一覧</a>
+			<a href = "/searchinn/AdminMenuServlet" class="btn">管理者TOP</a>&nbsp;&nbsp;
+			<a href = "/searchinn/AGuestListServlet?action=list" class="btn">顧客情報一覧表示</a>
 		</p>
 		<form action="/searchinn/GuestInfoServlet" method="post">
 			<table>
@@ -54,7 +54,7 @@
 				<td>${guest.name}</td>
 				<td>${guest.kana}</td>
 				<td>${guest.tel}</td>
-				<td>${guest.mail}/td>
+				<td>${guest.mail}</td>
 				<td>
 					<a href="/searchinn/GuestInfoServlet?id=<c:out value="${guest.guestId}"/>">詳細</a>
 				</td>

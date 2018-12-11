@@ -8,7 +8,6 @@
 <meta charset="UTF-8">
 
 <!--
-
 □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□■■□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
 ■■■■■□□□□□□□□□□□□□□□□□□□□□□□□□□□■■□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□■■□□
 □■□□□■□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□■□□□□□□□□□□□□□□□□□□□□■□□□
@@ -59,25 +58,15 @@
 □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
 
 -->
-
-<link rel="stylesheet" type="text/css" href="/searchinn/css/indexStyle.css" >
+<link rel="stylesheet" type="text/css" href="/searchinn/css/common.css" >
 <link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
-
-<title>BOOKINN</title>
-
+<link rel="stylesheet" type="text/css" href="/searchinn/css/indexStyle.css" >
+<title>Reserve-Inn</title>
 </head>
 
 <body>
-
+<header>
 	<jsp:include page="/include/header.jsp"/>
-
-	<div class="title">
-		<h1><a href="#">BOOKINN.com</a></h1>
-		<h3 id="hoge">世界最小級のホテル予約サイト</h3><br>
-		<h3 id="hoge">ホテル予約ならBOOKINN.com</h3><br>
-	</div>
-
-	<br>
 	<div id="main">
 		<h4 class="siro">ご予約の流れ</h4><span class="spanao">→</span>
 		<h4 class="ao">エリア/ホテル選択</h4><span class="spanao">→</span>
@@ -87,9 +76,15 @@
 		<h4 class="ao">入力確認</h4><span class="spanao">→</span>
 		<h4 class="siro">予約確定</h4>
 	</div>
+</header>
+<div class="title">
+	<br>
+	<h3 id="hoge">世界最小級のホテル予約サイト</h3><br>
+	<h3 id="hoge">ホテル予約ならReserve-Inn</h3>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-	<jsp:include page="/include/footer.jsp"/>
-
+<jsp:include page="/include/footer.jsp"/>
 
 </body>
 </html>

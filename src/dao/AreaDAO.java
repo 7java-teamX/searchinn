@@ -16,6 +16,7 @@ public class AreaDAO {
 	private final String DB_USER = "root";
 	private final String DB_PASS = "root";
 
+
 	public List<Area> showAll(){
 		Connection conn = null;
 		List<Area> areaList = new ArrayList<>();

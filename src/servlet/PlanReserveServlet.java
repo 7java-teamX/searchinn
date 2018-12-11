@@ -97,6 +97,11 @@ public class PlanReserveServlet extends HttpServlet {
 		//planIdの呼び出し
 		int planId  = plan.getPlanId();
 
+		//テスト
+		System.out.println("numOfAdults:"+ numOfAdults + "\t numOfChildren : "+numOfChildren +
+				"\t checkin : "+checkin + "\t numOfNights"+ numOfNights+
+				"\t reserveDate :"+reserveDate + "\t charge:"+ charge);
+
 		//ログイン状態の確認
 		if(loginUser != null) {
 			System.out.println("ログイン済み");
@@ -104,6 +109,7 @@ public class PlanReserveServlet extends HttpServlet {
 			//return:boolean   true時はreserveConfirm.jspにフォワード処理，false時はreserveForm.jspにフォワード処理
 			ReserveCheck rc = new ReserveCheck();
 			boolean bool = rc.checkReserve(planId, checkin, numOfNights);
+
 			if(bool) {
 				Reserve reserve = new Reserve(numOfAdults, numOfChildren, checkin, numOfNights, reserveDate, charge
 						, reserveMemo, plan.getPlanId(), plan.getPlanName(), plan.getNumRoom(), plan.getPlanImage()
