@@ -25,13 +25,31 @@
 	</div>
 </header>
 
-<p>ホテル名:${planList.get(0).getHotelName() }</p>
-<p>住所:${planList.get(0).getHotelAddress() }</p>
-<p>電話番号:${planList.get(0).getHotelTel() }</p>
-<p>eMail:${planList.get(0).getHotelmail()}</p>
-<p>${planList.get(0).getHotelImage() }</p>
-<p>ホテル情報:${planList.get(0).getHotelDetail() }</p>
+
+
 <div class="container">
+	<div class="hotelBox">
+		<span class="planName">
+			ホテル名:${planList.get(0).getHotelName() }
+		</span>
+		<div class="descriptArea">
+			<div class="descript">
+				<c:out value="${plan.roomTypeName}" /><br>
+				<p>ホテル情報<br>
+				${planList.get(0).getHotelDetail() }</p>
+				<div class="text" style="line-height:2em;">
+					住所:${planList.get(0).getHotelAddress() }<br>
+					電話番号:${planList.get(0).getHotelTel() }<br>
+					eMail:${planList.get(0).getHotelmail()}
+				</div>
+
+			</div>
+			<img src="/searchinn/image/imagesHotel/<c:out value="${plan.planImage}" />" width="300" height="300">
+		</div>
+
+	</div><!--  -->
+
+
 	<c:forEach var="plan" items="${planList}" varStatus="status">
 	<div class="box">
 		<span class="planName">

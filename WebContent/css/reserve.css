@@ -121,16 +121,8 @@ a:visited {	color: black;}
 	border-top: medium solid #ff8000;
 	margin: 25px;
 	padding: 20px;
-	background-color: #fef8c0;
+	background-color:#fef8c0;
 }
-.box:nth-child(2n+0) {
-	border-bottom: medium solid #ff8000;
-	border-top: medium solid #ff8000;
-	margin: 25px;
-	padding: 20px;
-	background-color: #d9fffd;
-}
-
 .box2 {
 	border-bottom: medium solid #ff8000;
 	border-top: medium solid #ff8000;
@@ -175,6 +167,14 @@ a:visited {	color: black;}
 
 .hotel{
 	padding:10px;
+}
+
+.hotelBox{
+	border-bottom: medium solid #ff8000;
+	border-top: medium solid #ff8000;
+	margin: 25px;
+	padding: 20px;
+	background-color: #fed2c0;x
 }
 .textarea{
 	font-size: 12px;
