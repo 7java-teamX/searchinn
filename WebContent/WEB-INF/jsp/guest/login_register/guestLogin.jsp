@@ -32,7 +32,7 @@
 				<input type="submit" value="会員ログイン">
 			</p>
 		</form>
-		<div class="errmsg">
+		<div class="errmsg" style="text-align:center; color:red;">
 			<c:if test="${not empty errMsg}">
 				<c:out value="${errMsg}"></c:out>
 			</c:if>
