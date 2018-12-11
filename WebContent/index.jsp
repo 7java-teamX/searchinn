@@ -61,7 +61,7 @@
 <link rel="stylesheet" type="text/css" href="/searchinn/css/common.css" >
 <link rel="stylesheet" type="text/css" href="/searchinn/css/include.css">
 <link rel="stylesheet" type="text/css" href="/searchinn/css/indexStyle.css" >
-<title>BOOKINN</title>
+<title>Reserve-Inn</title>
 </head>
 
 <body>

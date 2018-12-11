@@ -274,9 +274,9 @@ a:visited {	color: black;}
                      */
 #pageTop {
 	position: fixed;
-	bottom: 20px;
+	bottom: -40px;
 	right: 20px;
-	margin: 80px;
+	margin: 132px;
 }
 
 #pageTop i {
