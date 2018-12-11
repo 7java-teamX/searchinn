@@ -63,6 +63,7 @@ public class PlanDAO {
 				String hotelDetail = rs.getString(18);
 				Plan plan = new Plan(planId, planName, numRoom, planImage, planDetail, roomTypeId, roomTypeName, adultCapacity, childCapacity, adultCharge, childCharge, hotelId, hotelName, hotelAddress, hotelTel, hotelmail, hotelImage, hotelDetail);
 				planList.add(plan);
+				System.out.println(hotelmail);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
