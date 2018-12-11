@@ -3,6 +3,8 @@
 body{
 	background-image: linear-gradient(-90deg, #C7FFDD, #D8C7FF);
 	text-align: center;
+	width: 1048px;
+	margin: auto;
 }
 
 h2{
@@ -39,6 +41,10 @@ div.errmsg{
 }
 
 .center{
+	text-align: center;
+	color:white;
+}
+.center1{
 	text-align: center;
 	color:#28d;
 }

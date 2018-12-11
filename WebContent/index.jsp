@@ -77,11 +77,10 @@
 		<h4 class="siro">予約確定</h4>
 	</div>
 </header>
-
 <div class="title">
-	<h1><a href="#">BOOKINN.com</a></h1>
+	<br>
 	<h3 id="hoge">世界最小級のホテル予約サイト</h3><br>
-	<h3 id="hoge">ホテル予約ならBOOKINN.com</h3>
+	<h3 id="hoge">ホテル予約ならReserve-Inn</h3>
 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
