@@ -6,7 +6,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
+<style>
+#main,footer{
+	opacity:.7;
+}
+</style>
 <!--
 □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□■■□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□
 ■■■■■□□□□□□□□□□□□□□□□□□□□□□□□□□□■■□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□■■□□
@@ -82,7 +86,7 @@
 	<h3 id="hoge">世界最小級のホテル予約サイト</h3><br>
 	<h3 id="hoge">ホテル予約ならReserve-Inn</h3>
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br>
 
 <jsp:include page="/include/footer.jsp"/>
 
